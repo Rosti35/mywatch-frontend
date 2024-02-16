@@ -1,8 +1,7 @@
 import {Warehouse} from '@/forms/templates/edit/warehouse';
-import {Params} from 'next/dist/shared/lib/router/utils/route-matcher';
 import {SettingsLayout} from '../../_layouts/settings';
 
-export default function Page(_params: Params) {
+export default function Page() {
   return (
     <SettingsLayout
       title="Warehouse"
