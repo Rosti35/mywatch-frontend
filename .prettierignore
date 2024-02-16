@@ -1,0 +1,11 @@
+**/node_modules
+**/dist
+**/*.svg
+
+package.json
+pnpm-lock.yaml
+.electron-vendors.cache.json
+
+.github
+.idea
+.next
