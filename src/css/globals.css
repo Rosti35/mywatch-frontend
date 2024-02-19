@@ -6,6 +6,7 @@
   .text-field input:focus + label,
   .text-field input:not(:placeholder-shown) + label {
     transform: translateY(0);
+    top: 10px;
 
     @apply text-xs;
   }

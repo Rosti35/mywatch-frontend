@@ -13,15 +13,19 @@ export const Company = () => {
         id="city"
         placeholder="City"
       />
-      <div className="flex gap-3">
-        <TextField
-          id="address"
-          placeholder="Address"
-        />
-        <TextField
-          id="postalCode"
-          placeholder="ZIP / Postal code"
-        />
+      <div className="flex gap-3 w-full">
+        <span className="w-full">
+          <TextField
+            id="address"
+            placeholder="Address"
+          />
+        </span>
+        <span className="min-w-44">
+          <TextField
+            id="postalCode"
+            placeholder="ZIP / Postal code"
+          />
+        </span>
       </div>
     </div>
   );

@@ -1,5 +1,15 @@
 import type {Config} from 'tailwindcss';
 
+const round = {
+  '10px': '10px',
+  '50': '50px',
+  '100': '100px',
+  '200': '200px',
+  '300': '300px',
+  '400': '400px',
+  '500': '500px',
+};
+
 const config: Config = {
   darkMode: ['class'],
 
@@ -11,6 +21,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      padding: round,
+      margin: round,
       colors: {
         'themed-black': {
           primary: '#262626',
@@ -31,6 +43,7 @@ const config: Config = {
         md: '24px',
         lg: '32px',
         xl: '56px',
+        caption: '14px',
       },
     },
   },

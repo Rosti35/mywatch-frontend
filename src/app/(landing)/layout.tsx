@@ -8,7 +8,7 @@ export default function Layout({
 }>) {
   return (
     <>
-      <main className="md:px-24 px-5 pt-9 pb-32 flex flex-col gap-16 bg-themed-grey-200">
+      <main className="flex flex-col px-100 pb-[132px] pt-9 space-y-[60px] bg-themed-grey-200">
         <Navbar />
         {children}
       </main>
