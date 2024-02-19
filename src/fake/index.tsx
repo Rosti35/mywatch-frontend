@@ -21,6 +21,17 @@ export const sampeDelieveryAddress = {
   title: 'Some title',
 };
 
+export const sampleDealer = {
+  id: '1',
+  trusted: true,
+  name: 'Ineichen Zuriсh',
+  rating: 4.5,
+  iso2: 'us',
+  location: 'New York, NY',
+  stock: 2043,
+};
+
 export type Bank = typeof sampleBank;
 export type DelieveryAddress = typeof sampeDelieveryAddress;
 export type Warehouse = typeof sampleWarehouse;
+export type Dealer = typeof sampleDealer;

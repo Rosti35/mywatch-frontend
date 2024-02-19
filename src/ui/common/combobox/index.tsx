@@ -10,6 +10,7 @@ import {AnimatePresence, HTMLMotionProps, motion} from 'framer-motion';
 import {Popover, PopoverContent, PopoverTrigger} from '../popover';
 import {defaultTransition} from '@/ui/util';
 import {cn} from '@/lib/cn';
+import {useOnClickOutside} from '@/hooks/common/use-on-click-outside';
 
 export type Option = {
   value: any;
@@ -63,25 +64,23 @@ export const ComboboxTrigger: React.FC<ComboboxTriggerProps> = ({
   );
 };
 
-type ComboboxContentProps = {
-  asPopover?: boolean;
-} & HTMLMotionProps<'div'> &
-  React.PropsWithChildren;
-export const ComboboxContent = ({children, asPopover, ...props}: ComboboxContentProps) => {
-  const {open} = useCombobox();
+const ComboboxCommand = ({
+  children,
+  ...props
+}: HTMLMotionProps<'div'> & React.PropsWithChildren) => {
+  const {open, setOpen} = useCombobox();
 
-  if (asPopover) {
-    return (
-      <PopoverContent {...(props as PopoverContentProps)}>
-        <Command>{children}</Command>
-      </PopoverContent>
-    );
-  }
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  const onClickOutside = () => setOpen(false);
+
+  useOnClickOutside(ref, onClickOutside);
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {open ? (
         <motion.div
+          ref={ref}
           className="p-0 w-full"
           {...props}
           style={{zIndex: 999, position: 'absolute', left: 0, top: '100%'}}
@@ -92,6 +91,22 @@ export const ComboboxContent = ({children, asPopover, ...props}: ComboboxContent
       ) : null}
     </AnimatePresence>
   );
+};
+
+type ComboboxContentProps = {
+  asPopover?: boolean;
+} & HTMLMotionProps<'div'> &
+  React.PropsWithChildren;
+export const ComboboxContent = ({children, asPopover, ...props}: ComboboxContentProps) => {
+  if (asPopover) {
+    return (
+      <PopoverContent {...(props as PopoverContentProps)}>
+        <Command>{children}</Command>
+      </PopoverContent>
+    );
+  }
+
+  return <ComboboxCommand {...props}>{children}</ComboboxCommand>;
 };
 
 type ComboboxInput = {} & ComponentProps<typeof CommandInput>;

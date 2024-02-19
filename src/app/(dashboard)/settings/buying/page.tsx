@@ -1,8 +1,6 @@
 'use client';
 
-import {TabContent, TabRoot} from '@/ui/themed/tabs';
-
-import {TabTriggerWithBadge} from './_components/tabs';
+import {TabContent, TabRoot, TabTriggerWithBadge} from '@/ui/themed/tabs';
 
 import {Brand} from '@/forms/templates/preferences/buy/brand';
 import {Country} from '@/forms/templates/preferences/buy/country';
