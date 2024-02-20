@@ -8,6 +8,7 @@ import Link from 'next/link';
 import {FlagImage} from 'react-international-phone';
 import {RatingBadge} from './_components/rating-badge';
 import {TableHeader, TableRow} from '@/ui/common/table';
+import {DashboardPageLayout} from '../_layout';
 
 const Filters = () => (
   <div className="flex w-full gap-4 items-stretch flex-1">
@@ -69,11 +70,9 @@ const DealerCatalogItem = ({name, location, iso2, stock, id}: DealerCatalogItemP
 
 export default function Page() {
   return (
-    <div className="space-y-2">
-      <h1 className="text-lg font-bold py-2">Out trusted dealers</h1>
-
+    <DashboardPageLayout title="Out trusted dealers">
       <TabRoot defaultValue="dealers">
-        <div className="relative w-fit items-center whitespace-nowrap overflow-x-auto min-h-[50px] gap-4 h-full flex">
+        <div className="relative w-fit items-center whitespace-nowrap overflow-x-auto h-[50px] gap-4 flex">
           <TabTriggerWithBadge
             value="dealers"
             count={0}
@@ -118,6 +117,6 @@ export default function Page() {
           </div>
         </TabContent>
       </TabRoot>
-    </div>
+    </DashboardPageLayout>
   );
 }

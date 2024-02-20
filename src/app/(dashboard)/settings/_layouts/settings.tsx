@@ -31,15 +31,14 @@ export const SettingsLayout = ({
 
   return (
     <Fragment>
-      {showBack ? (
-        <Link href={prevRoute}>
-          <button className="w-fit flex items-center justify-center gap-2">
-            <ArrowLeftIcon className="w-6 h-6" /> {back}
-          </button>
-        </Link>
-      ) : null}
-
       <span className="flex flex-col gap-4">
+        {showBack ? (
+          <Link href={prevRoute}>
+            <button className="w-fit flex items-center justify-center gap-2">
+              <ArrowLeftIcon className="w-6 h-6" /> {back}
+            </button>
+          </Link>
+        ) : null}
         <h1 className="text-lg font-semibold leading-8">{title}</h1>
 
         {description ? description : null}

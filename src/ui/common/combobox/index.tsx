@@ -36,15 +36,20 @@ export const useCombobox = () => {
 
 type ComboboxTriggerProps = {
   placeholder?: string;
+  asChild?: boolean;
 } & React.HTMLAttributes<HTMLButtonElement>;
 export const ComboboxTrigger: React.FC<ComboboxTriggerProps> = ({
   className,
   placeholder,
+  asChild,
+  children,
   ...props
 }) => {
   const {value, options, open} = useCombobox();
 
   const currentValue = value ? options.find(option => option.value === value)?.label : placeholder;
+
+  if (asChild) return <PopoverTrigger asChild>{children}</PopoverTrigger>;
 
   return (
     <PopoverTrigger asChild>

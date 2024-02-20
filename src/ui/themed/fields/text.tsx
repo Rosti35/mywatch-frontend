@@ -2,8 +2,9 @@
 
 import {InputHTMLAttributes, useRef} from 'react';
 import {FieldLayout} from './layout';
+import {cn} from '@/lib/cn';
 
-export const TextField = (props: InputHTMLAttributes<HTMLInputElement>) => {
+export const TextField = ({className, ...props}: InputHTMLAttributes<HTMLInputElement>) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
@@ -14,7 +15,10 @@ export const TextField = (props: InputHTMLAttributes<HTMLInputElement>) => {
       <FieldLayout className="text-field">
         <input
           ref={inputRef}
-          className="placeholder:text-transparent text-sm h-[24px]  w-full bg-transparent outline-none"
+          className={cn(
+            'placeholder:text-transparent text-sm h-[24px]  w-full bg-transparent outline-none',
+            className,
+          )}
           {...props}
         />
 

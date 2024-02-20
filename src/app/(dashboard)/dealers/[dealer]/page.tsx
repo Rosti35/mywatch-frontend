@@ -164,7 +164,7 @@ const WatchPreview = () => {
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-[30px] py-4">
+    <div className="flex flex-col gap-[30px] pb-[40px]">
       <div className="w-full flex gap-[70px]">
         <div className="w-full flex flex-col text-wrap gap-[30px]">
           <Link
