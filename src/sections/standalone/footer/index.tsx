@@ -6,8 +6,8 @@ import GAppsSVG from '@/ui/common/svg/g-app.svg';
 import {Logo} from '@/ui/common/branding/logo';
 
 export const Footer = () => (
-  <div className="w-screen md:px-28 px-10 items-center py-20 min-h-80 text-sm text-white bg-themed-black-primary ">
-    <div className="flex gap-24 justify-between">
+  <div className="w-screen md:px-28 px-10 items-center py-20 flex min-h-80 text-sm text-white bg-themed-black-primary ">
+    <div className="flex gap-24 justify-between w-full">
       <div className="flex flex-col gap-10 md:max-w-52 mb-auto w-full">
         <Logo className="text-white" />
         <p>
@@ -15,7 +15,7 @@ export const Footer = () => (
         </p>
       </div>
 
-      <div className="flex gap-16 flex-wrap justify-center bg-zinc-800">
+      <div className="flex gap-16 flex-wrap justify-center ml-auto bg-zinc-800">
         <div className="flex gap-2 flex-col w-fit">
           <p className="font-bold">About</p>
 
