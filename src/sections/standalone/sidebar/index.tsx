@@ -25,35 +25,35 @@ export const Sidebar = () => {
           Home
         </Link>
         <Link
-          href="/home"
+          href="/"
           className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
         >
           <SaleIcon className="w-6 h-6 stroke-current" />
           Sell
         </Link>
         <Link
-          href="/home"
+          href="/"
           className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
         >
           <HomeIcon className="w-6 h-6 stroke-current " />
           Buy
         </Link>
         <Link
-          href="/home"
+          href="/deals"
           className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
         >
           <LegalIcon className="w-6 h-6 stroke-current " />
           My deals
         </Link>
         <Link
-          href="/home"
+          href="/dealers"
           className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
         >
           <UserGroupIcon className="w-6 h-6 stroke-current " />
           Dealers
         </Link>
         <Link
-          href="/home"
+          href="/messages"
           className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
         >
           <MessageIcon className="w-6 h-6 stroke-current " />
@@ -80,7 +80,7 @@ export const Sidebar = () => {
 
       <div className="flex flex-col">
         <Link
-          href="/settings"
+          href="/"
           className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center px-[30px]"
         >
           <QuestionIcon className="w-6 h-6 stroke-current " />
@@ -88,7 +88,7 @@ export const Sidebar = () => {
         </Link>
 
         <Link
-          href="/settings"
+          href="/"
           className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center px-[30px]"
         >
           <LogoutIcon className="w-6 h-6 stroke-current " />
