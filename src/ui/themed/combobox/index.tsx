@@ -43,7 +43,7 @@ export const ComboboxPlaceholder = ({
   return (
     <div
       onClick={() => setOpen(!open)}
-      className="cursor-pointer"
+      className="cursor-pointer w-full"
     >
       <FieldLayout>
         {children}

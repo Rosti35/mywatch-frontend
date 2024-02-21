@@ -10,7 +10,7 @@ export const CheckIcon = (props: SVGProps<SVGSVGElement>) => {
     >
       <path
         d="M7 13.4287L9.5 15.9287L17 8.07153"
-        strokeWidth="1.78571"
+        strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />

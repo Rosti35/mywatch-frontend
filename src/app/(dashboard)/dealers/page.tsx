@@ -97,22 +97,24 @@ export default function Page() {
           disableTransition
           value="dealers"
         >
-          <Filters />
+          <div className="pr-[40px] flex flex-col gap-5">
+            <Filters />
 
-          <div className="min-w-96 overflow-hidden">
-            <TableHeader>
-              <span>Dealer</span>
-              <span>Rating</span>
-              <span>Location</span>
-              <span>Current stock</span>
-              <span></span>
-            </TableHeader>
+            <div className="min-w-96 overflow-hidden">
+              <TableHeader>
+                <span>Dealer</span>
+                <span>Rating</span>
+                <span>Location</span>
+                <span>Current stock</span>
+                <span></span>
+              </TableHeader>
 
-            <div className="overflow-auto">
-              <DealerCatalogItem {...sampleDealer} />
-              <DealerCatalogItem {...sampleDealer} />
-              <DealerCatalogItem {...sampleDealer} />
-              <DealerCatalogItem {...sampleDealer} />
+              <div className="overflow-auto">
+                <DealerCatalogItem {...sampleDealer} />
+                <DealerCatalogItem {...sampleDealer} />
+                <DealerCatalogItem {...sampleDealer} />
+                <DealerCatalogItem {...sampleDealer} />
+              </div>
             </div>
           </div>
         </TabContent>

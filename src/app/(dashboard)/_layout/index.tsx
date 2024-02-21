@@ -1,10 +1,12 @@
+import {ReactNode} from 'react';
+
 export const Title = ({children}: Readonly<{children: React.ReactNode}>) => (
-  <div className="text-lg font-bold leading-10 mb-[30px]">{children}</div>
+  <div className="text-lg font-bold leading-10 pr-[40px] mb-[30px]">{children}</div>
 );
 
 export const DashboardWrapper = ({children}: Readonly<{children: React.ReactNode}>) => (
   <div className="h-full flex overflow-hidden">
-    <div className="flex-col lg:flex w-full h-full pt-[30px] flex">{children}</div>
+    <div className="flex-col lg:flex w-full h-full pt-[30px] overflow-auto flex">{children}</div>
   </div>
 );
 
@@ -21,7 +23,7 @@ export function DashboardPageLayout({
   title,
 }: Readonly<{
   children: React.ReactNode;
-  title: string;
+  title: string | ReactNode;
 }>) {
   return (
     <div className="overflow-hidden flex flex-col ">

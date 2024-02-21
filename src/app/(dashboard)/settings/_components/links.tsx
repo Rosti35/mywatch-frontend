@@ -49,7 +49,6 @@ export const LinksList = () => {
       </SettingLink>
       <SettingLink link="security">Security</SettingLink>
       <SettingLink link="notifications">Notifications</SettingLink>
-      <SettingLink link="subscription">My subscription</SettingLink>
     </div>
   );
 };

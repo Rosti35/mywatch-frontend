@@ -4,23 +4,36 @@ import * as Toggle from '@radix-ui/react-toggle';
 import {BrandItemProps, BrandList} from '@/sections/brand/brand-list';
 import {DashboardPageLayout} from '../_layout';
 import {SearchContent, SearchField, SearchRoot} from '@/ui/themed/search';
+import Link from 'next/link';
+import {PlusIcon} from '@/ui/common/icons/plus';
 
 const BrandItem = ({brand}: BrandItemProps) => {
   return (
-    <Toggle.Root
+    <Link
+      href="/stock/brand"
       aria-label="Brand"
       className="data-[state=on]:bg-themed-black-primary data-[state=on]:text-white hover:bg-themed-black-primary/80 hover:text-white transition-all rounded-md px-2"
     >
       {brand}
-    </Toggle.Root>
+    </Link>
   );
 };
 
+const Title = () => {
+  return (
+    <div className="flex w-full items-center">
+      Add watch to stock
+      <button className="ml-auto text-sm font-medium px-5 rounded-full bg-themed-grey-300">
+        Import from other platforms
+      </button>
+    </div>
+  );
+};
 export default function Stock() {
   return (
-    <DashboardPageLayout title="Add watch to stock">
+    <DashboardPageLayout title={<Title />}>
       <div className="h-fit overflow-hidden w-full flex flex-col">
-        <div className="pr-[30px] space-y-[30px]">
+        <div className="pr-[40px] space-y-[30px]">
           <div className="w-full h-fit relative">
             <SearchRoot options={[]}>
               <SearchField placeholder="Find the model you want to  add to your stock" />
@@ -54,7 +67,12 @@ export default function Stock() {
               </SearchContent>
             </SearchRoot>
           </div>
-          <p className="text-md font-bold">Choose brand</p>
+          <div className="flex">
+            <p className="text-md font-bold">Choose brand</p>
+            <button className="ml-auto flex gap-2 items-center rounded-full bg-themed-grey-100 px-5">
+              <PlusIcon className="w-6 h-6" /> My brand is not listed
+            </button>
+          </div>
         </div>
 
         <div className="overflow-auto h-full space-y-[30px] py-[30px]">
