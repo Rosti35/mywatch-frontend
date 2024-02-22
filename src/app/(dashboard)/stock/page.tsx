@@ -33,7 +33,7 @@ export default function Stock() {
   return (
     <DashboardPageLayout title={<Title />}>
       <div className="h-fit overflow-hidden w-full flex flex-col">
-        <div className="pr-[40px] space-y-[30px]">
+        <div className="space-y-[30px]">
           <div className="w-full h-fit relative">
             <SearchRoot options={[]}>
               <SearchField placeholder="Find the model you want to  add to your stock" />

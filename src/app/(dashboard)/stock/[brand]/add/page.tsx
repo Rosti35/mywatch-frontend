@@ -11,12 +11,12 @@ import {UploadIcon} from '@/ui/common/icons/upload';
 
 export default function Page() {
   return (
-    <div className="flex mt-[10px] gap-[50px] pr-[40px] pb-[40px]">
+    <div className="flex gap-[50px] pr-[40px] pb-[40px] pt-[40px]">
       <div className="flex flex-col gap-[30px]">
         <div className="flex flex-col gap-4 ">
           <Link
             href="/stock"
-            className="w-fit flex items-center gap-2"
+            className="w-fit flex items-center gap-2 font-medium"
           >
             <ArrowLeftIcon className="w-6 h-6" />
             Back to search

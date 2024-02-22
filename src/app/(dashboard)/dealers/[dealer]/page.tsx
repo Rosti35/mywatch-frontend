@@ -14,6 +14,7 @@ import {MailIcon} from '@/ui/common/icons/mail';
 import {LinkIcon} from '@/ui/common/icons/link';
 import Link from 'next/link';
 import {ArrowLeftIcon} from '@radix-ui/react-icons';
+import {WatchPreview} from '@/sections/demo/watch-card';
 
 const [, iso2] = defaultCountries[0];
 
@@ -90,86 +91,14 @@ const ContactsCard = () => {
   );
 };
 
-const BuyWatch = () => (
-  <div className="pl-[30px] text-nowrap max-w-[200px] w-full flex flex-col">
-    <div>
-      <p className="text-[14px]">Price</p>
-      <p className="text-[26px] font-semibold">35 000 $</p>
-    </div>
-
-    <div className="mt-[10px] flex items-center gap-2">
-      <TimeIcon className="w-6 h-6 text-themed-grey-400" />
-      10:59:59
-    </div>
-
-    <div className="mt-[20px]">
-      <button className=" h-[50px] bg-themed-black-primary text-white rounded-full w-full">
-        Want to buy
-      </button>
-    </div>
-
-    <div className="mt-auto text-sm">
-      <p className="text-[14px]">Warehouse</p>
-      <p className="flex items-center gap-2">
-        <FlagImage iso2={iso2} />
-        Some warehouse
-      </p>
-    </div>
-  </div>
-);
-
-const WatchPreview = () => {
-  return (
-    <div className="bg-white p-5 rounded-3xl flex">
-      <div className="min-w-[240px] h-[240px] rounded-3xl bg-zinc-500" />
-
-      <div className="flex flex-col px-6 py-6 border-r w-full border-r-themed-grey-200">
-        <div className="space-y-1">
-          <p>Rolex</p>
-          <p className="font-bold text-[20px]">Daytona Stainless Steel Black Dial</p>
-        </div>
-
-        <div className="mt-5 flex gap-[30px]">
-          <div>
-            <p className="text-[14px] text-themed-grey-600">Year</p>
-            <p>2023</p>
-          </div>
-          <div>
-            <p className="text-[14px] text-themed-grey-600">Package</p>
-            <p>Box and papers</p>
-          </div>
-          <div>
-            <p className="text-[14px] text-themed-grey-600">Condition</p>
-            <p>Brand new</p>
-          </div>
-          <div>
-            <p className="text-[14px] text-themed-grey-600">Reference</p>
-            <p>112312</p>
-          </div>
-        </div>
-
-        <div className="mt-auto flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-blue-800" />
-          <div>
-            Ineichen Zuriсh
-            <RatingBadge />
-          </div>
-        </div>
-      </div>
-
-      <BuyWatch />
-    </div>
-  );
-};
-
 export default function Page() {
   return (
-    <div className="flex flex-col gap-[30px] pb-[40px] pr-[40px]">
+    <div className="flex flex-col gap-[30px] pb-[40px] pt-[40px] pr-[40px]">
       <div className="w-full flex gap-[70px]">
         <div className="w-full flex flex-col text-wrap gap-[30px]">
           <Link
             href="/dealers"
-            className="w-fit flex items-center gap-2"
+            className="w-fit flex items-center gap-2 font-medium"
           >
             <ArrowLeftIcon className="w-6 h-6" />
             Back to list

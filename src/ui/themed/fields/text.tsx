@@ -9,7 +9,7 @@ export const TextField = ({className, ...props}: InputHTMLAttributes<HTMLInputEl
 
   return (
     <div
-      className="cursor-text min-w-40"
+      className="cursor-text min-w-40 relative overflow-hidden"
       onClick={() => inputRef.current?.focus()}
     >
       <FieldLayout className="text-field">
