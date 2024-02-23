@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ReactNode, Suspense} from 'react';
 
 export const Title = ({children}: Readonly<{children: React.ReactNode}>) => (
   <div className="text-lg font-bold leading-10 mb-[30px]">{children}</div>
@@ -15,7 +15,11 @@ export function DashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <DashboardWrapper>{children}</DashboardWrapper>;
+  return (
+    <DashboardWrapper>
+      <Suspense fallback={<></>}>{children}</Suspense>
+    </DashboardWrapper>
+  );
 }
 
 export function DashboardPageLayout({
