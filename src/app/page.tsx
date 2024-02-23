@@ -6,6 +6,7 @@ export default function Page() {
       <Link href="/dashboard">Dashoboard</Link>
       <Link href="/dashboard?new=true">Dashoboard(new user)</Link>
       <Link href="/upload">Docs upload</Link>
+      <Link href="/archive">Archive</Link>
       <Link href="/sell">Sell</Link>
       <Link href="/buy">Buy</Link>
       <Link href="/auth/signup">Sign up</Link>
