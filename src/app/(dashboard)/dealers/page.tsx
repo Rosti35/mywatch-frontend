@@ -72,7 +72,7 @@ export default function Page() {
   return (
     <DashboardPageLayout title="Out trusted dealers">
       <TabRoot defaultValue="dealers">
-        <div className="relative w-fit items-center whitespace-nowrap overflow-x-auto h-[50px] gap-4 flex">
+        <div className="relative w-fit items-center whitespace-nowrap h-[50px] gap-4 flex">
           <TabTriggerWithBadge
             value="dealers"
             count={0}
@@ -97,10 +97,10 @@ export default function Page() {
           disableTransition
           value="dealers"
         >
-          <div className="pr-[40px] flex flex-col gap-5">
+          <div className="flex flex-col gap-5">
             <Filters />
 
-            <div className="min-w-96 overflow-hidden">
+            <div>
               <TableHeader>
                 <span>Dealer</span>
                 <span>Rating</span>
@@ -109,7 +109,7 @@ export default function Page() {
                 <span></span>
               </TableHeader>
 
-              <div className="overflow-auto">
+              <div>
                 <DealerCatalogItem {...sampleDealer} />
                 <DealerCatalogItem {...sampleDealer} />
                 <DealerCatalogItem {...sampleDealer} />

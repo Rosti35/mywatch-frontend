@@ -22,33 +22,31 @@ const Title = () => {
 };
 export default function Page() {
   return (
-    <div>
-      <DashboardPageLayout title={<Title />}>
-        <div className="h-fit w-full flex flex-col gap-5 pr-[40px] pb-[40px]">
-          <div className="space-y-[30px]">
-            <div className="w-full h-fit relative flex flex-col gap-[14px]">
-              <div className="flex gap-[14px]">
-                <Select
-                  options={[]}
-                  placeholder="Brand & model"
-                />
-                <Select
-                  options={[]}
-                  placeholder="Brand & model"
-                />
-                <Select
-                  options={[]}
-                  placeholder="Brand & model"
-                />
-              </div>
+    <DashboardPageLayout title={<Title />}>
+      <div className="h-fit w-full flex flex-col gap-5">
+        <div className="space-y-[30px]">
+          <div className="w-full h-fit relative flex flex-col gap-[14px]">
+            <div className="flex gap-[14px]">
+              <Select
+                options={[]}
+                placeholder="Brand & model"
+              />
+              <Select
+                options={[]}
+                placeholder="Brand & model"
+              />
+              <Select
+                options={[]}
+                placeholder="Brand & model"
+              />
             </div>
           </div>
-
-          <WatchPreview />
-          <WatchPreview />
-          <WatchPreview />
         </div>
-      </DashboardPageLayout>
-    </div>
+
+        <WatchPreview sell />
+        <WatchPreview sell />
+        <WatchPreview sell />
+      </div>
+    </DashboardPageLayout>
   );
 }

@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 export const Sidebar = () => {
   return (
-    <aside className="w-full h-full flex flex-col gap-5 py-[30px] text-white/70 bg-themed-black-primary rounded-3xl">
+    <aside className="w-full h-full flex flex-col gap-5 py-[30px]  text-white/70 bg-themed-black-primary rounded-3xl">
       <span className="text-xl px-[30px]">
         <Logo className="text-white max-w-[150px] mx-auto" />
       </span>

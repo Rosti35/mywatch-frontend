@@ -31,7 +31,7 @@ const SettingLink = ({link, children}: SettingLinkProps) => {
 
 export const LinksList = () => {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full flex flex-col">
       <SettingLink link="company">Company profile</SettingLink>
       <SettingLink link="accounts">Bank accounts</SettingLink>
       <SettingLink link="delivery">Delivery addresses</SettingLink>

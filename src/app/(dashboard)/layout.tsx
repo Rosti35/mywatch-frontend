@@ -7,7 +7,7 @@ export default function Layout({
 }>) {
   return (
     <main className="flex h-screen bg-themed-grey-200">
-      <div className="w-full hidden xl:block p-2 max-w-64 ">
+      <div className="w-full hidden xl:block p-[10px] max-w-[270px]">
         <Sidebar />
       </div>
       <div className="w-full pl-[30px]">{children}</div>

@@ -13,6 +13,7 @@ export const CheckIcon = (props: SVGProps<SVGSVGElement>) => {
         strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
+        stroke="currentColor"
       />
     </svg>
   );

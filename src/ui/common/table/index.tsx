@@ -19,7 +19,7 @@ export const TableRow = ({children, className, ...props}: HTMLAttributes<HTMLDiv
   return (
     <div
       className={cn(
-        'w-full grid-cols-5 overflow-x-auto text-nowrap grid [&>*]:h-[90px] border-t border-t-themed-grey-300',
+        'w-full grid-cols-5 text-nowrap grid [&>*]:h-[90px] border-t border-t-themed-grey-300',
         className,
       )}
       {...props}

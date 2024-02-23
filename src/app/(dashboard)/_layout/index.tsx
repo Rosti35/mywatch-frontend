@@ -26,10 +26,10 @@ export function DashboardPageLayout({
   title: string | ReactNode;
 }>) {
   return (
-    <div className="flex flex-col pt-[40px] pr-[40px] pb-[40px]">
+    <div className="flex flex-col pt-[40px] h-full pr-[40px]">
       <Title>{title}</Title>
 
-      {children}
+      <div className="pb-[40px] h-full">{children}</div>
     </div>
   );
 }
