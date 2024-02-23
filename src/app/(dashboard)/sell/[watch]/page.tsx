@@ -16,7 +16,7 @@ export default function Page() {
       <div className="w-full pl-5 pt-[30px]">
         <div className="flex flex-col gap-4 ">
           <Link
-            href="/buy"
+            href="/sell"
             className="w-fit flex items-center gap-2 tracking-tight"
           >
             <ArrowLeftIcon className="w-6 h-6" />
@@ -63,8 +63,6 @@ export default function Page() {
               Cancel
             </button>
           </div>
-
-          <DealerBadge variant="md" />
         </div>
       </div>
     </div>

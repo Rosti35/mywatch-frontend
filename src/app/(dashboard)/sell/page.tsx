@@ -12,11 +12,18 @@ import {WatchPreview} from '@/sections/demo/watch-card';
 
 const Title = () => {
   return (
-    <div className="flex w-full items-center">
-      Add watch to stock
-      <button className="ml-auto text-sm font-medium px-5 rounded-full bg-themed-grey-300">
-        Import from other platforms
-      </button>
+    <div className="flex w-full flex-col gap-5">
+      <p>Sell watches</p>
+
+      <div className="flex gap-4 font-normal text-sm">
+        <button className="bg-themed-black-primary gap-[10px] text-white rounded-full h-10 px-5 flex items-center">
+          <PlusIcon className="w-6 h-6" />
+          Add watch
+        </button>
+        <button className="bg-[#D4D4D4] text-black rounded-full h-10 px-5">
+          Import from other platforms
+        </button>
+      </div>
     </div>
   );
 };
@@ -33,11 +40,15 @@ export default function Page() {
               />
               <Select
                 options={[]}
-                placeholder="Brand & model"
+                placeholder="Warehouse"
               />
               <Select
                 options={[]}
-                placeholder="Brand & model"
+                placeholder="Status"
+              />
+              <Select
+                options={[]}
+                placeholder="Sort"
               />
             </div>
           </div>

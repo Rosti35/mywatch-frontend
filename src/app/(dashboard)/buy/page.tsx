@@ -25,9 +25,9 @@ const BrandItem = ({brand}: BrandItemProps) => {
 const Title = () => {
   return (
     <div className="flex w-full items-center">
-      Add watch to stock
-      <button className="ml-auto text-sm font-medium px-5 rounded-full bg-themed-grey-300">
-        Import from other platforms
+      New watches for sale
+      <button className="ml-auto text-sm font-medium px-5 rounded-full bg-themed-black-primary text-white">
+        Set up selection
       </button>
     </div>
   );
