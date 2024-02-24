@@ -2,7 +2,7 @@ import {PhoneField} from '@/ui/themed/fields/phone';
 import {TextField} from '@/ui/themed/fields/text';
 
 export const Account = () => (
-  <div className="flex flex-col gap-3">
+  <div className="flex flex-col gap-[10px]">
     <TextField
       id="email"
       type="email"

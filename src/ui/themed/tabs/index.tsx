@@ -47,7 +47,7 @@ export const TabTriggerContainer = ({
   return (
     <div
       className={cn(
-        'flex rounded-full h-[60px] p-1 overflow-hidden  bg-themed-grey-300',
+        'flex rounded-full h-[58px] p-1 overflow-hidden  bg-themed-grey-300',
         className,
       )}
       {...props}

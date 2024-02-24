@@ -1,8 +1,9 @@
 import {Logo} from '@/ui/common/branding/logo';
+import {Button} from '@/ui/themed/button';
 
 export const Navbar = () => (
-  <nav className="flex justify-between gap-2 whitespace-nowrap px-3">
-    <div className="mr-auto flex gap-[10px] w-full">
+  <nav className="flex justify-between gap-2 whitespace-nowrap px-3 mt-9">
+    <div className="mr-auto flex max-h-[50px] gap-[10px] w-full">
       <Logo />
 
       <span className="my-auto rounded-full border border-themed-black-primary text-sm font-light items-center justify-center flex px-[10px] w-[55px] h-[23px]">
@@ -10,10 +11,13 @@ export const Navbar = () => (
       </span>
     </div>
 
-    <button className="ml-auto transition rounded-full px-6 hover:bg-black hover:text-white">
+    <Button
+      size="md"
+      className="bg-transparent ml-auto hover:bg-themed-grey-300 text-black"
+    >
       Log in
-    </button>
+    </Button>
 
-    <button className="rounded-full transition text-white bg-black px-6">Join now</button>
+    <Button size="md">Join now</Button>
   </nav>
 );

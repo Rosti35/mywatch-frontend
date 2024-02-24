@@ -23,6 +23,11 @@ const config: Config = {
     extend: {
       padding: round,
       margin: round,
+      height: {
+        'button-lg': '60px',
+        'button-md': '50px',
+        'button-sm': '40px',
+      },
       colors: {
         'themed-black': {
           primary: '#262626',

@@ -3,7 +3,7 @@ import {TextField} from '@/ui/themed/fields/text';
 
 export const Company = () => {
   return (
-    <div className="flex relative flex-col gap-3">
+    <div className="flex relative flex-col gap-[10px]">
       <TextField
         id="companyName"
         placeholder="Company name"
@@ -27,6 +27,10 @@ export const Company = () => {
           />
         </span>
       </div>
+      <TextField
+        id="website"
+        placeholder="Website (if presents)"
+      />
     </div>
   );
 };

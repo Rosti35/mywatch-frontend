@@ -7,12 +7,12 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <main className="flex flex-col px-100 pb-[132px] pt-9 space-y-[60px] bg-themed-grey-200">
+    <div className="flex flex-col">
+      <main className="flex flex-col px-100 pb-[132px] space-y-[60px] bg-themed-grey-200">
         <Navbar />
         {children}
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

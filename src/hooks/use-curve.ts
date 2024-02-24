@@ -1,5 +1,15 @@
 import * as d3 from 'd3';
 
+function scaleValue(
+  value: number,
+  minInput: number,
+  maxInput: number,
+  minOutput: number,
+  maxOutput: number,
+) {
+  return ((value - minInput) / (maxInput - minInput)) * (maxOutput - minOutput) + minOutput;
+}
+
 export const useCurve = (data: [number, number][], dimensions: [number, number]) => {
   const xMin = Math.min(...data.map(([x, _]) => x));
   const xMax = Math.max(...data.map(([x, _]) => x));
@@ -7,16 +17,6 @@ export const useCurve = (data: [number, number][], dimensions: [number, number])
   const yMax = Math.max(...data.map(([_, y]) => y));
 
   const [width, height] = dimensions;
-
-  function scaleValue(
-    value: number,
-    minInput: number,
-    maxInput: number,
-    minOutput: number,
-    maxOutput: number,
-  ) {
-    return ((value - minInput) / (maxInput - minInput)) * (maxOutput - minOutput) + minOutput;
-  }
 
   const builder = d3
     .line()

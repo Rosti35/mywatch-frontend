@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(onest.className, 'bg-themed-black-primary')}>{children}</body>
+      <body className={cn(onest.className, 'bg-themed-black-primary tracking-tight')}>
+        {children}
+      </body>
     </html>
   );
 }
