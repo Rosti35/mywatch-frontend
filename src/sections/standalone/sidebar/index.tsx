@@ -16,38 +16,38 @@ export const Sidebar = () => {
         <Logo className="text-white max-w-[150px] mx-auto" />
       </span>
 
-      <div className="flex flex-col text-sm px-[30px]">
+      <div className="flex flex-col text-sm px-[30px] [&>*]:h-[54px]">
         <Link
           href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
+          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
         >
           <HomeIcon className="w-6 h-6 stroke-current" />
           Home
         </Link>
         <Link
           href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
+          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
         >
           <SaleIcon className="w-6 h-6 stroke-current" />
           Sell
         </Link>
         <Link
           href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
+          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
         >
           <HomeIcon className="w-6 h-6 stroke-current " />
           Buy
         </Link>
         <Link
           href="/deals"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
+          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
         >
           <LegalIcon className="w-6 h-6 stroke-current " />
           My deals
         </Link>
         <Link
           href="/dealers"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
+          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
         >
           <UserGroupIcon className="w-6 h-6 stroke-current " />
           Dealers

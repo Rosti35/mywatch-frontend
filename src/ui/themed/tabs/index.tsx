@@ -60,7 +60,7 @@ export const TabTriggerContainer = ({
 type BadgeProps = {count: string | number};
 const Badge = ({count}: BadgeProps) =>
   count === 0 ? null : (
-    <div className="min-w-6 h-6 rounded-full flex items-center justify-center leading-5">
+    <div className="min-w-6 h-6 text-[14px] rounded-full flex items-center justify-center leading-5">
       {count}
     </div>
   );

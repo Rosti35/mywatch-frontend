@@ -38,7 +38,7 @@ const AccountInfo = () => (
   </section>
 );
 
-export default function SignUp() {
+export default function Page() {
   return (
     <div className="flex flex-col">
       <h1 className="text-xl font-semibold tracking-tight mb-10 leading-[56px]">

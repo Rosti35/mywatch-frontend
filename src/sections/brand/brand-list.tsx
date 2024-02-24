@@ -12,7 +12,7 @@ export type BrandItemProps = {
 };
 const BrandCheckbox = ({brand}: BrandItemProps) => (
   <Checkbox>
-    <span className="text-ellipsis overflow-hidden">{brand}</span>
+    <span className="text-ellipsis overflow-hidden max-w-40">{brand}</span>
   </Checkbox>
 );
 
@@ -25,7 +25,7 @@ export const BrandList = ({template = BrandCheckbox, className, ...props}: Brand
   return Object.entries(groupNamesByLetter()).map(([continent, countries]) => (
     <div
       key={continent}
-      className="flex gap-7"
+      className="flex gap-7 w-full h-full"
     >
       <div className="text-md font-bold h-full sticky top-0 ">
         <p>{continent}</p>

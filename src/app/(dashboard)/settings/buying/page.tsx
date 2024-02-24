@@ -21,8 +21,11 @@ export default function Page() {
       title="Set up your buying preferences"
       description={description}
     >
-      <TabRoot defaultValue="brand">
-        <div className="relative w-full items-center whitespace-nowrap overflow-x-auto min-h-[50px] gap-3 h-fit flex">
+      <TabRoot
+        className="flex gap-0 flex-col h-full"
+        defaultValue="brand"
+      >
+        <div className="relative w-full items-center whitespace-nowrap overflow-x-auto min-h-[50px] gap-[14px] h-fit flex">
           <TabTriggerWithBadge
             value="brand"
             count={2}
@@ -55,36 +58,38 @@ export default function Page() {
           </TabTriggerWithBadge>
         </div>
 
-        <TabContent
-          disableTransition
-          value="brand"
-        >
-          <Brand />
-        </TabContent>
-        <TabContent
-          disableTransition
-          value="location"
-        >
-          <Country />
-        </TabContent>
-        <TabContent
-          disableTransition
-          value="condition_and_set"
-        >
-          <Condition />
-        </TabContent>
-        <TabContent
-          disableTransition
-          value="price"
-        >
-          <Price />
-        </TabContent>
-        <TabContent
-          disableTransition
-          value="partners"
-        >
-          <Partners />
-        </TabContent>
+        <div className="mt-[30px] flex flex-col overflow-hidden pb-[50px]">
+          <TabContent
+            disableTransition
+            value="brand"
+          >
+            <Brand />
+          </TabContent>
+          <TabContent
+            disableTransition
+            value="location"
+          >
+            <Country />
+          </TabContent>
+          <TabContent
+            disableTransition
+            value="condition_and_set"
+          >
+            <Condition />
+          </TabContent>
+          <TabContent
+            disableTransition
+            value="price"
+          >
+            <Price />
+          </TabContent>
+          <TabContent
+            disableTransition
+            value="partners"
+          >
+            <Partners />
+          </TabContent>
+        </div>
       </TabRoot>
     </SettingsLayout>
   );

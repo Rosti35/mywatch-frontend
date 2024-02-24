@@ -15,7 +15,7 @@ export const ContinentList = () =>
         <p>{continent}</p>
       </div>
 
-      <div className="grid gap-2 my-7 h-full text-sm sm:grid-cols-2 xl:grid-cols-3 grid-cols-1">
+      <div className="grid gap-[10px] mt-[16px] mb-[30px] h-full text-sm sm:grid-cols-2 xl:grid-cols-3 grid-cols-1">
         {countries?.sort().map(([country, iso]) => (
           <div
             key={iso}
@@ -27,7 +27,7 @@ export const ContinentList = () =>
                 height={24}
                 iso2={iso}
               />
-              <span className="text-ellipsis overflow-hidden">{country}</span>
+              <span className="text-ellipsis overflow-hidden max-w-40">{country}</span>
             </Checkbox>
           </div>
         ))}

@@ -42,6 +42,10 @@ const config: Config = {
         },
       },
 
+      letterSpacing: {
+        tight: '-3%',
+      },
+
       fontSize: {
         xs: '12px',
         sm: '16px',

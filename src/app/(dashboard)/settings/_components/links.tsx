@@ -19,7 +19,7 @@ const SettingLink = ({link, children}: SettingLinkProps) => {
     >
       <button
         className={cn(
-          'w-full z-40 relative px-5 h-12 text-left transition-all items-center justify-center text-themed-black-primary rounded-xl hover:bg-themed-grey-300',
+          'w-full z-40 relative px-5 h-[50px] text-left transition-all items-center justify-center text-themed-black-primary rounded-xl hover:bg-themed-grey-300',
           active ? 'bg-themed-black-primary text-white hover:bg-themed-black-primary/90' : null,
         )}
       >
@@ -31,7 +31,7 @@ const SettingLink = ({link, children}: SettingLinkProps) => {
 
 export const LinksList = () => {
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full h-full flex flex-col leading-5">
       <SettingLink link="company">Company profile</SettingLink>
       <SettingLink link="accounts">Bank accounts</SettingLink>
       <SettingLink link="delivery">Delivery addresses</SettingLink>

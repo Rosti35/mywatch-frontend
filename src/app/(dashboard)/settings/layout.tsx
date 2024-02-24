@@ -5,12 +5,12 @@ import {DashboardPageLayout, DashboardWrapper, Title} from '../_layout';
 import {LinksList} from './_components/links';
 
 const SettingsLayout = ({children}: PropsWithChildren) => (
-  <div className="flex h-full w-full gap-5 ">{children}</div>
+  <div className="flex h-full w-full gap-5">{children}</div>
 );
 
 const SettingsSidebar = () => {
   return (
-    <div className="max-w-64 w-full h-full flex flex-col">
+    <div className="w-full h-full flex flex-col">
       <Title>Settings</Title>
 
       <span className="font-normal text-sm">
@@ -27,7 +27,9 @@ export default function Layout({
 }>) {
   return (
     <div className="flex gap-5 w-full h-full pr-[40px] py-[30px]">
-      <SettingsSidebar />
+      <div className="pt-[10px] w-full max-w-[262px] ">
+        <SettingsSidebar />
+      </div>
       <SettingsLayout>
         <div className="w-full flex flex-col flex-1 bg-themed-grey-100 h-full overflow-hidden lg:rounded-3xl sm:p-10 p-5 gap-7">
           {children}

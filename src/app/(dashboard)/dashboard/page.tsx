@@ -20,7 +20,7 @@ const DealerProfile = () => {
       <div className="h-20 w-20 rounded-full bg-blue-500" />
 
       <div className="flex flex-col justify-center">
-        <p className="text-lg font-bold">Ineichen Zuriсh</p>
+      <p className="text-lg font-bold tracking-tight">Ineichen Zuriсh</p>
 
         <p className="text-sm flex gap-5 font-normal leading-6">
           Out premium dealer <RatingBadge />
@@ -177,7 +177,7 @@ export default function Page() {
                       )}
                       <p
                         className={cn(
-                          `text-wrap mt-auto text-[14px] text-left  `,
+                          `text-wrap mt-auto text-[14px] leading-[18px] text-left  `,
                           completed && 'line-through',
                         )}
                       >

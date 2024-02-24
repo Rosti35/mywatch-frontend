@@ -7,7 +7,7 @@ import {HTMLAttributes} from 'react';
 
 const ContextMenuItem = ({children, ...props}: HTMLAttributes<HTMLButtonElement>) => (
   <button
-    className="hover:bg-themed-grey-200 grid w-full gap-2 px-6 py-4 transition-all"
+    className="hover:bg-themed-grey-200 grid w-full gap-[10px] px-6 py-4 transition-all"
     style={{gridTemplateColumns: '1fr 2fr'}}
     {...props}
   >
@@ -26,11 +26,11 @@ export const ContextMenu = ({onEdit, onDelete}: CardActions) => {
       <PopoverContent className="flex h-fit w-32 flex-col items-center justify-center overflow-hidden rounded-3xl bg-white p-0">
         <ContextMenuItem onClick={onEdit}>
           <EditIcon className="mr-auto h-6 w-6" />
-          <span className="w-full flex-1 text-left">Edit</span>
+          <span className="w-full flex-1 text-left font-light">Edit</span>
         </ContextMenuItem>
         <ContextMenuItem onClick={onDelete}>
           <TrashIcon className="mr-auto h-6 w-6 text-red-600" />
-          <span className="w-full flex-1  text-left text-red-600">Delete</span>
+          <span className="w-full flex-1  text-left text-red-600 font-light">Delete</span>
         </ContextMenuItem>
       </PopoverContent>
     </Popover>

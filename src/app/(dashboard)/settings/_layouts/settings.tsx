@@ -1,5 +1,6 @@
 'use client';
 
+import {Button} from '@/ui/themed/button';
 import {ArrowLeftIcon} from '@radix-ui/react-icons';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
@@ -30,8 +31,8 @@ export const SettingsLayout = ({
   const prevRoute = usePop();
 
   return (
-    <Fragment>
-      <span className="flex flex-col gap-4">
+    <div className="w-full h-full flex flex-col">
+      <span className="flex flex-col gap-[14px] mb-[30px]">
         {showBack ? (
           <Link href={prevRoute}>
             <button className="w-fit flex items-center justify-center gap-2">
@@ -39,21 +40,19 @@ export const SettingsLayout = ({
             </button>
           </Link>
         ) : null}
-        <h1 className="text-lg font-semibold leading-8">{title}</h1>
+        <h1 className="text-lg font-semibold tracking-tight leading-[32px]">{title}</h1>
 
-        {description ? description : null}
+        {description ? <span className="leading-5">{description}</span> : null}
       </span>
 
-      <div className="flex h-full w-full flex-col overflow-hidden">{children}</div>
+      <div className="overflow-hidden pb-[50px]">{children}</div>
 
       {showSaveButton ? (
-        <div className="mt-auto flex h-fit gap-4">
-          <button className="rounded-full bg-black px-7 py-5 text-sm text-white">
-            Save settings
-          </button>
-          <button className="rounded-full bg-white px-7 py-5 text-sm">Reset</button>
+        <div className="mt-auto flex gap-4">
+          <Button>Save settings</Button>
+          <Button className="bg-white hover:opacity-70 text-themed-black-primary">Reset</Button>
         </div>
       ) : null}
-    </Fragment>
+    </div>
   );
 };

@@ -1,7 +1,7 @@
 import {ReactNode, Suspense} from 'react';
 
 export const Title = ({children}: Readonly<{children: React.ReactNode}>) => (
-  <div className="text-lg font-bold leading-10 mb-[30px]">{children}</div>
+  <div className="text-lg font-bold leading-[32px] mb-[30px]">{children}</div>
 );
 
 export const DashboardWrapper = ({children}: Readonly<{children: React.ReactNode}>) => (

@@ -6,7 +6,7 @@ type CommonCardProps = HTMLAttributes<HTMLDivElement> & PropsWithChildren;
 export const CardRoot = ({className, children, ...props}: CommonCardProps) => {
   return (
     <div
-      className={cn('rounded-3xl bg-zinc-50 h-fit p-6 flex flex-col gap-2', className)}
+      className={cn('rounded-3xl bg-white h-fit p-6 flex flex-col gap-[14px]', className)}
       {...props}
     >
       {children}
@@ -23,7 +23,7 @@ export const CardTitle = ({children, actions, ...props}: CardTitleProps) => {
       className="flex"
       {...props}
     >
-      <p className="font-bold text-md">{children}</p>
+      <p className="font-bold text-[20px] leading-[25px]">{children}</p>
 
       <span className="ml-auto flex items-center justify-center">{actions}</span>
     </div>
