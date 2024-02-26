@@ -14,7 +14,7 @@ export const AccountInfoCard = () => (
     <div>
       <p className="leading-[20px]">Please note:</p>
 
-      <p className="font-bold text-md tracking-tight mt-[10px] leading-[30px]">
+      <p className="font-bold text-md tracking-[-0.038rem] mt-[10px] leading-[30px]">
         We can only register you as a dealer if you meet the following requirements:
       </p>
     </div>
