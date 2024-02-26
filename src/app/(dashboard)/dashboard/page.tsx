@@ -211,7 +211,7 @@ export default function Page() {
         <Row2 />
         <TabRoot
           defaultValue="day"
-          className="flex gap-5 flex-row w-full flex-1 min-h-[300px]"
+          className="flex gap-5 flex-row w-full flex-1 min-h-[300px] max-h-[300px]"
         >
           <div className="p-[30px] rounded-3xl gap-5 h-full w-full flex-col bg-themed-grey-100 flex">
             <div className="flex w-full">
