@@ -20,7 +20,7 @@ const DealerProfile = () => {
       <div className="h-20 w-20 rounded-full bg-blue-500" />
 
       <div className="flex flex-col justify-center">
-      <p className="text-lg font-bold tracking-tight">Ineichen Zuriсh</p>
+        <p className="text-lg font-bold tracking-tight">Ineichen Zuriсh</p>
 
         <p className="text-sm flex gap-5 font-normal leading-6">
           Out premium dealer <RatingBadge />
@@ -34,15 +34,15 @@ const DealerProfile = () => {
 const Row1 = () => (
   <div className="flex gap-5 w-full min-h-[137px]">
     <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <p>My Stock</p>
         <p className="mt-auto text-lg font-bold">12</p>
       </div>
-      <button className="bg-themed-black-primary ml-auto my-auto text-white rounded-full w-[50px] h-[50px] items-center flex justify-center">
+      <button className="bg-themed-black-primary ml-auto my-auto text-white rounded-full w-[54px] h-[54px] items-center flex justify-center">
         <PlusIcon className="w-6 h-6" />
       </button>
     </div>
-    <div className="p-[30px] gap-[16px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
+    <div className="p-[30px] gap-[10px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
       <p>My active sales</p>
       <p className="mt-auto flex items-center gap-[14px]">
         <span className="text-lg font-bold">356</span>
@@ -157,7 +157,7 @@ export default function Page() {
         {newUser ? (
           <div className="flex w-full  min-h-[261px] gap-[20px] text-white p-[30px] bg-[#89A4B7] rounded-3xl ">
             <div className=" justify-between flex flex-col w-full">
-              <p className="font-bold text-lg mb-auto h-[41px] tracking-tight">
+              <p className="font-bold text-lg mb-auto leading-10 h-[41px] tracking-tight">
                 Complete the boarding to mywatch
               </p>
 
@@ -214,29 +214,31 @@ export default function Page() {
           <div className="p-[30px] rounded-3xl gap-5 h-full w-full flex-col bg-themed-grey-100 flex">
             <div className="flex w-full">
               <div className="flex flex-col w-full gap-4">
-                <p>Market pulse</p>
+                <p className="leading-4">Market pulse</p>
                 <p className="flex gap-6 text-lg font-bold">
-                  569 123 $
-                  <span className="text-sm font-medium mt-auto text-green-500 flex items-center justify-center gap-1">
+                  <span className="tracking-tightest">569 123 $</span>
+                  <span className="text-sm font-medium mt-auto mb-1 tracking-wide text-green-500 flex items-center justify-center gap-1">
                     <ArrowTopRightIcon className="w-6 h-6" />
                     12 545 $
                   </span>
                 </p>
               </div>
 
-              <div className="ml-auto max-w-[200px] flex w-full">
+              <div className="ml-auto mr-1 max-w-[200px] flex w-full">
                 <TabTriggerContainer className="h-fit w-full p-1">
                   <TabTrigger
                     value="day"
                     className="min-h-[30px]"
+                    activeClassname="font-medium"
                   >
-                    day
+                    Day
                   </TabTrigger>
                   <TabTrigger
                     value="month"
                     className="min-h-[30px]"
+                    activeClassname="font-medium"
                   >
-                    month
+                    Month
                   </TabTrigger>
                 </TabTriggerContainer>
               </div>
@@ -250,9 +252,9 @@ export default function Page() {
               <LineChart data={data} />
             </TabContent>
           </div>
-          <div className="p-[30px] gap-7 rounded-3xl w-full h-full bg-themed-grey-100 flex flex-col">
+          <div className="p-[29px] gap-4 rounded-3xl w-full h-full bg-themed-grey-100 flex flex-col">
             <p className="flex gap-4 items-center">
-              <span className="text-[22px] font-bold leading-7">Chats</span>
+              <span className="text-[22px] font-bold leading-3">Chats</span>
 
               <span className="font-bold items-center justify-center text-[14px] flex bg-red-500 text-white rounded-full w-[30px] h-6">
                 +2
