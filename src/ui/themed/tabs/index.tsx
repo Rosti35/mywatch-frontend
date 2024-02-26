@@ -60,7 +60,7 @@ export const TabTriggerContainer = ({
 type BadgeProps = {count: string | number};
 const Badge = ({count}: BadgeProps) =>
   count === 0 ? null : (
-    <div className="min-w-6 h-6 text-[14px] rounded-full flex items-center justify-center leading-5">
+    <div className="min-w-6 h-6 text-[14px] font-bold rounded-full flex items-center justify-center leading-5">
       {count}
     </div>
   );
@@ -74,7 +74,7 @@ export const TabTriggerWithBadge = ({
     <TabTrigger
       {...props}
       disableTransition
-      className="md:px-6 md:py-3 h-full min-h-[50px] [&>div]:bg-themed-black-primary [&>div]:text-white py-2 px-4 w-full flex transition-all gap-2 justify-center rounded-full bg-white"
+      className="px-6 md:py-3 h-full min-h-[50px] leading-5 text-nowrap [&>div]:bg-themed-black-primary [&>div]:text-white w-full flex transition-all gap-[10px] justify-center rounded-full bg-white"
       activeClassname="text-white bg-themed-black-primary [&>div]:!bg-white [&>div]:text-black"
     >
       {children}

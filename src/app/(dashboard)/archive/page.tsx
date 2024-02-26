@@ -1,19 +1,11 @@
 'use client';
 
-import * as Toggle from '@radix-ui/react-toggle';
-import {BrandItemProps, BrandList} from '@/sections/brand/brand-list';
 import {DashboardPageLayout} from '../_layout';
-import {SearchContent, SearchField, SearchRoot} from '@/ui/themed/search';
 import Link from 'next/link';
-import {PlusIcon} from '@/ui/common/icons/plus';
-import {TextField} from '@/ui/themed/fields/text';
-import {Select} from '@/ui/themed/fields/select';
-import {WatchDetails, WatchPreview} from '@/sections/demo/watch-card';
+import {WatchDetails} from '@/sections/demo/watch-card';
 import {TabContent, TabRoot} from '@/ui/common/tabs';
 import {TabTriggerWithBadge} from '@/ui/themed/tabs';
-import {DealerBadge} from '@/ui/themed/dealer/badge';
 import {MessageIcon} from '@/ui/common/icons/message';
-import {TimeIcon} from '@/ui/common/icons/time';
 
 export default function Page() {
   return (

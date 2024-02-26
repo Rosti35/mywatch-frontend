@@ -9,7 +9,7 @@ export const FieldLayout = ({
   return (
     <div
       className={cn(
-        'px-4 py-[11.5px] justify-center gap-[2px] flex flex-col-reverse relative max-h-[60px] min-h-[60px] w-full bg-white rounded-xl',
+        'px-4 pb-[11.5px] pt-[13px] justify-center gap-[2px] flex flex-col-reverse relative max-h-[61px] min-h-[61px] w-full bg-white rounded-xl',
         className,
       )}
       {...props}

@@ -1,7 +1,7 @@
 import {ReactNode, Suspense} from 'react';
 
 export const Title = ({children}: Readonly<{children: React.ReactNode}>) => (
-  <div className="text-lg font-bold leading-[32px] mb-[30px]">{children}</div>
+  <div className="text-lg font-bold leading-[32px] tracking-tight mb-[30px]">{children}</div>
 );
 
 export const DashboardWrapper = ({children}: Readonly<{children: React.ReactNode}>) => (
@@ -33,7 +33,7 @@ export function DashboardPageLayout({
     <div className="flex flex-col pt-[40px] h-full pr-[40px]">
       <Title>{title}</Title>
 
-      <div className="pb-[40px] h-full">{children}</div>
+      <div className="h-full mb-[40px]">{children}</div>
     </div>
   );
 }

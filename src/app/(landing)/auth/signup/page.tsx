@@ -8,7 +8,7 @@ import {Button} from '@/ui/themed/button';
 
 const CompanyInfo = () => (
   <section>
-    <h2 className="text-2xl font-semibold mb-5 leading-[30px]">Company info</h2>
+    <h2 className="text-[24px] font-semibold mb-5 leading-[30px]  tracking-tight">Company info</h2>
     <TabRoot defaultValue="tab1">
       <TabTriggerContainer>
         <TabTrigger value="tab1">Legal entity / corporation</TabTrigger>
@@ -33,7 +33,7 @@ const CompanyInfo = () => (
 
 const AccountInfo = () => (
   <section>
-    <h2 className="text-2xl font-semibold mb-5  leading-[30px]">Account info</h2>
+    <h2 className="text-2xl font-semibold mb-5 tracking-tight leading-[30px]">Account info</h2>
     <Account />
   </section>
 );
@@ -41,7 +41,7 @@ const AccountInfo = () => (
 export default function Page() {
   return (
     <div className="flex flex-col">
-      <h1 className="text-xl font-semibold tracking-tight mb-10 leading-[56px]">
+      <h1 className="text-[56px] font-semibold tracking-[-1px] mb-10  leading-[100%]">
         Create an account
       </h1>
 

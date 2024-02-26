@@ -27,11 +27,11 @@ export default function Layout({
 }>) {
   return (
     <div className="flex gap-5 w-full h-full pr-[40px] py-[30px]">
-      <div className="pt-[10px] w-full max-w-[262px] ">
+      <div className="pt-[10px] flex-1 w-full min-w-[262px] max-w-[262px]">
         <SettingsSidebar />
       </div>
       <SettingsLayout>
-        <div className="w-full flex flex-col flex-1 bg-themed-grey-100 h-full overflow-hidden lg:rounded-3xl sm:p-10 p-5 gap-7">
+        <div className="w-full flex flex-col bg-themed-grey-100 h-full overflow-hidden lg:rounded-3xl sm:p-10 p-5 gap-7">
           {children}
         </div>
       </SettingsLayout>

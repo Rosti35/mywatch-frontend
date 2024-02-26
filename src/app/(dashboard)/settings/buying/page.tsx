@@ -52,7 +52,7 @@ export default function Page() {
           </TabTriggerWithBadge>
           <TabTriggerWithBadge
             value="partners"
-            count={9}
+            count={0}
           >
             My partners
           </TabTriggerWithBadge>
