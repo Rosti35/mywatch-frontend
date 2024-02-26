@@ -7,7 +7,7 @@ import {Logo} from '@/ui/common/branding/logo';
 
 export const Footer = () => (
   <div className="px-28 py-[71px] max-h-[317px] h-[317px] flex text-sm text-white bg-themed-black-primary ">
-    <div className="flex gap-[100px] w-full h-fit bg-zinc-600">
+    <div className="flex gap-[100px] w-full h-fit">
       <div className="flex flex-col gap-10 md:max-w-52 mr-3 mb-auto w-full">
         <Logo className="text-white max-w-[221px] min-w-[221px] w-full" />
         <p className="leading-[20px]">

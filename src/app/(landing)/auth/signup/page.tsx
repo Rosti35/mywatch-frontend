@@ -58,7 +58,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="w-full flex items-end justify-end h-fit">
+        <div className="w-full flex mt-[52px] items-end justify-end h-fit">
           <AccountInfoCard />
         </div>
       </div>
