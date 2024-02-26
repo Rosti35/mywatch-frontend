@@ -65,7 +65,7 @@ const data: [number, number][] = Array.from(Array(4).keys()).map(i => [
 const Row2 = () => (
   <div className="flex gap-5 w-full  h-full max-h-[208px]">
     <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <p>Watches on sale</p>
         <p className="text-lg font-bold flex gap-[14px] items-center">
           12 322
@@ -76,7 +76,7 @@ const Row2 = () => (
       </div>
       <Link
         href="/#"
-        className="mt-auto font-medium flex gap-[6px]"
+        className="mt-auto font-normal text-[15px] flex gap-[6px]"
       >
         Set up your buying preferences <ArrowTopRightIcon className="w-6 h-6" />
       </Link>
@@ -155,7 +155,7 @@ export default function Page() {
     <DashboardPageLayout title={<DealerProfile />}>
       <div className="flex gap-5 flex-col h-full">
         {newUser ? (
-          <div className="flex w-full  min-h-[261px] gap-[20px] text-white p-[30px] bg-[#89A4B7] rounded-3xl ">
+          <div className="flex w-full  min-h-[261px] gap-[20px] text-white p-[30px] bg-[#89A4B7] rounded-[32px] ">
             <div className=" justify-between flex flex-col w-full">
               <p className="font-bold text-lg mb-auto leading-10 h-[41px] tracking-tight">
                 Complete the boarding to mywatch
@@ -189,9 +189,11 @@ export default function Page() {
               </div>
             </div>
             <div className="ml-auto p-6 bg-themed-black-primary max-w-[325px] w-full rounded-3xl h-full flex flex-col">
-              <p className="text-md font-bold">I have an invitation</p>
-              <p>This will instantly open access to all mywatch services</p>
-              <div className="bg-themed-grey-100 w-full rounded-full flex mt-auto h-[54px] pl-4 items-center">
+              <p className="text-md font-bold leading-8 tracking-[-0.6px]">I have an invitation</p>
+              <p className="text-themed-grey-400 leading-5 my-auto">
+                This will instantly open access to all mywatch services
+              </p>
+              <div className="bg-themed-grey-100 w-full rounded-full mb-1 flex mt-auto h-[54px] pl-4 items-center">
                 <input
                   type="text"
                   placeholder="Partner key"
@@ -224,7 +226,7 @@ export default function Page() {
                 </p>
               </div>
 
-              <div className="ml-auto mr-1 max-w-[200px] flex w-full">
+              <div className="ml-auto max-w-[200px] flex w-full">
                 <TabTriggerContainer className="h-fit w-full p-1">
                   <TabTrigger
                     value="day"
