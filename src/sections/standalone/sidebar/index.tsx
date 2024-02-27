@@ -13,7 +13,15 @@ import {UserGroupIcon} from '@/ui/common/icons/user-group';
 import {VerificationIcon} from '@/ui/common/icons/verification';
 import Link from 'next/link';
 import {useSearchParams} from 'next/navigation';
-import {FC, ReactNode, SVGProps} from 'react';
+import {
+  FC,
+  PropsWithChildren,
+  PropsWithRef,
+  PropsWithoutRef,
+  ReactNode,
+  SVGProps,
+  Suspense,
+} from 'react';
 
 type SidebarLinkProps = {
   href: string;
@@ -46,7 +54,7 @@ const SidebarLink = ({href, children, icon, disabled}: SidebarLinkProps) => {
   );
 };
 
-export const Sidebar = () => {
+export const _Sidebar = () => {
   const params = useSearchParams();
 
   const newUser = Boolean(params.get('new'));
@@ -142,4 +150,7 @@ export const Sidebar = () => {
       </div>
     </aside>
   );
+};
+export const Sidebar = ({children}: PropsWithChildren) => {
+  return <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>;
 };
