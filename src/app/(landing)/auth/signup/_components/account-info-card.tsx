@@ -12,7 +12,7 @@ const Paragraph = ({children}: PropsWithChildren) => (
 export const AccountInfoCard = () => (
   <div className="text-white p-10 text-sm flex gap-4 items-start justify-start flex-col bg-themed-black-primary rounded-3xl max-w-[505px] w-full">
     <div>
-      <p className="leading-[20px]">Please note:</p>
+      <p className="leading-[20px] tracking-wide">Please note:</p>
 
       <p className="font-bold text-md tracking-[-0.038rem] mt-[10px] leading-[30px]">
         We can only register you as a dealer if you meet the following requirements:

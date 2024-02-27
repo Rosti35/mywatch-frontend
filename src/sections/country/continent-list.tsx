@@ -11,7 +11,7 @@ const countryContinents = Object.entries(groupCountriesByContinent());
 export const ContinentList = () =>
   countryContinents.map(([continent, countries]) => (
     <div key={continent}>
-      <div className="text-md font-bold sticky top-0 bg-themed-grey-100">
+      <div className="text-md leading-6 font-bold sticky top-0 bg-themed-grey-100">
         <p>{continent}</p>
       </div>
 

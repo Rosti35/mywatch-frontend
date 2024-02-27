@@ -6,7 +6,7 @@ import {PropsWithChildren} from 'react';
 const Connected = () => (
   <div className="flex gap-2">
     <div className="border w-6 h-6 border-green-600 rounded-full flex items-center justify-center">
-      <CheckIcon className="w-6 h-6 stroke-green-600" />
+      <CheckIcon className="w-6 h-6 text-green-600" />
     </div>
     Connected <span className="font-semibold">+7 963 255-55-44</span>
   </div>

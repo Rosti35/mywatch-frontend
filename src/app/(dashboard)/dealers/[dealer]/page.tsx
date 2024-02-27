@@ -15,6 +15,7 @@ import {LinkIcon} from '@/ui/common/icons/link';
 import Link from 'next/link';
 import {ArrowLeftIcon} from '@radix-ui/react-icons';
 import {WatchPreview} from '@/sections/demo/watch-card';
+import {Button} from '@/ui/themed/button';
 
 const [, iso2] = defaultCountries[0];
 
@@ -41,31 +42,34 @@ const DealerProfile = ({name}: DealerProfileProps) => {
 const ContactsCard = () => {
   return (
     <CardRoot className="gap-6 p-[30px] bg-themed-grey-100">
-      <CardTitle actions>Contacts</CardTitle>
+      <div className="text-md font-bold leading-7">Contacts</div>
 
       <div className="flex flex-col gap-4">
-        <p className="flex items-center gap-2">
-          <FlagImage iso2={iso2} />
+        <p className="flex items-center ml-[3px] gap-[10px]">
+          <FlagImage
+            iso2={iso2}
+            size={30}
+          />
           Switzerland, Stadthausquai 11, Zürich
         </p>
 
-        <p className="font-semibold text-[18px]">+41 44 298 11 44</p>
-        <p className="flex items-center gap-2">
+        <p className="font-semibold leading-4 tracking-wide text-[18px]">+41 44 298 11 44</p>
+        <p className="flex items-center gap-2 leading-8">
           <MailIcon className="w-6 h-6" />
           info@ineichen.com
         </p>
         <a
           href="#"
-          className="text-blue-500"
+          className="text-blue-500 leading-3"
         >
           https://ineichen.com
         </a>
-        <div className="flex gap-4">
-          <span className="flex items-center gap-2">
+        <div className="flex gap-[24px]">
+          <span className="flex items-center tracking-wide gap-2">
             Chrono24
             <LinkIcon className="w-5 h-5 text-themed-grey-400" />
           </span>
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2 tracking-wide">
             Instagram
             <LinkIcon className="w-5 h-5 text-themed-grey-400" />
           </span>
@@ -93,29 +97,30 @@ const ContactsCard = () => {
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-[30px] pb-[40px] pt-[40px] pr-[40px]">
+    <div className="flex flex-col gap-[24px] pb-[40px] pt-[40px] pr-[40px]">
       <div className="w-full flex gap-[70px]">
         <div className="w-full flex flex-col text-wrap gap-[30px]">
           <Link
             href="/dealers"
-            className="w-fit flex items-center gap-2 font-medium"
+            className="w-fit flex items-center gap-1 font-medium"
           >
             <ArrowLeftIcon className="w-6 h-6" />
-            Back to list
+            <span className="tracking-wide"> Back to list</span>
           </Link>
           <DealerProfile name={sampleDealer.name} />
 
-          <p className="leading-7">
+          <p className="leading-6 tracking-wide">
             Released in 1963, Cosmograph Daytona watches have long gone beyond just a work of
             watchmaking and have become a legend. It is the name of the model, which is strongly
             associated with the famous race track, and the characteristic graphic dial that made it
             iconic
           </p>
 
-          <div className="flex gap-3 mt-auto flex-wrap text-nowrap">
-            <button className="h-[60px] rounded-full flex items-center gap-[10px] px-6 bg-themed-black-primary text-white">
-              <PlusIcon className="w-6 h-6" /> Add to my partners
-            </button>
+          <div className="flex gap-[10px] flex-wrap text-nowrap">
+            <Button className="gap-[10px] px-[24px]">
+              <PlusIcon className="w-6 h-6" />
+              Add to my partners
+            </Button>
             <button className="h-[60px] rounded-full px-6 text-themed-black-primary bg-white">
               Sent message
             </button>
@@ -128,7 +133,7 @@ export default function Page() {
           <ContactsCard />
         </div>
       </div>
-      <div className="flex gap-5 text-nowrap">
+      <div className="flex gap-5 text-nowrap max-h-[125px]">
         <TotalDealsStatus />
         <RatingStatus />
         <BlacklistStatus />

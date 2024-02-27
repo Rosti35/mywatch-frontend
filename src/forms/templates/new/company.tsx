@@ -20,7 +20,7 @@ export const Company = () => {
             placeholder="Address"
           />
         </span>
-        <span className="min-w-44">
+        <span className="min-w-[40px] w-fit">
           <TextField
             id="postalCode"
             placeholder="ZIP / Postal code"

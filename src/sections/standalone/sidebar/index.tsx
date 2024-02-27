@@ -1,3 +1,5 @@
+'use client';
+
 import {Logo} from '@/ui/common/branding/logo';
 import {HomeIcon} from '@/ui/common/icons/home';
 import {LegalIcon} from '@/ui/common/icons/legal';
@@ -6,10 +8,49 @@ import {MessageIcon} from '@/ui/common/icons/message';
 import {QuestionIcon} from '@/ui/common/icons/question';
 import {SaleIcon} from '@/ui/common/icons/sale';
 import {SettingIcon} from '@/ui/common/icons/setting';
+import {ShopIcon} from '@/ui/common/icons/shop';
 import {UserGroupIcon} from '@/ui/common/icons/user-group';
+import {VerificationIcon} from '@/ui/common/icons/verification';
 import Link from 'next/link';
+import {useSearchParams} from 'next/navigation';
+import {FC, ReactNode, SVGProps} from 'react';
+
+type SidebarLinkProps = {
+  href: string;
+  children: ReactNode;
+  icon: FC<SVGProps<SVGSVGElement>>;
+  disabled?: boolean;
+};
+const SidebarLink = ({href, children, icon, disabled}: SidebarLinkProps) => {
+  const Icon = icon;
+  if (disabled) {
+    return (
+      <Link
+        href={href}
+        className="flex pointer-events-none text-white/10 gap-[10px] w-full items-center pb-1"
+      >
+        <Icon className="w-6 h-6 mb-1 stroke-current" />
+        <p className="mb-1 tracking-wide font-normal">{children}</p>
+      </Link>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className="flex hover:text-themed-grey-100 gap-[10px] text-white/70  w-full items-center pb-1"
+    >
+      <Icon className="w-6 h-6 mb-1 stroke-current" />
+      <p className="mb-1 tracking-wide font-normal">{children}</p>
+    </Link>
+  );
+};
 
 export const Sidebar = () => {
+  const params = useSearchParams();
+
+  const newUser = Boolean(params.get('new'));
+
   return (
     <aside className="w-full h-full flex flex-col gap-5 py-[30px]  text-white/70 bg-themed-black-primary rounded-3xl">
       <span className="text-xl px-[30px]">
@@ -17,83 +58,87 @@ export const Sidebar = () => {
       </span>
 
       <div className="flex flex-col text-sm px-[30px] [&>*]:h-[54px]">
-        <Link
+        <SidebarLink
           href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
+          icon={HomeIcon}
         >
-          <HomeIcon className="w-6 h-6 stroke-current" />
           Home
-        </Link>
-        <Link
-          href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
+        </SidebarLink>
+
+        {newUser ? (
+          <SidebarLink
+            href="/upload?new=true"
+            icon={VerificationIcon}
+          >
+            Verification
+          </SidebarLink>
+        ) : null}
+        <SidebarLink
+          href="/sell"
+          icon={SaleIcon}
+          disabled={newUser}
         >
-          <SaleIcon className="w-6 h-6 stroke-current" />
           Sell
-        </Link>
-        <Link
-          href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
+        </SidebarLink>
+
+        <SidebarLink
+          href="/buy"
+          icon={ShopIcon}
+          disabled={newUser}
         >
-          <HomeIcon className="w-6 h-6 stroke-current " />
           Buy
-        </Link>
-        <Link
-          href="/deals"
-          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
+        </SidebarLink>
+        <SidebarLink
+          href="/"
+          icon={LegalIcon}
+          disabled={newUser}
         >
-          <LegalIcon className="w-6 h-6 stroke-current " />
           My deals
-        </Link>
-        <Link
+        </SidebarLink>
+        <SidebarLink
           href="/dealers"
-          className="flex hover:text-themed-grey-100 gap-3 w-full items-center"
+          icon={UserGroupIcon}
+          disabled={newUser}
         >
-          <UserGroupIcon className="w-6 h-6 stroke-current " />
           Dealers
-        </Link>
-        <Link
+        </SidebarLink>
+        <SidebarLink
           href="/messages"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
+          icon={MessageIcon}
         >
-          <MessageIcon className="w-6 h-6 stroke-current " />
           Messages
-        </Link>
-        <Link
-          href="/settings"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center"
+        </SidebarLink>
+        <SidebarLink
+          href="/settings/company"
+          icon={SettingIcon}
         >
-          <SettingIcon className="w-6 h-6 stroke-current " />
           Settings
-        </Link>
+        </SidebarLink>
       </div>
 
-      <div className="mt-auto px-6">
-        <div className="flex items-center gap-3">
+      <div className="mt-auto px-6 h-[42px] mb-1">
+        <div className="flex items-center gap-[14px]">
           <div className="w-12 h-12 bg-zinc-700 rounded-full"></div>
           <span className="flex flex-col">
-            <p>Ineichen Zuriсh</p>
-            <p className="text-xs text-white/50">Premium dealer</p>
+            <p className="tracking-wide">Ineichen Zuriсh</p>
+            <p className="text-[14px] text-white/50 leading-7 tracking-wide">Premium dealer</p>
           </span>
         </div>
       </div>
 
-      <div className="flex flex-col">
-        <Link
+      <div className="flex flex-col px-[30px] [&>*]:h-[48px]">
+        <SidebarLink
+          icon={QuestionIcon}
           href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center px-[30px]"
         >
-          <QuestionIcon className="w-6 h-6 stroke-current " />
           Support
-        </Link>
-
-        <Link
+        </SidebarLink>
+        <SidebarLink
+          icon={LogoutIcon}
           href="/"
-          className="flex hover:text-themed-grey-100 gap-3 w-full h-12 items-center px-[30px]"
         >
-          <LogoutIcon className="w-6 h-6 stroke-current " />
           Logout
-        </Link>
+        </SidebarLink>
       </div>
     </aside>
   );

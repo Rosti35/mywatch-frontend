@@ -8,20 +8,20 @@ export default function Page() {
     <SettingsLayout title="Notification settings">
       <NotificationSwitch
         label="Comments"
-        className="pb-5  border-b border-b-themed-grey-200"
+        className="pb-[19px] border-b border-b-themed-grey-200"
       >
         These are notifications for comments on your posts and replies to your comments.
       </NotificationSwitch>
 
       <NotificationSwitch
         label="Reminders"
-        className="py-5"
+        className="py-[19px]"
       >
         These are notifications for comments on your posts and replies to your comments.
       </NotificationSwitch>
 
       <NotificationSwitch
-        label="Comments"
+        label="More activity about you"
         className="py-5 border-t border-t-themed-grey-200"
       >
         These are notifications for comments on your posts and replies to your comments.

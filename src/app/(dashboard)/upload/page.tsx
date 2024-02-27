@@ -1,14 +1,14 @@
 'use client';
 
-import {ChangeEvent, PropsWithChildren, useRef, useState} from 'react';
+import {PropsWithChildren, useRef, useState} from 'react';
 import {DashboardPageLayout} from '../_layout';
 import {useEventListener} from '@/hooks/common/use-event-listener';
 import {UploadIcon} from '@/ui/common/icons/upload';
 import {AnimatePresence, motion} from 'framer-motion';
-import {defaultTransition} from '@/ui/util';
 import {Cross1Icon} from '@radix-ui/react-icons';
 import {TrashIcon} from '@/ui/common/icons/trash';
 import {Timer} from '@/ui/common/timer';
+import {Button} from '@/ui/themed/button';
 
 const Title = () => {
   return (
@@ -159,10 +159,10 @@ export default function Page() {
 
           <div className="ml-auto w-full h-fit gap-[30px] max-w-[544px] rounded-3xl p-[30px] bg-themed-black-primary text-white flex">
             <div className="w-full">
-              <p className="font-bold  text-md leading-8 tracking-tight text-nowrap">
+              <p className="font-bold leading-6 text-md tracking-tight text-nowrap">
                 We have started checking
               </p>
-              <p className="leading-5 mt-[10px]">
+              <p className="leading-[1.3rem] tracking-wide mt-[10px]">
                 It will take us 48 hours to confirm your documents and open access to the platform
               </p>
               <button className="mt-[20px] rounded-full bg-white text-themed-black-primary px-[30px] py-[15px]">
@@ -181,12 +181,10 @@ export default function Page() {
         </div>
 
         <div className="flex mt-auto gap-4">
-          <button className="px-[30px] bg-themed-black-primary rounded-full text-white py-5">
+          <Button className="px-[30px] bg-themed-black-primary rounded-full text-white py-5">
             Upload
-          </button>
-          <button className="px-[30px] bg-white rounded-full  py-5">
-            Save for later
-          </button>
+          </Button>
+          <button className="px-[30px] bg-white rounded-full  py-5">Save for later</button>
         </div>
       </div>
     </DashboardPageLayout>

@@ -8,10 +8,15 @@ type SwitchProps = {
 } & HTMLAttributes<HTMLDivElement>;
 export const Switch = ({id, children, className, ...props}: SwitchProps) => (
   <div
-    className={cn('flex flex-row-reverse items-center gap-2 w-fit text-sm', className)}
+    className={cn('flex flex-row-reverse items-center gap-[10px] w-fit text-sm', className)}
     {...props}
   >
-    <label htmlFor={id}>{children}</label>
+    <label
+      htmlFor={id}
+      className="tracking-wide"
+    >
+      {children}
+    </label>
     <SwitchPrimitive.Root
       className="w-[52px] h-[28px] bg-blackA6 rounded-full relative focus:shadow-black data-[state=checked]:bg-black outline-none cursor-default data-[state=unchecked]:bg-themed-grey-400"
       id={id}

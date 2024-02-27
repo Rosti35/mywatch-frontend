@@ -33,7 +33,7 @@ const CompanyInfo = () => (
 
 const AccountInfo = () => (
   <section>
-    <h2 className="text-2xl font-semibold mb-5 tracking-tight leading-[30px]">Account info</h2>
+    <h2 className="text-2xl font-semibold mb-5 tracking-tight leading-[24px]">Account info</h2>
     <Account />
   </section>
 );

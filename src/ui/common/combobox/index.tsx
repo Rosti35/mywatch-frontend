@@ -61,8 +61,8 @@ export const ComboboxTrigger: React.FC<ComboboxTriggerProps> = ({
         <AnimatePresence>
           {currentValue ? <motion.span {...defaultTransition}>{currentValue}</motion.span> : null}
         </AnimatePresence>
-        <div className="absolute right-0 top-0 w-14 flex items-center justify-center h-full">
-          <ChevronDownIcon className="h-6 w-6 right-0 text-themed-grey-600 top-0 shrink-0 opacity-50" />
+        <div className="absolute right-0 top-0 mr-[20px] flex items-center justify-center h-full">
+          <ChevronDownIcon className="h-6 w-6 right-0 text-themed-grey-400 top-0 shrink-0 opacity-50" />
         </div>
       </button>
     </PopoverTrigger>

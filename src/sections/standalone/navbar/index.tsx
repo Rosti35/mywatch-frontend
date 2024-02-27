@@ -13,11 +13,16 @@ export const Navbar = () => (
 
     <Button
       size="md"
-      className="bg-transparent ml-auto hover:bg-themed-grey-300 text-black"
+      className="bg-transparent rounded-xl ml-auto hover:bg-themed-grey-300 text-black"
     >
       Log in
     </Button>
 
-    <Button size="md">Join now</Button>
+    <Button
+      size="md"
+      className="rounded-xl"
+    >
+      Join now
+    </Button>
   </nav>
 );

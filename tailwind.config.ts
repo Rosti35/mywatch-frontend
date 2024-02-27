@@ -43,7 +43,10 @@ const config: Config = {
       },
 
       letterSpacing: {
-        tight: '-3%',
+        tighter: '-0.07rem',
+        tight: '-0.048rem',
+        wide: '0.001rem',
+        wides: '0.0015rem',
       },
 
       fontSize: {

@@ -9,8 +9,6 @@ import {TableHeader, TableRow} from '@/ui/common/table';
 import {DashboardPageLayout} from '../_layout';
 import {FilterSelect} from '../_components/filter';
 import {Button} from '@/ui/themed/button';
-import {PlusIcon} from '@/ui/common/icons/plus';
-import {CheckIcon} from '@/ui/common/icons/check';
 
 const Filters = () => (
   <div className="flex w-full gap-4 items-stretch flex-1">
@@ -27,10 +25,9 @@ const DealerCatalogItem = ({name, location, iso2, stock, id}: DealerCatalogItemP
       <div className="w-full bg-themed-grey-200 flex items-center">
         <Link
           href={`dealers/${id}`}
-          className="font-bold flex items-center tracking-wide w-full hover:underline gap-1"
+          className="font-bold tracking-wide w-full hover:underline"
         >
           {name}
-          <CheckIcon className="w-4 h-4 rounded-full bg-themed-black-primary text-white" />
         </Link>
       </div>
       <div className="w-full bg-themed-grey-200 flex items-center">
@@ -47,19 +44,11 @@ const DealerCatalogItem = ({name, location, iso2, stock, id}: DealerCatalogItemP
       <div className="w-full bg-themed-grey-200 flex items-center">
         <p className="w-full">{stock}</p>
       </div>
-      <div className="w-full bg-red-900  gap-3 flex items-center">
-        <Button
-          size="md"
-          className="h-[50px] min-w-[50px] flex items-center justify-center p-0"
-        >
-          <PlusIcon className="w-6 h-6 m-auto" />
-        </Button>
-        <Button
-          size="md"
-          className="bg-white text-red-500 hover:bg-red-200"
-        >
-          Block
-        </Button>
+      <div className="w-full bg-themed-grey-200 gap-3 flex items-center">
+        <button className="min-h-[50px] px-8 text-white bg-themed-black-primary cursor-pointer hover:bg-themed-black-primary/80 rounded-full">
+          Invite
+        </button>
+        <Button size='md' className="bg-white text-red-500 hover:bg-red-200">Block</Button>
       </div>
     </TableRow>
   );

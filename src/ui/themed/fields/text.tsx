@@ -24,7 +24,7 @@ export const TextField = ({className, ...props}: InputHTMLAttributes<HTMLInputEl
 
         <label
           htmlFor={props.id}
-          className="origin-top-left translate-y-2/3 pointer-events-none scale-125 transition-all text-themed-grey-400 h-[15px] bg-transparent text-xs  font-light flex items-center "
+          className="origin-top-left tracking-wide translate-y-2/3 pointer-events-none scale-125 transition-all text-themed-grey-400 h-[15px] bg-transparent text-xs  font-light flex items-center "
         >
           {props.placeholder}
         </label>

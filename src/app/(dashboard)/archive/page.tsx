@@ -2,10 +2,11 @@
 
 import {DashboardPageLayout} from '../_layout';
 import Link from 'next/link';
-import {WatchDetails} from '@/sections/demo/watch-card';
+import {Warehouse as WarehousePreview, WatchDetails} from '@/sections/demo/watch-card';
 import {TabContent, TabRoot} from '@/ui/common/tabs';
 import {TabTriggerWithBadge} from '@/ui/themed/tabs';
 import {MessageIcon} from '@/ui/common/icons/message';
+import {FlagImage, defaultCountries} from 'react-international-phone';
 
 export default function Page() {
   return (
@@ -50,9 +51,9 @@ export default function Page() {
                 <div className="flex mt-auto gap-5">
                   <div className="mt-4 flex items-center gap-3">
                     <div className="w-[40px] h-[40px] rounded-full bg-blue-800" />
-                    <div className="leading-6 h-full flex flex-col justify-center gap-1">
-                      <p className="font-bold">Ineichen Zuriсh</p>
-                      <p className="leading-4 text-[14px]">Buyer</p>
+                    <div className=" h-full flex flex-col justify-center gap-1">
+                      <p className="font-bold leading-3 tracking-wide">Ineichen Zuriсh</p>
+                      <p className="leading-6 text-[14px] tracking-wide">Buyer</p>
                     </div>
                   </div>
                   <div className="mt-auto flex items-center gap-3">
@@ -64,24 +65,30 @@ export default function Page() {
               </div>
               <div className="pl-[30px] text-nowrap min-w-[230px] pr-[30px] flex flex-col">
                 <div>
-                  <p className="text-[14px]">Price</p>
-                  <p className="text-[26px] font-semibold">35 000 $</p>
+                  <p className="text-[14px] leading-3">Price</p>
+                  <p className="text-[26px] font-semibold leading-[45px]">35 000 $</p>
                 </div>
 
                 <div className="mt-[10px] flex items-center gap-6">
                   <p className="flex flex-col gap-1">
-                    <span className="text-[14px] leading-4 text-themed-grey-400">Date</span>
-                    <span className="leading-5">10 dec 2023</span>
+                    <span className="text-[14px] leading-6 tracking-wide text-themed-grey-400">
+                      Date
+                    </span>
+                    <span className="leading-4 tracking-wide">10 dec 2023</span>
                   </p>
                   <p className="flex flex-col gap-1">
-                    <span className="text-[14px] leading-4 text-themed-grey-400">Deal №</span>
-                    <span className="leading-5">463-45</span>
+                    <span className="text-[14px] leading-6 tracking-wide text-themed-grey-400">
+                      Deal №
+                    </span>
+                    <span className="leading-4 tracking-wide">463-45</span>
                   </p>
                 </div>
-
                 <div className="mt-auto text-sm">
-                  <p className="text-[14px]">Warehouse</p>
-                  <p className="flex items-center gap-2">Some warehouse</p>
+                  <p className="text-[14px] tracking-wide">Warehouse</p>
+                  <p className="flex items-center gap-2">
+                    <FlagImage iso2={defaultCountries[0][1]} />
+                    Some warehouse
+                  </p>
                 </div>
               </div>
             </div>

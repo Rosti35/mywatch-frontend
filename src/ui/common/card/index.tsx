@@ -39,7 +39,7 @@ export const CardField = ({caption, children, className, ...props}: CardFieldPro
       className={cn('flex flex-col', className)}
       {...props}
     >
-      <p className="text-xs text-themed-grey-400">{caption}</p>
+      <p className="text-xs tracking-wide text-themed-grey-400">{caption}</p>
 
       <span>{children}</span>
     </div>

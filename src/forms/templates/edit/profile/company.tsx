@@ -11,8 +11,8 @@ export const CompanyProfile = () => (
       <textarea className="resize-none bg-white rounded-xl min-h-44 p-4 outline-none" />
     </div>
 
-    <div className="w-32 h-auto flex flex-col items-center gap-4">
-      <div className="w-[100px] h-[100px] rounded-full bg-blue-950"></div>
+    <div className="w-32 h-auto flex pb-2 flex-col items-center gap-4">
+      <div className="w-[100px] mr-2 h-[100px] rounded-full bg-blue-950"></div>
       <div className="flex gap-2">
         Change logo
         <UploadIcon className="w-6 h-6" />

@@ -12,7 +12,7 @@ const BrandItem = ({brand}: BrandItemProps) => {
     <Link
       href="/stock/brand"
       aria-label="Brand"
-      className="data-[state=on]:bg-themed-black-primary data-[state=on]:text-white hover:bg-themed-black-primary/80 hover:text-white transition-all rounded-md px-2"
+      className="data-[state=on]:bg-themed-black-primary leading-6 tracking-wide text-left data-[state=on]:text-white hover:bg-themed-black-primary/80 hover:text-white transition-all rounded-md "
     >
       {brand}
     </Link>
@@ -21,9 +21,9 @@ const BrandItem = ({brand}: BrandItemProps) => {
 
 const Title = () => {
   return (
-    <div className="flex w-full items-center">
+    <div className="flex max-h-[32px] w-full items-center leading-3">
       Add watch to stock
-      <button className="ml-auto text-sm font-medium px-5 rounded-full bg-themed-grey-300">
+      <button className="ml-auto tracking-[-0.02rem] h-[40px] text-sm font-medium px-5 rounded-full bg-themed-grey-300">
         Import from other platforms
       </button>
     </div>

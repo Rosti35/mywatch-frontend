@@ -17,9 +17,9 @@ export const NotificationSwitch = ({
       className={cn('flex', className)}
       {...props}
     >
-      <div className="flex w-full flex-col gap-2">
-        <p className="text-md font-semibold">{label}</p>
-        <p className="max-w-96 leading-5">{children}</p>
+      <div className="flex w-full flex-col gap-[10px]">
+        <p className="text-[22px] leading-7 font-semibold">{label}</p>
+        <p className="max-w-96 leading-5 tracking-wide">{children}</p>
       </div>
 
       <div className="flex flex-col gap-4 items-center justify-center">
