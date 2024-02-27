@@ -20,7 +20,7 @@ export const DelieveryAddressPreview = ({
     <CardRoot>
       <CardTitle actions={<ContextMenu {...props} />}>{title}</CardTitle>
 
-      <div className="flex">
+      <div className="flex mt-[4px]">
         <CardField caption="City">
           <div className="flex gap-2">
             <FlagImage iso2={iso2} />
@@ -34,10 +34,10 @@ export const DelieveryAddressPreview = ({
 
       <CardField caption="Address">{address}</CardField>
 
-      <div className="flex">
-        <CardField caption="Name">{name}</CardField>
-        <div className="ml-auto">
-          <CardField caption="Phone number">{phone_number}</CardField>
+      <div className="flex gap-5">
+        <CardField caption="Name">Nikolay Dvoryadkin</CardField>
+        <div>
+          <CardField caption="Phone number">+7 963 548-85-22</CardField>
         </div>
       </div>
     </CardRoot>

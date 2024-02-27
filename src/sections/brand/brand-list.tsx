@@ -12,7 +12,7 @@ export type BrandItemProps = {
 };
 const BrandCheckbox = ({brand}: BrandItemProps) => (
   <Checkbox>
-    <span className="text-ellipsis overflow-hidden max-w-40">{brand}</span>
+    <span className="text-ellipsis tracking-wide overflow-hidden max-w-40">{brand}</span>
   </Checkbox>
 );
 

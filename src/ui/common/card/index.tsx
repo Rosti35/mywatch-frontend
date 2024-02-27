@@ -41,7 +41,7 @@ export const CardField = ({caption, children, className, ...props}: CardFieldPro
     >
       <p className="text-xs tracking-wide text-themed-grey-400">{caption}</p>
 
-      <span>{children}</span>
+      <span className="tracking-wide">{children}</span>
     </div>
   );
 };

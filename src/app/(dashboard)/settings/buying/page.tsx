@@ -58,7 +58,7 @@ export default function Page() {
           </TabTriggerWithBadge>
         </div>
 
-        <div className="mt-[30px] flex flex-col overflow-hidden pb-[50px]">
+        <div className="mt-[30px] flex flex-col overflow-hidden">
           <TabContent
             disableTransition
             value="brand"

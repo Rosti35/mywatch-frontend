@@ -151,6 +151,10 @@ export const _Sidebar = () => {
     </aside>
   );
 };
-export const Sidebar = ({children}: PropsWithChildren) => {
-  return <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>;
+export const Sidebar = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <_Sidebar />
+    </Suspense>
+  );
 };

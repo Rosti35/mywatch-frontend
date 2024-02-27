@@ -25,12 +25,14 @@ export const ContextMenu = ({onEdit, onDelete}: CardActions) => {
       </PopoverTrigger>
       <PopoverContent className="flex h-fit w-32 flex-col items-center justify-center overflow-hidden rounded-3xl bg-white p-0">
         <ContextMenuItem onClick={onEdit}>
-          <EditIcon className="mr-auto h-6 w-6" />
-          <span className="w-full flex-1 text-left font-light">Edit</span>
+          <EditIcon className="mr-auto h-5 w-5" />
+          <span className="w-full flex-1 text-[14px] text-left font-light">Edit</span>
         </ContextMenuItem>
         <ContextMenuItem onClick={onDelete}>
-          <TrashIcon className="mr-auto h-6 w-6 text-red-600" />
-          <span className="w-full flex-1  text-left text-red-600 font-light">Delete</span>
+          <TrashIcon className="mr-auto h-5 w-5 text-red-600" />
+          <span className="w-full flex-1 text-[14px] text-left text-red-600 font-light">
+            Delete
+          </span>
         </ContextMenuItem>
       </PopoverContent>
     </Popover>
