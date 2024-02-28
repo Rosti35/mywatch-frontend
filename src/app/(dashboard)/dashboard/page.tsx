@@ -88,7 +88,12 @@ function SendInvitationDialog({children}: PropsWithChildren) {
 const StockStatus = () => (
   <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex">
     <div className="flex flex-col gap-2">
-      <p className="leading-5">My stock</p>
+      <Link
+        href="/stock"
+        className="leading-5"
+      >
+        My stock
+      </Link>
       <p className="mt-auto text-lg font-bold">12</p>
     </div>
     <button className="bg-themed-black-primary ml-auto my-auto text-white rounded-full w-[50px] h-[50px] items-center flex justify-center">
@@ -168,7 +173,12 @@ const AvatarsRow = () => (
 const SellsStatus = () => (
   <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
     <div className="flex flex-col gap-4">
-      <p className="leading-5 tracking-wide">Watches on sale</p>
+      <Link
+        href="/buy"
+        className="leading-5 tracking-wide"
+      >
+        Watches on sale
+      </Link>
       <p className="text-lg font-bold flex gap-[18px] leading-10 items-center">
         12 322
         <span className="font-bold text-[14px] rounded-full w-[30px] h-6 bg-green-500 text-white flex items-center justify-center">

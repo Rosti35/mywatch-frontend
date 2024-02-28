@@ -13,15 +13,7 @@ import {UserGroupIcon} from '@/ui/common/icons/user-group';
 import {VerificationIcon} from '@/ui/common/icons/verification';
 import Link from 'next/link';
 import {useSearchParams} from 'next/navigation';
-import {
-  FC,
-  PropsWithChildren,
-  PropsWithRef,
-  PropsWithoutRef,
-  ReactNode,
-  SVGProps,
-  Suspense,
-} from 'react';
+import {FC, ReactNode, SVGProps, Suspense} from 'react';
 
 type SidebarLinkProps = {
   href: string;
