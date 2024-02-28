@@ -1,11 +1,81 @@
 'use client';
 
-import * as Toggle from '@radix-ui/react-toggle';
 import {BrandItemProps, BrandList} from '@/sections/brand/brand-list';
 import {DashboardPageLayout} from '../_layout';
 import {SearchContent, SearchField, SearchRoot} from '@/ui/themed/search';
 import Link from 'next/link';
 import {PlusIcon} from '@/ui/common/icons/plus';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/ui/common/dialog';
+import {Button} from '@/ui/themed/button';
+import {TextField} from '@/ui/themed/fields/text';
+import {PropsWithChildren} from 'react';
+import {TabContent, TabRoot} from '@/ui/common/tabs';
+import {TabTrigger, TabTriggerContainer} from '@/ui/themed/tabs';
+
+export function ImportDialog({children}: PropsWithChildren) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent className="sm:max-w-[600px] bg-themed-grey-100 gap-[30px] rounded-[32px] p-[40px]">
+        <DialogHeader>
+          <DialogTitle>Import from other platforms</DialogTitle>
+          <DialogDescription className="leading-6 tracking-wide">
+            Just send an invitation and start making quick, convenient transactions
+          </DialogDescription>
+        </DialogHeader>
+        <TabRoot
+          defaultValue={'chrono'}
+          className="flex flex-col gap-[16px]"
+        >
+          <TabTriggerContainer className="bg-themed-grey-200">
+            <TabTrigger value="chrono">Chrono24</TabTrigger>
+            <TabTrigger value="xml">XML Import</TabTrigger>
+          </TabTriggerContainer>
+          <TabContent value="chrono">
+            <TextField placeholder="Url" />
+          </TabContent>
+
+          <Link
+            href={'/import'}
+            className="w-full"
+          >
+            <Button className="w-full">Import</Button>
+          </Link>
+        </TabRoot>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+export function AddBrandDialog({children}: PropsWithChildren) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent className="sm:max-w-[430px] bg-themed-grey-100 gap-[30px] rounded-[32px] p-[40px]">
+        <DialogHeader>
+          <DialogTitle>Add brand</DialogTitle>
+          <DialogDescription className="leading-6">
+            Just send an invitation and start making quick, convenient transactions
+          </DialogDescription>
+        </DialogHeader>
+        <div className="flex flex-col gap-[16px]">
+          <TextField placeholder="Brand name" />
+
+          <TextField placeholder="Website" />
+
+          <Button>Add</Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
 
 const BrandItem = ({brand}: BrandItemProps) => {
   return (
@@ -23,9 +93,11 @@ const Title = () => {
   return (
     <div className="flex max-h-[32px] w-full items-center leading-3">
       Add watch to stock
-      <button className="ml-auto tracking-[-0.02rem] h-[40px] text-sm font-medium px-5 rounded-full bg-themed-grey-300">
-        Import from other platforms
-      </button>
+      <ImportDialog>
+        <button className="ml-auto tracking-[-0.02rem] h-[40px] text-sm font-medium px-5 rounded-full bg-themed-grey-300">
+          Import from other platforms
+        </button>
+      </ImportDialog>
     </div>
   );
 };
@@ -69,9 +141,11 @@ export default function Stock() {
           </div>
           <div className="flex">
             <p className="text-md font-bold">Choose brand</p>
-            <button className="ml-auto flex gap-2 items-center rounded-full bg-themed-grey-100 px-5">
-              <PlusIcon className="w-6 h-6" /> My brand is not listed
-            </button>
+            <AddBrandDialog>
+              <button className="ml-auto flex gap-2 items-center rounded-full bg-themed-grey-100 px-5">
+                <PlusIcon className="w-6 h-6" /> My brand is not listed
+              </button>
+            </AddBrandDialog>
           </div>
         </div>
 

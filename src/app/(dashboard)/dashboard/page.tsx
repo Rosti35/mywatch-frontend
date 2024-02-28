@@ -13,6 +13,18 @@ import {ArrowTopRightIcon} from '@radix-ui/react-icons';
 import {CheckIcon} from '@/ui/common/icons/check';
 import {cn} from '@/lib/cn';
 import {useSearchParams} from 'next/navigation';
+import {Message} from '../_components/message';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/ui/common/dialog';
+import {Button} from '@/ui/themed/button';
+import {PropsWithChildren} from 'react';
+import {PhoneField} from '@/ui/themed/fields/phone';
 
 const data: [number, number][] = Array.from(Array(4).keys()).map(i => [
   i,
@@ -39,6 +51,39 @@ const DealerProfile = () => {
     </div>
   );
 };
+
+export function SendInvitationDialog({children}: PropsWithChildren) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogContent className="sm:max-w-[600px] bg-themed-grey-100 gap-[30px] rounded-[32px] p-[40px]">
+        <DialogHeader>
+          <DialogTitle>Invite your trusted partners</DialogTitle>
+          <DialogDescription>
+            Just send an invitation and start making quick, convenient transactions
+          </DialogDescription>
+        </DialogHeader>
+
+        <TabRoot
+          defaultValue={'whatsapp'}
+          className="flex flex-col gap-[16px]"
+        >
+          <TabTriggerContainer className="bg-themed-grey-200">
+            <TabTrigger value="whatsapp">Whatsapp</TabTrigger>
+            <TabTrigger value="tg">Telegram</TabTrigger>
+            <TabTrigger value="sms">SMS</TabTrigger>
+            <TabTrigger value="email">Email</TabTrigger>
+          </TabTriggerContainer>
+          <TabContent value="whatsapp">
+            <PhoneField placeholder="Phone" />
+          </TabContent>
+
+          <Button className="w-full">Send invitation code</Button>
+        </TabRoot>
+      </DialogContent>
+    </Dialog>
+  );
+}
 
 const StockStatus = () => (
   <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex">
@@ -177,9 +222,11 @@ const SendInvitationCard = () => (
       <p className="leading-5 font-light text-themed-grey-300">
         Start making quick, comfortable convenient deals with no fee
       </p>
-      <button className="rounded-full mt-auto bg-themed-grey-100 text-themed-black-primary w-fit px-6 leading-5 min-h-[50px]">
-        Sent invintation
-      </button>
+      <SendInvitationDialog>
+        <button className="rounded-full mt-auto bg-themed-grey-100 text-themed-black-primary w-fit px-6 leading-5 min-h-[50px]">
+          Send invintation
+        </button>
+      </SendInvitationDialog>
     </div>
   </div>
 );
@@ -318,21 +365,7 @@ export default function Page() {
             </p>
             <div className="flex h-full items-center flex-col gap-[14px]">
               {[1, 2, 3].map(i => {
-                return (
-                  <div
-                    key={i}
-                    className="flex gap-[14px] w-full items-center"
-                  >
-                    <div className="w-[48px] h-[48px] rounded-full bg-zinc-700" />
-                    <div className="flex flex-col justify-center gap-1">
-                      <p className="leading-5 font-medium">Mywatch</p>
-                      <p className="leading-4 text-themed-grey-500 text-[14px]">
-                        Hi! Welcome to mywatch
-                      </p>
-                    </div>
-                    <span className="ml-auto text-themed-grey-400 text-[14px]">10:45</span>
-                  </div>
-                );
+                return <Message key={i} />;
               })}
             </div>
           </div>

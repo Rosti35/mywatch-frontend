@@ -1,7 +1,7 @@
 'use client';
 
 import {PropsWithChildren} from 'react';
-import {DashboardPageLayout, DashboardWrapper, Title} from '../_layout';
+import {Title} from '../_layout';
 import {LinksList} from './_components/links';
 
 const SettingsLayout = ({children}: PropsWithChildren) => (
