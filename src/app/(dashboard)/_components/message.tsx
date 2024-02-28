@@ -1,7 +1,10 @@
 import Link from 'next/link';
 
 export const Message = ({id = 1}: {id?: string | number}) => (
-  <Link href={`/messages/${id}`}>
+  <Link
+    href={`/messages/${id}`}
+    className="w-full"
+  >
     <div className="flex gap-[14px] w-full items-center">
       <div className="w-[48px] h-[48px] rounded-full bg-zinc-700" />
       <div className="flex flex-col justify-center gap-1">
