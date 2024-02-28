@@ -19,7 +19,7 @@ import {PropsWithChildren} from 'react';
 import {TabContent, TabRoot} from '@/ui/common/tabs';
 import {TabTrigger, TabTriggerContainer} from '@/ui/themed/tabs';
 
-export function ImportDialog({children}: PropsWithChildren) {
+function ImportDialog({children}: PropsWithChildren) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -54,7 +54,7 @@ export function ImportDialog({children}: PropsWithChildren) {
   );
 }
 
-export function AddBrandDialog({children}: PropsWithChildren) {
+function AddBrandDialog({children}: PropsWithChildren) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>

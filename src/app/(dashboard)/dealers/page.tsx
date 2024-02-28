@@ -89,7 +89,7 @@ const DealerProfile = () => {
   );
 };
 
-export function AddToBlacklistDialog({children}: PropsWithChildren) {
+function AddToBlacklistDialog({children}: PropsWithChildren) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>

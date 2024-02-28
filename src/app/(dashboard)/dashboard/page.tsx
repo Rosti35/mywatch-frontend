@@ -52,7 +52,7 @@ const DealerProfile = () => {
   );
 };
 
-export function SendInvitationDialog({children}: PropsWithChildren) {
+function SendInvitationDialog({children}: PropsWithChildren) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
