@@ -11,16 +11,8 @@ import {Button} from '@/ui/themed/button';
 import {PlusIcon} from '@/ui/common/icons/plus';
 import {CheckIcon} from '@/ui/common/icons/check';
 import {PropsWithChildren} from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/ui/common/dialog';
+import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@/ui/common/dialog';
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import {DealerBadge} from '@/ui/themed/dealer/badge';
 import {RatingBadge} from '@/sections/demo/watch-card';
 
 const RadioGroupDemo = () => (
