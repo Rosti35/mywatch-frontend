@@ -1,12 +1,8 @@
 import {ReactNode, Suspense} from 'react';
 
 export const Title = ({children}: Readonly<{children: React.ReactNode}>) => (
-  <div className="text-lg font-bold leading-[32px] tracking-tight mb-[30px]">{children}</div>
-);
-
-export const DashboardWrapper = ({children}: Readonly<{children: React.ReactNode}>) => (
-  <div className="h-full flex overflow-hidden">
-    <div className="flex-col lg:flex w-full h-full overflow-auto flex">{children}</div>
+  <div className="text-lg font-bold leading-[32px] tracking-tight sm:mb-[30px] mb-6">
+    {children}
   </div>
 );
 
@@ -15,11 +11,7 @@ export function DashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <DashboardWrapper>
-      <Suspense fallback={<></>}>{children}</Suspense>
-    </DashboardWrapper>
-  );
+  return <Suspense fallback={<></>}>{children}</Suspense>;
 }
 
 export function DashboardPageLayout({
@@ -30,10 +22,10 @@ export function DashboardPageLayout({
   title: string | ReactNode;
 }>) {
   return (
-    <div className="flex flex-col pt-[40px] h-full md:pr-[40px] pr-4">
+    <div className="flex flex-col h-full">
       <Title>{title}</Title>
 
-      <div className="h-full mb-[40px]">{children}</div>
+      {children}
     </div>
   );
 }

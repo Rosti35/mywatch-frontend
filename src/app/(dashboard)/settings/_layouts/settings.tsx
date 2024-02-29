@@ -31,8 +31,8 @@ export const SettingsLayout = ({
   const prevRoute = usePop();
 
   return (
-    <div className="w-full h-full flex flex-col">
-      <span className="flex flex-col gap-[14px] mb-[30px]">
+    <div className="w-full h-full flex flex-col gap-[30px]">
+      <span className="flex flex-col gap-[14px] ">
         {showBack ? (
           <Link href={prevRoute}>
             <button className="w-fit flex items-center justify-center gap-2">
@@ -45,10 +45,10 @@ export const SettingsLayout = ({
         {description ? <span className="leading-5">{description}</span> : null}
       </span>
 
-      <div>{children}</div>
+      <div className="w-full h-full">{children}</div>
 
       {showSaveButton ? (
-        <div className="mt-auto sm:pb-0 pb-5 flex gap-4">
+        <div className="mt-auto flex flex-col sm:flex-row sm:gap-4 gap-2">
           <Button>Save settings</Button>
           <Button className="bg-white hover:opacity-70 text-themed-black-primary">Reset</Button>
         </div>

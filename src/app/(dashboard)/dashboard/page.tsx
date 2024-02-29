@@ -23,7 +23,7 @@ import {
   DialogTrigger,
 } from '@/ui/common/dialog';
 import {Button} from '@/ui/themed/button';
-import {PropsWithChildren} from 'react';
+import {HTMLAttributes, PropsWithChildren} from 'react';
 import {PhoneField} from '@/ui/themed/fields/phone';
 
 const data: [number, number][] = Array.from(Array(4).keys()).map(i => [
@@ -31,21 +31,35 @@ const data: [number, number][] = Array.from(Array(4).keys()).map(i => [
   Math.round(Math.random() * 100),
 ]);
 
+const DashboardCard = ({children, className, ...props}: HTMLAttributes<HTMLDivElement>) => {
+  return (
+    <div
+      className={cn(
+        'md:p-[30px] p-4 sm:rounded-3xl rounded-[20px] w-full bg-themed-grey-100 ',
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
 const DealerProfile = () => {
   return (
-    <div className="flex h-20 gap-5 items-center">
-      <div className="h-20 w-20 rounded-full bg-blue-500" />
+    <div className="flex sm:gap-5 gap-[14px] items-center">
+      <div className="sm:max-h-20 sm:max-w-20 max-w-[50px] my-auto w-full h-auto aspect-square rounded-full bg-blue-500" />
 
-      <div className="flex flex-col justify-center">
-        <p className="text-lg font-bold leading-10 tracking-tight">Ineichen Zuriсh</p>
+      <div className="flex flex-col sm:max-h-auto max-h-[50px] justify-center">
+        <p className="sm:text-lg text-[18px] font-bold tracking-tight">Ineichen Zuriсh</p>
 
-        <p className="text-sm flex gap-[16px] mt-[1px] font-normal leading-6">
-          <span className="leading-5 tracking-wide flex items-center gap-[10px]">
-            <CheckIcon className="w-[18px] text-white h-[18px] bg-blue-400 rounded-full" />
+        <p className="flex sm:gap-[16px] gap-1 leading-4 font-normal sm:text-sm text-xs text-nowrap">
+          <span className="tracking-wide leading-3 flex items-center gap-[10px]">
+            <CheckIcon className="max-w-5 max-h-5 h-full w-full aspect-square text-white bg-blue-400 rounded-full" />
             Verfied dealer
           </span>
-          <RatingBadge className="w-5 h-5" />
-          <span className="text-themed-grey-400">Since 2023</span>
+          <RatingBadge className="max-w-5 max-h-5 h-full w-full aspect-square" />
+          <span className="text-themed-grey-400 sm:block hidden">Since 2023</span>
         </p>
       </div>
     </div>
@@ -86,7 +100,7 @@ function SendInvitationDialog({children}: PropsWithChildren) {
 }
 
 const StockStatus = () => (
-  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-grey-100 flex">
+  <DashboardCard className="flex">
     <Link
       href="/stock"
       className="flex flex-col gap-2"
@@ -99,11 +113,11 @@ const StockStatus = () => (
         <PlusIcon className="w-6 h-6" />
       </Link>
     </button>
-  </div>
+  </DashboardCard>
 );
 
 const SalesStatus = () => (
-  <div className="md:p-[30px] p-4 gap-[10px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
+  <DashboardCard className="gap-[10px] flex flex-col">
     <Link
       href="/sell"
       className="leading-5 md:text-sm text-[14px]"
@@ -119,7 +133,7 @@ const SalesStatus = () => (
         +2
       </span>
     </p>
-  </div>
+  </DashboardCard>
 );
 type UserStep = {
   completed: boolean;
@@ -130,12 +144,12 @@ type NewUserStepperProps = {
 };
 const NewUserStepper = ({steps}: NewUserStepperProps) => {
   return (
-    <div className="flex gap-4 mt-auto w-full">
+    <div className="flex sm:px-[30px] p-4 overflow-auto gap-4 mt-auto w-full">
       {steps.map(({completed, description}, i) => {
         return (
           <div
             key={i}
-            className="h-[140px] text-wrap w-full rounded-3xl bg-white/10 p-[20px] flex flex-col"
+            className="lg:h-[140px] h-[120px] min-w-[120px] text-wrap w-full rounded-3xl bg-white/10 p-[20px] flex flex-col"
           >
             {completed ? (
               <CheckIcon className="w-6 h-6 bg-green-600 rounded-full" />
@@ -174,15 +188,15 @@ const AvatarsRow = () => (
 );
 
 const SellsStatus = () => (
-  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-grey-100 flex flex-col">
+  <DashboardCard className="bg-themed-grey-100 flex flex-col">
     <div className="flex flex-col gap-4">
       <Link
         href="/buy"
-        className="leading-5 tracking-wide"
+        className="leading-5 md:text-sm text-xs tracking-wide"
       >
         Watches on sale
       </Link>
-      <p className="text-lg font-bold flex gap-[18px] leading-10 items-center">
+      <p className="sm:text-lg text-md font-bold flex gap-[18px] sm:leading-10 leading-5 items-center">
         12 322
         <span className="font-bold text-[14px] rounded-full w-[30px] h-6 bg-green-500 text-white flex items-center justify-center">
           +2
@@ -191,15 +205,15 @@ const SellsStatus = () => (
     </div>
     <Link
       href="/settings/buying"
-      className="mt-auto font-normal tracking-wide text-[15px] flex gap-[6px]"
+      className="mt-auto font-normal tracking-wide sm:text-[15px] text-xs items-center sm:leading-none leading-10 flex gap-[6px]"
     >
       Set up your buying preferences <ArrowTopRightIcon className="w-6 h-6" />
     </Link>
-  </div>
+  </DashboardCard>
 );
 
 const PartnersStatus = () => (
-  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-grey-100 flex flex-col">
+  <DashboardCard className="flex flex-col">
     <div className="flex w-full">
       <div className="flex flex-col gap-4">
         <Link
@@ -223,11 +237,11 @@ const PartnersStatus = () => (
         Black list <ArrowTopRightIcon className="w-6 h-6" />
       </Link>
     </div>
-  </div>
+  </DashboardCard>
 );
 
 const SendInvitationCard = () => (
-  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-black-primary text-white flex">
+  <DashboardCard className="bg-themed-black-primary text-white flex">
     <div className="flex flex-col gap-4">
       <p className="font-medium text-[22px] leading-6 tracking-[-0.02rem]">
         Invite your trusted partners
@@ -241,7 +255,7 @@ const SendInvitationCard = () => (
         </button>
       </SendInvitationDialog>
     </div>
-  </div>
+  </DashboardCard>
 );
 
 const steps = [
@@ -268,43 +282,48 @@ const steps = [
 ];
 
 const Boarding = () => (
-  <div className=" justify-between flex flex-col w-full">
-    <p className="font-bold text-lg mb-auto leading-10 h-[41px] tracking-tight">
-      Complete the boarding to mywatch
-    </p>
+  <div className="justify-between flex flex-col w-full">
+    <DashboardCard className="bg-transparent">
+      <p className="font-bold text-lg leading-10 tracking-tight">
+        Complete the boarding to mywatch
+      </p>
+    </DashboardCard>
 
     <NewUserStepper steps={steps} />
   </div>
 );
 
 const InvitationCard = () => (
-  <div className="ml-auto p-6 bg-themed-black-primary max-w-[325px] w-full rounded-3xl h-full flex flex-col">
-    <p className="text-md font-bold leading-8 tracking-[-0.6px]">I have an invitation</p>
-    <p className="text-themed-grey-400 leading-5 my-auto">
-      This will instantly open access to all mywatch services
-    </p>
-    <div className="bg-themed-grey-100 w-full rounded-full mb-1 flex mt-auto h-[54px] pl-4 items-center">
-      <input
-        type="text"
-        placeholder="Partner key"
-        className="bg-transparent outline-none text-themed-black-primary h-full w-full placeholder:text-themed-black-primary"
-      />
-      <button className="px-6 rounded-full h-full bg-themed-black-primary border-[2px] border-themed-grey-100">
-        Check
-      </button>
+  <DashboardCard className="bg-transparent">
+    <div className="ml-auto p-6 bg-themed-black-primary w-full rounded-3xl h-full flex flex-col">
+      <p className="text-md font-bold leading-8 tracking-[-0.6px]">I have an invitation</p>
+      <p className="text-themed-grey-400 leading-5 my-auto mt-[6px]">
+        This will instantly open access to all mywatch services
+      </p>
+      <div className="bg-themed-grey-100 mt-4 w-full rounded-full mb-1 flex h-[54px] pl-4 items-center">
+        <input
+          type="text"
+          placeholder="Partner key"
+          className="bg-transparent outline-none text-themed-black-primary h-full w-full placeholder:text-themed-black-primary"
+        />
+        <button className="px-6 rounded-full h-full bg-themed-black-primary border-[2px] border-themed-grey-100">
+          Check
+        </button>
+      </div>
     </div>
-  </div>
+  </DashboardCard>
 );
 
 export default function Page() {
   const params = useSearchParams();
 
   const newUser = Boolean(params.get('new'));
+
   return (
     <DashboardPageLayout title={<DealerProfile />}>
       <div className="flex sm:gap-5 gap-2 flex-col h-auto">
         {newUser ? (
-          <div className="flex w-full  min-h-[261px] md:gap-[20px] gap-2 text-white p-[30px] bg-[#89A4B7] rounded-[32px] ">
+          <div className="flex lg:flex-nowrap flex-wrap w-full h-fit md:gap-[20px] gap-2 text-white bg-[#89A4B7] rounded-[32px] ">
             <Boarding />
             <InvitationCard />
           </div>
@@ -321,15 +340,15 @@ export default function Page() {
         </div>
         <TabRoot
           defaultValue="day"
-          className="grid grid-cols-2 gap-5 h-full flex-wrap w-full flex-1"
+          className="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-2 h-full flex-wrap w-full flex-1"
         >
-          <div className="md:p-[30px] p-4 rounded-[32px] gap-5 h-full w-full flex-col bg-themed-grey-100 flex">
-            <div className="flex w-full h-fit">
+          <DashboardCard className="min-h-[240px] gap-5 h-full w-full flex-col flex">
+            <div className="flex w-full h-fit text-nowrap sm:flex-nowrap flex-wrap">
               <div className="flex flex-col w-full gap-4">
                 <p className="leading-4 tracking-wide">Market pulse</p>
-                <p className="flex gap-6 text-lg font-bold">
+                <p className="flex gap-6 md:text-lg text-md font-bold">
                   <span className="tracking-tightest">569 123 $</span>
-                  <span className="text-sm font-medium mt-auto mb-1 tracking-wide text-green-500 flex items-center justify-center gap-1">
+                  <span className="md:text-sm text-xs font-medium mt-auto mb-1 tracking-wide text-green-500 flex items-center justify-center gap-1">
                     <ArrowTopRightIcon className="w-6 h-6" />
                     12 545 $
                   </span>
@@ -340,14 +359,14 @@ export default function Page() {
                 <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-full p-1">
                   <TabTrigger
                     value="day"
-                    className="min-h-[30px]"
+                    className="text-sm md:text-xs min-h-[30px]"
                     activeClassname="font-medium"
                   >
                     Day
                   </TabTrigger>
                   <TabTrigger
                     value="month"
-                    className="min-h-[30px]"
+                    className="text-sm md:text-xs min-h-[30px]"
                     activeClassname="font-medium"
                   >
                     Month
@@ -361,8 +380,8 @@ export default function Page() {
             >
               <LineChart data={data} />
             </TabContent>
-          </div>
-          <div className="md:p-[30px] p-4 gap-6 rounded-[32px] w-full h-full bg-themed-grey-100 flex flex-col">
+          </DashboardCard>
+          <DashboardCard className="gap-6 w-full h-full flex flex-col">
             <p className="flex gap-4 items-center">
               <span className="text-[22px] font-bold leading-3">Chats</span>
 
@@ -381,7 +400,7 @@ export default function Page() {
                 return <Message key={i} />;
               })}
             </div>
-          </div>
+          </DashboardCard>
         </TabRoot>
       </div>
     </DashboardPageLayout>
