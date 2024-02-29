@@ -22,10 +22,10 @@ export default function Page() {
       description={description}
     >
       <TabRoot
-        className="flex gap-0 flex-col h-full"
+        className="flex gap-0 flex-col overflow-auto h-full"
         defaultValue="brand"
       >
-        <div className="relative w-full items-center whitespace-nowrap overflow-x-auto min-h-[50px] gap-[14px] h-fit flex">
+        <div className="absolute w-full items-center whitespace-nowrap overflow-x-auto min-h-[50px] gap-[14px] h-fit flex">
           <TabTriggerWithBadge
             value="brand"
             count={2}

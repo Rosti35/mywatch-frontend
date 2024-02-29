@@ -89,7 +89,7 @@ export const _Sidebar = () => {
           Buy
         </SidebarLink>
         <SidebarLink
-          href="/"
+          href="/archive"
           icon={LegalIcon}
           disabled={newUser}
         >

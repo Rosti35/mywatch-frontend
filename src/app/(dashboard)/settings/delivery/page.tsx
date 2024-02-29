@@ -16,7 +16,7 @@ export default function Page() {
       showSaveButton={false}
     >
       <div className="h-full overflow-auto">
-        <div className="overflow-auto grid grid-cols-2 gap-5">
+        <div className="overflow-auto flex flex-wrap gap-5">
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />

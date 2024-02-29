@@ -111,7 +111,7 @@ const UploadButton = ({children}: PropsWithChildren) => {
   return (
     <motion.div
       layout
-      className="p-5 max-w-[450px] bg-themed-grey-100 rounded-[20px] flex flex-col"
+      className="p-5 min-w-[350px] max-w-[450px] bg-themed-grey-100 rounded-[20px] flex flex-col"
     >
       <div className="flex w-full">
         {children}
@@ -145,8 +145,8 @@ export default function Page() {
   return (
     <DashboardPageLayout title={<Title />}>
       <div className="flex flex-col h-full gap-10">
-        <div className="flex w-full">
-          <div className="gap-[10px] w-full flex flex-col">
+        <div className="flex flex-wrap-reverse gap-[30px] w-full">
+          <div className="gap-[10px] flex-1 flex flex-col">
             <UploadButton>Commercial registration number</UploadButton>
             <UploadButton>Commercial register excerpt</UploadButton>
             <UploadButton>Taxpayer ID number</UploadButton>
@@ -157,12 +157,12 @@ export default function Page() {
             <UploadButton>Articles of incorporation</UploadButton>
           </div>
 
-          <div className="ml-auto w-full h-fit gap-[30px] max-w-[544px] rounded-3xl p-[30px] bg-themed-black-primary text-white flex">
-            <div className="w-full">
-              <p className="font-bold leading-6 text-md tracking-tight text-nowrap">
+          <div className="ml-auto mb-auto w-fit h-fit gap-[30px] max-w-[544px] rounded-3xl md:p-[30px] p-5 bg-themed-black-primary text-white flex md:flex-row flex-nowrap flex-row-reverse">
+            <div className="w-fit text-wrap">
+              <p className="font-bold leading-6 md:text-md text-[18px] tracking-tight text-nowrap">
                 We have started checking
               </p>
-              <p className="leading-[1.3rem] tracking-wide mt-[10px]">
+              <p className="leading-[1.3rem] md:text-sm text-xs tracking-wide mt-[10px]">
                 It will take us 48 hours to confirm your documents and open access to the platform
               </p>
               <button className="mt-[20px] rounded-full bg-white text-themed-black-primary px-[30px] py-[15px]">
@@ -170,7 +170,7 @@ export default function Page() {
               </button>
             </div>
 
-            <div className="w-fit relative">
+            <div className="w-fit relative hidden">
               <Timer />
               <div className="absolute w-full h-full left-0 top-0 flex flex-col items-center justify-center">
                 <p className="font-medium leading-10 tracking-tight text-lg">45:40</p>
@@ -184,7 +184,7 @@ export default function Page() {
           <Button className="px-[30px] bg-themed-black-primary rounded-full text-white py-5">
             Upload
           </Button>
-          <button className="px-[30px] bg-white rounded-full  py-5">Save for later</button>
+          <Button className="px-[30px] text-black bg-white">Save for later</Button>
         </div>
       </div>
     </DashboardPageLayout>

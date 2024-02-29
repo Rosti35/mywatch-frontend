@@ -45,10 +45,10 @@ export const SettingsLayout = ({
         {description ? <span className="leading-5">{description}</span> : null}
       </span>
 
-      <div className="overflow-hidden pb-[50px]">{children}</div>
+      <div>{children}</div>
 
       {showSaveButton ? (
-        <div className="mt-auto flex gap-4">
+        <div className="mt-auto sm:pb-0 pb-5 flex gap-4">
           <Button>Save settings</Button>
           <Button className="bg-white hover:opacity-70 text-themed-black-primary">Reset</Button>
         </div>

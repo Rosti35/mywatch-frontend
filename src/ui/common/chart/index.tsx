@@ -36,14 +36,6 @@ export const LineChart = ({data}: LineChartProps) => {
           strokeWidth={2}
         />
       </svg>
-      {data.map((_, i) => {
-        return (
-          <span
-            key={i}
-            className="border-dashed border border-themed-grey-200"
-          />
-        );
-      })}
     </div>
   );
 };

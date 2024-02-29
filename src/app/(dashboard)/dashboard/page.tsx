@@ -86,16 +86,14 @@ function SendInvitationDialog({children}: PropsWithChildren) {
 }
 
 const StockStatus = () => (
-  <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex">
-    <div className="flex flex-col gap-2">
-      <Link
-        href="/stock"
-        className="leading-5"
-      >
-        My stock
-      </Link>
-      <p className="mt-auto text-lg font-bold">12</p>
-    </div>
+  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-grey-100 flex">
+    <Link
+      href="/stock"
+      className="flex flex-col gap-2"
+    >
+      <p className="leading-5 md:text-sm text-[14px] text-nowrap">My stock</p>
+      <p className="mt-auto md:text-lg text-md font-bold">12</p>
+    </Link>
     <button className="bg-themed-black-primary ml-auto my-auto text-white rounded-full w-[50px] h-[50px] items-center flex justify-center">
       <Link href="/stock">
         <PlusIcon className="w-6 h-6" />
@@ -105,11 +103,16 @@ const StockStatus = () => (
 );
 
 const SalesStatus = () => (
-  <div className="p-[30px] gap-[10px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
-    <Link href="/sell">My active sales</Link>
-    <p className="mt-auto flex items-center gap-[14px]">
-      <span className="text-lg font-bold">356</span>
-      <span className="rounded-full border border-themed-black-primary h-fit px-4 leading-5 py-[5px]">
+  <div className="md:p-[30px] p-4 gap-[10px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
+    <Link
+      href="/sell"
+      className="leading-5 md:text-sm text-[14px]"
+    >
+      My active sales
+    </Link>
+    <p className="mt-auto flex items-center justify-between sm:justify-normal sm:gap-[14px]">
+      <span className="md:text-lg text-md font-bold">10</span>
+      <span className="rounded-full border text-nowrap border-themed-black-primary md:text-sm text-xs h-fit px-[10px] leading-5 py-[4px]">
         10 replies
       </span>
       <span className="font-bold text-[14px] rounded-full w-[30px] h-6 bg-green-500 text-white flex items-center justify-center">
@@ -171,7 +174,7 @@ const AvatarsRow = () => (
 );
 
 const SellsStatus = () => (
-  <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
+  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-grey-100 flex flex-col">
     <div className="flex flex-col gap-4">
       <Link
         href="/buy"
@@ -196,7 +199,7 @@ const SellsStatus = () => (
 );
 
 const PartnersStatus = () => (
-  <div className="p-[30px] rounded-3xl w-full bg-themed-grey-100 flex flex-col">
+  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-grey-100 flex flex-col">
     <div className="flex w-full">
       <div className="flex flex-col gap-4">
         <Link
@@ -224,7 +227,7 @@ const PartnersStatus = () => (
 );
 
 const SendInvitationCard = () => (
-  <div className="p-[30px] rounded-3xl w-full bg-themed-black-primary text-white flex">
+  <div className="md:p-[30px] p-4 rounded-3xl w-full bg-themed-black-primary text-white flex">
     <div className="flex flex-col gap-4">
       <p className="font-medium text-[22px] leading-6 tracking-[-0.02rem]">
         Invite your trusted partners
@@ -299,29 +302,29 @@ export default function Page() {
   const newUser = Boolean(params.get('new'));
   return (
     <DashboardPageLayout title={<DealerProfile />}>
-      <div className="flex gap-5 flex-col h-full">
+      <div className="flex sm:gap-5 gap-2 flex-col h-auto">
         {newUser ? (
-          <div className="flex w-full  min-h-[261px] gap-[20px] text-white p-[30px] bg-[#89A4B7] rounded-[32px] ">
+          <div className="flex w-full  min-h-[261px] md:gap-[20px] gap-2 text-white p-[30px] bg-[#89A4B7] rounded-[32px] ">
             <Boarding />
             <InvitationCard />
           </div>
         ) : null}
-        <div className="flex gap-5 w-full min-h-[137px] max-h-[137px]">
+        <div className="flex md:gap-5 w-full md:min-h-[137px] gap-2 max-h-[90px] md:max-h-[137px]">
           <StockStatus />
           <SalesStatus />
         </div>
 
-        <div className="flex gap-5 w-full  h-full max-h-[208px] min-h-[208px]">
+        <div className="flex lg:flex-nowrap flex-wrap sm:gap-5 gap-2 w-full  h-full ">
           <SellsStatus />
           <PartnersStatus />
           {newUser ? null : <SendInvitationCard />}
         </div>
         <TabRoot
           defaultValue="day"
-          className="flex gap-5 flex-row w-full flex-1 min-h-[300px] max-h-[300px]"
+          className="grid grid-cols-2 gap-5 h-full flex-wrap w-full flex-1"
         >
-          <div className="p-[30px] rounded-[32px] gap-5 h-full w-full flex-col bg-themed-grey-100 flex">
-            <div className="flex w-full">
+          <div className="md:p-[30px] p-4 rounded-[32px] gap-5 h-full w-full flex-col bg-themed-grey-100 flex">
+            <div className="flex w-full h-fit">
               <div className="flex flex-col w-full gap-4">
                 <p className="leading-4 tracking-wide">Market pulse</p>
                 <p className="flex gap-6 text-lg font-bold">
@@ -354,12 +357,12 @@ export default function Page() {
             </div>
             <TabContent
               value="day"
-              className="h-full flex-1 w-full"
+              className="h-full  w-full flex-1 items-stretch"
             >
               <LineChart data={data} />
             </TabContent>
           </div>
-          <div className="p-[30px] gap-6 rounded-[32px] w-full h-full bg-themed-grey-100 flex flex-col">
+          <div className="md:p-[30px] p-4 gap-6 rounded-[32px] w-full h-full bg-themed-grey-100 flex flex-col">
             <p className="flex gap-4 items-center">
               <span className="text-[22px] font-bold leading-3">Chats</span>
 

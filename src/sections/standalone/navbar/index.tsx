@@ -68,13 +68,15 @@ export const Navbar = () => (
       </span>
     </div>
 
-    <SignInDialog />
+    <div className="gap-2 md:flex hidden">
+      <SignInDialog />
 
-    <Button
-      size="md"
-      className="rounded-xl"
-    >
-      Join now
-    </Button>
+      <Button
+        size="md"
+        className="rounded-xl"
+      >
+        Join now
+      </Button>
+    </div>
   </nav>
 );

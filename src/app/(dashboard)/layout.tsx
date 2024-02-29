@@ -10,7 +10,7 @@ export default function Layout({
       <div className="w-full hidden xl:block p-[10px] min-w-[270px] max-w-[270px]">
         <Sidebar />
       </div>
-      <div className="w-full pl-[23px]">{children}</div>
+      <div className="w-full md:pl-[23px] pl-4">{children}</div>
     </main>
   );
 }

@@ -12,8 +12,8 @@ export default function Page() {
 
   return (
     <SettingsLayout title="Bank accounts">
-      <div className="h-full overflow-auto">
-        <div className="overflow-auto grid grid-cols-2 gap-5">
+      <div className="h-full">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
           <BankAccountPreview {...passingProps} />
           <BankAccountPreview {...passingProps} />
           <BankAccountPreview {...passingProps} />

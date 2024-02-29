@@ -5,7 +5,7 @@ import {SettingsLayout} from '../_layouts/settings';
 
 export default function Page() {
   return (
-    <SettingsLayout title="Company Profile">
+    <SettingsLayout title="Company profile">
       <CompanyProfile />
     </SettingsLayout>
   );

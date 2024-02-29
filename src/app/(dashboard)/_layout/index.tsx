@@ -30,7 +30,7 @@ export function DashboardPageLayout({
   title: string | ReactNode;
 }>) {
   return (
-    <div className="flex flex-col pt-[40px] h-full pr-[40px]">
+    <div className="flex flex-col pt-[40px] h-full md:pr-[40px] pr-4">
       <Title>{title}</Title>
 
       <div className="h-full mb-[40px]">{children}</div>

@@ -13,14 +13,14 @@ export const Company = () => {
         id="city"
         placeholder="City"
       />
-      <div className="flex gap-3 w-full">
+      <div className="flex sm:flex-nowrap flex-wrap gap-3 w-full">
         <span className="w-full">
           <TextField
             id="address"
             placeholder="Address"
           />
         </span>
-        <span className="min-w-[40px] w-fit">
+        <span className="min-w-[40px] sm:w-fit w-full">
           <TextField
             id="postalCode"
             placeholder="ZIP / Postal code"
