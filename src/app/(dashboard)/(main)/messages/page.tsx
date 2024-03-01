@@ -5,8 +5,8 @@ import {Sidebar} from './_components';
 
 export default function Page() {
   return (
-    <div>
-      <div className="sm:hidden flex">
+    <div className="h-full">
+      <div className="sm:hidden h-full flex">
         <Sidebar />
       </div>
       <div className="w-full sm:flex h-full hidden items-center justify-center">

@@ -343,35 +343,37 @@ export default function Page() {
           className="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-2 h-full flex-wrap w-full flex-1"
         >
           <DashboardCard className="min-h-[240px] gap-5 h-full w-full flex-col flex">
-            <div className="flex w-full h-fit text-nowrap sm:flex-nowrap flex-wrap">
+            <div className="flex w-full h-fit text-nowrap sm:flex-nowrap ">
               <div className="flex flex-col w-full gap-4">
-                <p className="leading-4 tracking-wide">Market pulse</p>
-                <p className="flex gap-6 md:text-lg text-md font-bold">
+                <div className="flex">
+                  <p className="leading-4 tracking-wide">Market pulse</p>
+
+                  <div className="ml-auto max-w-[200px] flex w-full">
+                    <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-full p-1">
+                      <TabTrigger
+                        value="day"
+                        className="text-sm md:text-xs min-h-[30px]"
+                        activeClassname="font-medium"
+                      >
+                        Day
+                      </TabTrigger>
+                      <TabTrigger
+                        value="month"
+                        className="text-sm md:text-xs min-h-[30px]"
+                        activeClassname="font-medium"
+                      >
+                        Month
+                      </TabTrigger>
+                    </TabTriggerContainer>
+                  </div>
+                </div>
+                <p className="flex sm:gap-6 md:text-lg text-md font-bold">
                   <span className="tracking-tightest">569 123 $</span>
                   <span className="md:text-sm text-xs font-medium mt-auto mb-1 tracking-wide text-green-500 flex items-center justify-center gap-1">
                     <ArrowTopRightIcon className="w-6 h-6" />
                     12 545 $
                   </span>
                 </p>
-              </div>
-
-              <div className="ml-auto max-w-[200px] flex w-full">
-                <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-full p-1">
-                  <TabTrigger
-                    value="day"
-                    className="text-sm md:text-xs min-h-[30px]"
-                    activeClassname="font-medium"
-                  >
-                    Day
-                  </TabTrigger>
-                  <TabTrigger
-                    value="month"
-                    className="text-sm md:text-xs min-h-[30px]"
-                    activeClassname="font-medium"
-                  >
-                    Month
-                  </TabTrigger>
-                </TabTriggerContainer>
               </div>
             </div>
             <TabContent

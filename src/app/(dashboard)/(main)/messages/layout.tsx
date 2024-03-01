@@ -8,7 +8,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex gap-5 w-full h-full ">
+    <div className="flex gap-5 w-full">
       <div className="pt-[10px] h-full md:block hidden w-full max-w-[354px]">
         <Sidebar />
       </div>

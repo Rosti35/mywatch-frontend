@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const BottomNavigation = () => {
   return (
-    <div className="p-[10px] fixed bottom-0 sm:hidden flex justify-between w-full items-center px-[32px]  backdrop-blur-md bg-white/50">
+    <div className="p-[10px] fixed bottom-0 sm:hidden z-50 flex justify-center [&>*]:w-[70px] w-full items-center px-[32px]  backdrop-blur-md bg-white/50">
       <Link
         href="/dashboard"
         className="text-black  flex flex-col justify-center items-center leading-7"
@@ -38,7 +38,7 @@ const BottomNavigation = () => {
         className="text-black  flex flex-col justify-center items-center leading-7"
       >
         <MessageIcon className="w-6 h-6" />
-        <p className="text-xs font-medium">Messages</p>
+        <p className="text-xs font-medium">Chats</p>
       </Link>
 
       <Link
