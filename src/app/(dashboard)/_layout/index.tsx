@@ -1,7 +1,7 @@
 import {ReactNode, Suspense} from 'react';
 
 export const Title = ({children}: Readonly<{children: React.ReactNode}>) => (
-  <div className="text-lg font-bold leading-[32px] tracking-tight sm:mb-[30px] mb-6">
+  <div className="sm:text-lg text-md font-bold sm:leading-[32px] leading-[42px] tracking-tight sm:mb-[30px] mb-[17px]">
     {children}
   </div>
 );
@@ -22,7 +22,7 @@ export function DashboardPageLayout({
   title: string | ReactNode;
 }>) {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex overflow-x-hidden flex-col h-full">
       <Title>{title}</Title>
 
       {children}

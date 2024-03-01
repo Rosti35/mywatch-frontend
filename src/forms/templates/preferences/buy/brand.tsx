@@ -3,7 +3,7 @@ import {PlusIcon} from '@/ui/common/icons/plus';
 
 export const Brand = () => {
   return (
-    <div className="h-full max-h-[400px] flex flex-col overflow-auto">
+    <div className="h-full flex flex-col overflow-auto">
       <div className="flex w-full mb-[24px] items-center">
         <p className="sm:text-md text-sm font-semibold">Brand</p>
 

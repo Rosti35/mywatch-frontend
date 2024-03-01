@@ -2,12 +2,14 @@ import {CardRoot} from '@/ui/common/card';
 
 export const TotalDealsStatus = () => {
   return (
-    <CardRoot className="w-full h-full p-6 pt-5 gap-[14px]">
-      <p>Total deals</p>
+    <CardRoot className="w-full h-full sm:p-5 p-5 gap-[14px]">
+      <p className="text-[14px] sm:text-sm">Total deals</p>
 
-      <p className="text-lg gap-[10px] font-semibold flex items-center">
-        <span className="leading-10">1 200</span>
-        <span className="text-sm font-normal text-green-600">+ 123 this month</span>
+      <p className="text-lg gap-[10px] font-semibold flex flex-wrap sm:flex-nowrap items-center">
+        <span className="leading-8 sm:text-lg text-md">1 200</span>
+        <span className="sm:text-sm text-[14px] leading-2 font-normal text-green-600">
+          + 123 this month
+        </span>
       </p>
     </CardRoot>
   );

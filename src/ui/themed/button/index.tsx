@@ -11,7 +11,7 @@ const ButtonSmall = ({className, ...props}: HTMLAttributes<HTMLButtonElement>) =
   return (
     <button
       className={cn(
-        `flex items-center justify-center px-5 h-button-sm transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
+        `flex items-center  sm:text-sm text-xs justify-center sm:px-5 px-[14px] h-button-sm transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
         className,
       )}
       {...props}
@@ -33,7 +33,7 @@ const ButtonLarge = ({className, ...props}: HTMLAttributes<HTMLButtonElement>) =
   return (
     <button
       className={cn(
-        `flex items-center justify-center h-button-lg px-[30px] transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
+        `flex items-center sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-sm   px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
         className,
       )}
       {...props}
