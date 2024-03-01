@@ -26,8 +26,6 @@ export function DashboardPageLayout({
       <Title>{title}</Title>
 
       {children}
-
-      <div className="h-48" />
     </div>
   );
 }
