@@ -63,7 +63,7 @@ export default function Layout({
         <Sidebar />
       </div>
       <div className="flex flex-col w-full">
-        <div className="w-full h-full">{children}</div>
+        {children}
 
         <BottomNavigation />
       </div>
