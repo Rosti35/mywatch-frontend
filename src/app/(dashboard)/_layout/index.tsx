@@ -22,10 +22,12 @@ export function DashboardPageLayout({
   title: string | ReactNode;
 }>) {
   return (
-    <div className="flex overflow-x-hidden flex-col h-full">
+    <div className="flex overflow-x-hidden flex-col overflow-y-hidden h-full">
       <Title>{title}</Title>
 
       {children}
+
+      <div className="h-48" />
     </div>
   );
 }

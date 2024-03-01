@@ -12,14 +12,14 @@ const Title = () => {
     <div className="flex w-full flex-col sm:gap-5 gap-[8px]">
       <p className="tracking-tighter sm:leading-7 leading-[42px]">Sell watches</p>
 
-      <div className="flex sm:gap-4 gap-2 font-normal text-sm text-nowrap">
+      <div className="flex  sm:gap-4 gap-2 font-normal text-sm text-nowrap">
         <Link
           href={'/stock'}
-          className="sm:w-fit w-full"
+          className="w-fit "
         >
           <Button
             size="sm"
-            className="bg-themed-black-primary  gap-[10px] text-white rounded-full w-full sm:w-fit flex items-center"
+            className="bg-themed-black-primary text-nowrap whitespace-nowrap  gap-[10px] text-white rounded-full w-full sm:w-fit flex items-center"
           >
             <PlusIcon className="w-6 h-6" />
             Add watch

@@ -18,7 +18,7 @@ const BottomNavigation = () => {
       </Link>
 
       <Link
-        href="/dashboard"
+        href="/sell"
         className="text-black  flex flex-col justify-center items-center leading-7"
       >
         <SaleIcon className="w-6 h-6" />
@@ -26,23 +26,23 @@ const BottomNavigation = () => {
       </Link>
 
       <Link
-        href="/dashboard"
+        href="/buy"
         className="text-black  flex flex-col justify-center items-center leading-7"
       >
         <ShopIcon className="w-6 h-6" />
-        <p className="text-xs font-medium">Sell</p>
+        <p className="text-xs font-medium">Buy</p>
       </Link>
 
       <Link
-        href="/dashboard"
+        href="/messages"
         className="text-black  flex flex-col justify-center items-center leading-7"
       >
         <MessageIcon className="w-6 h-6" />
-        <p className="text-xs font-medium">Sell</p>
+        <p className="text-xs font-medium">Messages</p>
       </Link>
 
       <Link
-        href="/dashboard"
+        href="/settings"
         className="text-black  flex flex-col justify-center items-center leading-7"
       >
         <SettingIcon className="w-6 h-6" />
@@ -58,12 +58,12 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex overflow-hidden gap-4 h-screen bg-themed-grey-200">
+    <main className="flex gap-4 bg-themed-grey-200">
       <div className="w-full hidden xl:block p-[10px] min-w-[270px] max-w-[270px]">
         <Sidebar />
       </div>
       <div className="flex flex-col w-full">
-        {children}
+        <div className="w-full overflow-auto ">{children}</div>
 
         <BottomNavigation />
       </div>
