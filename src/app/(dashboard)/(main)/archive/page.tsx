@@ -1,12 +1,12 @@
 'use client';
 
-import {DashboardPageLayout} from '../_layout';
 import Link from 'next/link';
 import {Warehouse as WarehousePreview, WatchDetails} from '@/sections/demo/watch-card';
 import {TabContent, TabRoot} from '@/ui/common/tabs';
 import {TabTriggerWithBadge} from '@/ui/themed/tabs';
 import {MessageIcon} from '@/ui/common/icons/message';
 import {FlagImage, defaultCountries} from 'react-international-phone';
+import {DashboardPageLayout} from '../../_layout';
 
 export default function Page() {
   return (

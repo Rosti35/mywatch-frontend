@@ -1,7 +1,6 @@
 'use client';
 
 import {PropsWithChildren, useRef, useState} from 'react';
-import {DashboardPageLayout} from '../_layout';
 import {useEventListener} from '@/hooks/common/use-event-listener';
 import {UploadIcon} from '@/ui/common/icons/upload';
 import {AnimatePresence, motion} from 'framer-motion';
@@ -9,6 +8,7 @@ import {Cross1Icon} from '@radix-ui/react-icons';
 import {TrashIcon} from '@/ui/common/icons/trash';
 import {Timer} from '@/ui/common/timer';
 import {Button} from '@/ui/themed/button';
+import {DashboardPageLayout} from '../../_layout';
 
 const Title = () => {
   return (
