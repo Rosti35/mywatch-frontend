@@ -304,13 +304,13 @@ export default function Page() {
                     </TabTriggerContainer>
                   </div>
                 </div>
-                <p className="flex sm:gap-6 leading-none md:text-lg text-md font-bold">
+                <div className="flex sm:gap-6 leading-none md:text-lg text-md font-bold">
                   <span className="tracking-tightest">569 123 $</span>
                   <div className="md:text-sm text-xs font-medium mt-auto tracking-wide text-green-500 flex items-center justify-center gap-1">
                     <ArrowTopRightIcon className="w-6 h-6" />
                     12 545 $
                   </div>
-                </p>
+                </div>
               </div>
             </div>
             <TabContent

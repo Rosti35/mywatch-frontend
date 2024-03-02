@@ -29,7 +29,7 @@ export const DealerVerificationLabel = () => (
 );
 
 export const DealerVerification = ({showSince}: DealerVerificationProps) => (
-  <p className="flex sm:gap-[16px] gap-1 font-normal sm:text-sm text-xs text-nowrap">
+  <div className="flex sm:gap-[16px] gap-1 font-normal sm:text-sm text-xs text-nowrap">
     <DealerVerificationLabel />
 
     <span className="flex sm:text-sm text-[14px] text-nowrap gap-[10px] items-center">
@@ -38,7 +38,7 @@ export const DealerVerification = ({showSince}: DealerVerificationProps) => (
     </span>
 
     {showSince ? <span className="text-themed-grey-400 sm:block hidden">Since 2023</span> : null}
-  </p>
+  </div>
 );
 
 export const DealerProfile = ({avatar, children}: {avatar: ReactNode} & PropsWithChildren) => {
