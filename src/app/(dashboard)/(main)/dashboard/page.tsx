@@ -320,7 +320,7 @@ export default function Page() {
               <LineChart data={data} />
             </TabContent>
           </DashboardCardRoot>
-          <DashboardCardRoot className="gap-6 w-full h-full flex flex-col">
+          <DashboardCardRoot className="gap-6 w-full h-fit flex flex-col">
             <DashboardCardTitle className="items-center gap-2">
               <DashboardTitleLink
                 href="/messages"

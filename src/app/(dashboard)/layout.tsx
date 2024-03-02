@@ -63,7 +63,7 @@ export default function Layout({
         <Sidebar />
       </div>
       <div className="flex relative flex-col w-full overflow-auto">
-        <div className="w-full absolute">{children}</div>
+        <div className="w-full ">{children}</div>
 
         <BottomNavigation />
       </div>
