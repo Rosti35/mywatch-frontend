@@ -1,3 +1,5 @@
+'use client';
+
 import {Message} from '@/app/(dashboard)/_components/message';
 import {Title} from '@/app/(dashboard)/_layout';
 import {cn} from '@/lib/cn';

@@ -5,7 +5,7 @@ import {TabContent, TabRoot, TabTrigger} from '@/ui/themed/tabs';
 
 export default function Subscription() {
   return (
-    <div className="flex flex-col gap-4 sm:h-full h-svh">
+    <div className="flex flex-col gap-4 sm:h-full">
       <span className="flex flex-col gap-4">
         <h1 className="text-lg font-semibold leading-8">My subscription</h1>
         <p className="leading-6">

@@ -58,12 +58,12 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex gap-4 bg-themed-grey-200">
+    <main className="flex w-full h-full gap-4 bg-themed-grey-200">
       <div className="w-full hidden xl:block p-[10px] min-w-[270px] max-w-[270px]">
         <Sidebar />
       </div>
-      <div className="flex flex-col w-full">
-        <div className="w-full overflow-auto ">{children}</div>
+      <div className="flex relative flex-col w-full overflow-auto">
+        <div className="w-full absolute">{children}</div>
 
         <BottomNavigation />
       </div>

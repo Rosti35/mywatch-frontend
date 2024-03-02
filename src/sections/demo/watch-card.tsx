@@ -123,7 +123,7 @@ export const RatingBadge = ({className, ...props}: RatingBadgeProps) => {
         {...props}
       />
       4.8
-      <span className="text-themed-grey-400">(543 deals)</span>
+      <span className="text-themed-grey-400 sm:text-sm text-xs">(543 deals)</span>
     </span>
   );
 };

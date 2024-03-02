@@ -1,13 +1,10 @@
-import {sampleDealer} from '@/fake';
 import {BlacklistStatus} from '@/sections/dealer/status/blacklisted';
 import {PartnersStatus} from '@/sections/dealer/status/partners';
 import {RatingStatus} from '@/sections/dealer/status/rating';
 import {TotalDealsStatus} from '@/sections/dealer/status/total-deals';
-import {CardRoot, CardTitle} from '@/ui/common/card';
+import {CardRoot} from '@/ui/common/card';
 import {PlusIcon} from '@/ui/common/icons/plus';
-import {TimeIcon} from '@/ui/common/icons/time';
 import {FlagImage, defaultCountries} from 'react-international-phone';
-import {RatingBadge} from '../_components/rating-badge';
 import {WhatsappIcon} from '@/ui/common/icons/whapsapp';
 import {TelegramIcon} from '@/ui/common/icons/telegram';
 import {MailIcon} from '@/ui/common/icons/mail';
@@ -16,26 +13,21 @@ import Link from 'next/link';
 import {ArrowLeftIcon} from '@radix-ui/react-icons';
 import {WatchPreview} from '@/sections/demo/watch-card';
 import {Button} from '@/ui/themed/button';
+import {
+  DealerCompanyName,
+  DealerProfile,
+  DealerProfileAvatar,
+  DealerVerification,
+} from '@/ui/themed/dealer';
 
 const [, iso2] = defaultCountries[0];
 
-type DealerProfileProps = {
-  name: string;
-};
-
-const DealerProfile = ({name}: DealerProfileProps) => {
+const Dealer = () => {
   return (
-    <div className="flex sm:gap-5 gap-4 items-center">
-      <div className="sm:h-20 sm:w-20 w-[50px] h-[50px] rounded-full bg-blue-500" />
-
-      <div className="flex flex-col justify-center">
-        <p className="sm:text-lg text-[18px] font-bold">{name}</p>
-
-        <p>
-          Out premium dealer <span className="text-themed-grey-400 ml-4">Since 2023</span>
-        </p>
-      </div>
-    </div>
+    <DealerProfile avatar={<DealerProfileAvatar />}>
+      <DealerCompanyName />
+      <DealerVerification />
+    </DealerProfile>
   );
 };
 
@@ -107,7 +99,7 @@ export default function Page() {
             <ArrowLeftIcon className="w-6 h-6" />
             <span className="tracking-wide sm:text-sm text-[14px]"> Back to list</span>
           </Link>
-          <DealerProfile name={sampleDealer.name} />
+          <Dealer />
 
           <p className="md:leading-6 sm:text-sm text-[14px] leading-[21px] md:tracking-wide">
             Released in 1963, Cosmograph Daytona watches have long gone beyond just a work of

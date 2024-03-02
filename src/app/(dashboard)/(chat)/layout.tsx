@@ -1,4 +1,5 @@
-import {SettingsSidebar} from './settings/_components/sidebar';
+import {Suspense} from 'react';
+import {Sidebar} from './messages/_components';
 
 export default function Layout({
   children,
@@ -6,15 +7,17 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col w-full sm:h-screen h-full">
+    <div className="flex flex-col w-full h-screen">
       <div className="flex gap-6 w-full h-full sm:pb-0 pb-[72px]">
-        <div className="sm:block pl-[5px] py-[40px] hidden flex-1 w-full min-w-[262px] h-full max-w-[262px]">
-          <SettingsSidebar />
+        <div className="sm:block pl-[5px] py-[40px] hidden flex-1 w-full min-w-[356px] h-full max-w-[356px]">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Sidebar />
+          </Suspense>
         </div>
         <div className="w-full overflow-hidden h-full md:py-[30px] md:pr-[40px] p-0 ">
           <div className="w-full h-full overflow-auto sm:bg-themed-grey-100  sm:rounded-3xl bg-transparent rounded-none">
             <div className="sm:p-10 p-4 pb-0 w-full h-full">
-              <div className="w-full h-full">{children}</div>
+              <div className="w-full h-full sm:pb-0 pb-6">{children}</div>
             </div>
           </div>
         </div>
