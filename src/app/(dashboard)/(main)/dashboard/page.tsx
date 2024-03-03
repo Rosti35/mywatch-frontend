@@ -109,7 +109,7 @@ const StockStatus = () => (
         <DashboardTitleLink href="/stock">
           <p className="leading-5 md:text-sm text-[14px] text-nowrap">My stock</p>
         </DashboardTitleLink>
-        <p className="mt-auto md:text-lg text-md leading-none font-bold">12</p>
+        <p className="mt-auto md:text-lg text-md leading-[22px] font-bold">12</p>
       </DashboardCardActivity>
       <AddButton className="my-auto" />
     </DashboardCardTitle>
@@ -192,7 +192,7 @@ const PartnersStatus = () => (
 );
 
 const Chat = () => (
-  <DashboardCardRoot className="gap-6 max-h-[300px] w-full h-fit flex flex-col">
+  <DashboardCardRoot className="gap-6 min-h-[300px] w-full h-fit flex flex-col">
     <DashboardCardTitle className="items-center gap-2">
       <DashboardTitleLink
         href="/messages"
@@ -285,7 +285,7 @@ const MarketPulse = () => (
     defaultValue="day"
     className="w-full"
   >
-    <DashboardCardRoot className="min-h-[240px] gap-5 h-full w-full flex-col flex">
+    <DashboardCardRoot className="min-h-[300px] gap-5 h-full w-full flex-col flex">
       <div className="flex w-full h-fit text-nowrap sm:flex-nowrap ">
         <div className="flex flex-col w-full gap-1">
           <div className="flex ">
@@ -335,7 +335,7 @@ export default function Page() {
   const newUser = Boolean(params.get('new'));
 
   return (
-    <div className="w-full h-full sm:pt-[40px]  px-4 lg:px-6 flex flex-col">
+    <div className="w-full h-full sm:pt-[40px] sm:pr-[40px]  px-4 sm:pl-[23px] flex flex-col">
       <Title>
         <Dealer />
       </Title>

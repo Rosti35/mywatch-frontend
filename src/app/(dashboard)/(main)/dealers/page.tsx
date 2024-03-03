@@ -218,27 +218,29 @@ export default function Page() {
       >
         <TabRoot
           defaultValue="dealers"
-          className="gap-[30px] h-full w-full overflow-hidden"
+          className="gap-[30px] h-full w-full overflow-x-hidden"
         >
-          <div className="overflow-auto sm:w-fit w-full px-4 md:px-0 items-center whitespace-nowrap sm:h-[50px] h-[40px] gap-4 flex">
-            <TabTriggerWithBadge
-              value="dealers"
-              count={0}
-            >
-              All dealers
-            </TabTriggerWithBadge>
-            <TabTriggerWithBadge
-              value="partners"
-              count={3}
-            >
-              My partners
-            </TabTriggerWithBadge>
-            <TabTriggerWithBadge
-              value="black_list"
-              count={3}
-            >
-              Black list
-            </TabTriggerWithBadge>
+          <div className="overflow-x-auto overflow-y-hidden">
+            <div className="sm:w-fit w-full px-4 md:px-0 items-center whitespace-nowrap h-[80px] gap-4 flex">
+              <TabTriggerWithBadge
+                value="dealers"
+                count={0}
+              >
+                All dealers
+              </TabTriggerWithBadge>
+              <TabTriggerWithBadge
+                value="partners"
+                count={3}
+              >
+                My partners
+              </TabTriggerWithBadge>
+              <TabTriggerWithBadge
+                value="black_list"
+                count={3}
+              >
+                Black list
+              </TabTriggerWithBadge>
+            </div>
           </div>
 
           <TabContent

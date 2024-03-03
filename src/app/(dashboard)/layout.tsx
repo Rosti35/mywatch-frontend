@@ -59,7 +59,7 @@ export default function Layout({
 }>) {
   return (
     <main className="flex w-full h-full bg-themed-grey-200">
-      <div className="w-full hidden xl:block py-[10px] pl-[10px] min-w-[270px] max-w-[270px]">
+      <div className="w-full hidden xl:block py-[10px] px-[10px] min-w-[270px] max-w-[270px]">
         <Sidebar />
       </div>
       <div className="flex relative flex-col w-full overflow-auto">

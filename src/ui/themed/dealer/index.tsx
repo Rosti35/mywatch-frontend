@@ -7,7 +7,7 @@ export const DealerProfileAvatar = () => (
   <div className="sm:max-h-20 sm:max-w-20 max-w-[50px] my-auto w-full h-auto aspect-square rounded-full bg-blue-500" />
 );
 export const DealerCompanyName = () => (
-  <p className="sm:text-lg text-[18px] font-bold sm:tracking-tight tracking-wide">Ineichen Zuriсh</p>
+  <p className="sm:text-lg text-[18px] lg:leading-[42px] font-bold sm:tracking-tight tracking-wide">Ineichen Zuriсh</p>
 );
 
 type DealerVerificationProps = {
@@ -29,7 +29,7 @@ export const DealerVerificationLabel = () => (
 );
 
 export const DealerVerification = ({showSince}: DealerVerificationProps) => (
-  <div className="flex sm:gap-[16px] gap-1 font-normal sm:text-sm text-xs text-nowrap">
+  <div className="flex sm:gap-[16px] sm:leading-5 gap-1 font-normal sm:text-sm text-xs text-nowrap">
     <DealerVerificationLabel />
 
     <span className="flex sm:text-sm text-[14px] text-nowrap gap-[10px] items-center">
