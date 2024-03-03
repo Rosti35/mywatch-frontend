@@ -120,7 +120,7 @@ const Filters = () => (
 
 const DealerCatalogItemMobile = () => {
   return (
-    <div className="w-full border-b border-b-[#D4D4D4] last:border-b-0 first:pt-0 py-[20px] flex h-fit">
+    <div className="w-full border-b border-b-[#D4D4D4] last:border-b-0 first:pt-0 py-[14px] flex h-fit">
       <div className="flex gap-[10px] flex-col">
         <Link
           href={`dealers/${sampleDealer.id}`}
@@ -140,17 +140,17 @@ const DealerCatalogItemMobile = () => {
         <p>Current stock {sampleDealer.stock}</p>
       </div>
 
-      <div className="flex flex-col ml-auto">
+      <div className="flex flex-col justify-center gap-[7px] ml-auto">
         <Button
           size="sm"
-          className="mt-auto text-sm sm:px-5 px-[14px] sm:text-[14px]"
+          className="text-sm sm:px-5 px-[14px] sm:text-[14px]"
         >
           <PlusIcon className="w-6 h-6" />
         </Button>
 
         <Button
           size="sm"
-          className="mt-auto text-sm bg-white text-red-500 sm:px-5 px-[14px] sm:text-[14px]"
+          className="bg-white text-red-500 sm:px-5 px-[20px] text-[14px]"
         >
           Block
         </Button>
@@ -208,9 +208,9 @@ const DealerCatalogItem = ({name, location, iso2, stock, id}: DealerCatalogItemP
 
 export default function Page() {
   return (
-    <div className="w-full h-full sm:pt-[40px] lg:px-6 flex flex-col">
+    <div className="w-full h-full sm:pt-[40px] lg:pl-[23px]  flex flex-col">
       <span className=" sm:px-0 px-4">
-        <Title>Out trusted dealers</Title>
+        <Title>Our trusted dealers</Title>
       </span>
       <div
         title="Out trusted dealers"
@@ -218,37 +218,35 @@ export default function Page() {
       >
         <TabRoot
           defaultValue="dealers"
-          className="gap-[30px] h-full w-full overflow-x-hidden"
+          className="gap-[30px] h-full w-full"
         >
-          <div className="overflow-x-auto overflow-y-hidden">
-            <div className="sm:w-fit w-full px-4 md:px-0 items-center whitespace-nowrap h-[80px] gap-4 flex">
-              <TabTriggerWithBadge
-                value="dealers"
-                count={0}
-              >
-                All dealers
-              </TabTriggerWithBadge>
-              <TabTriggerWithBadge
-                value="partners"
-                count={3}
-              >
-                My partners
-              </TabTriggerWithBadge>
-              <TabTriggerWithBadge
-                value="black_list"
-                count={3}
-              >
-                Black list
-              </TabTriggerWithBadge>
-            </div>
+          <div className="sm:w-fit w-full h-full sm:[&>*]:h-[50px] [&>*]:h-[40px] overflow-auto px-4 md:px-0 items-center whitespace-nowrap sm:gap-[14px] gap-[10px] flex">
+            <TabTriggerWithBadge
+              value="dealers"
+              count={0}
+            >
+              All dealers
+            </TabTriggerWithBadge>
+            <TabTriggerWithBadge
+              value="partners"
+              count={3}
+            >
+              My partners
+            </TabTriggerWithBadge>
+            <TabTriggerWithBadge
+              value="black_list"
+              count={3}
+            >
+              Black list
+            </TabTriggerWithBadge>
           </div>
 
           <TabContent
             disableTransition
             value="dealers"
-            className="w-full h-full"
+            className="w-full h-full "
           >
-            <div className="flex flex-col w-full h-full gap-[16px]">
+            <div className="flex flex-col lg:pr-[40px] w-full h-full gap-[16px]">
               <Filters />
 
               <div className="md:block hidden">

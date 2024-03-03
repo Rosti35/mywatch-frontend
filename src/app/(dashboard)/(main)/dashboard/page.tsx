@@ -109,7 +109,9 @@ const StockStatus = () => (
         <DashboardTitleLink href="/stock">
           <p className="leading-5 md:text-sm text-[14px] text-nowrap">My stock</p>
         </DashboardTitleLink>
-        <p className="mt-auto md:text-lg text-md leading-[22px] font-bold">12</p>
+        <p className="mt-auto md:text-lg text-md sm:leading-[42.4px] leading-[22px] font-bold">
+          12
+        </p>
       </DashboardCardActivity>
       <AddButton className="my-auto" />
     </DashboardCardTitle>
@@ -119,11 +121,13 @@ const StockStatus = () => (
 const SalesStatus = () => (
   <DashboardCardRoot className="gap-[10px] flex flex-col">
     <DashboardCardTitle>
-      <DashboardTitleLink href="/sell">My active sales</DashboardTitleLink>
+      <DashboardTitleLink href="/sell">
+        <p className="leading-5 md:text-sm text-[14px] text-nowrap">My active sales</p>
+      </DashboardTitleLink>
     </DashboardCardTitle>
-    <DashboardCardContent className=" flex items-center justify-between sm:justify-normal sm:gap-[14px]">
-      <span className="md:text-lg text-md font-bold">10</span>
-      <span className="rounded-full border text-nowrap border-themed-black-primary md:text-sm text-xs h-fit px-[10px] leading-5 py-[4px]">
+    <DashboardCardContent className=" flex items-center gap-1 sm:leading-[42.5px] leading-[22px] justify-between sm:justify-normal sm:gap-[14px]">
+      <span className="md:text-lg text-md font-bold">12</span>
+      <span className="rounded-full sm:ml-0 ml-auto border tracking-tight text-nowrap border-themed-black-primary md:text-sm text-xs h-fit sm:px-4 px-[10px] sm:leading-5 sm:py-[4px]">
         10 replies
       </span>
       <Badge>+2</Badge>
@@ -161,7 +165,7 @@ const SellsStatus = () => (
     <DashboardCardContent>
       <Link
         href="/settings/buying"
-        className="mt-auto font-normal tracking-wide sm:text-[15px] text-xs items-center sm:leading-none flex gap-[6px]"
+        className="mt-auto font-medium tracking-[-0.4px] sm:leading-none leading-8 sm:text-[16px] text-xs items-center flex gap-[6px]"
       >
         Set up your buying preferences <ArrowTopRightIcon className="w-6 h-6" />
       </Link>
@@ -173,8 +177,10 @@ const PartnersStatus = () => (
   <DashboardCardRoot className="flex flex-col">
     <DashboardCardTitle>
       <DashboardCardActivity>
-        <DashboardTitleLink href="/dealers">My partners</DashboardTitleLink>
-        <p className="text-lg font-bold">98</p>
+        <DashboardTitleLink href="/dealers">
+          <p className="leading-[7px] sm:leading-none md:text-sm text-xs  text-nowrap">My partners</p>
+        </DashboardTitleLink>
+        <p className="sm:text-lg text-md font-bold sm:leading-[42.5px] leading-[42px]">98</p>
       </DashboardCardActivity>
       <AddButton />
     </DashboardCardTitle>
@@ -219,18 +225,15 @@ const Chat = () => (
 
 const SendInvitationCard = () => (
   <DashboardCardRoot className="bg-themed-black-primary text-white flex">
-    <DashboardCardActivity className="flex flex-col gap-4">
+    <DashboardCardActivity className="flex flex-col sm:gap-4 gap-2">
       <p className="font-medium text-[22px] leading-6 tracking-[-0.02rem]">
         Invite your trusted partners
       </p>
-      <p className="leading-5 font-light text-themed-grey-300">
+      <p className="sm:leading-5 leading-[16px] sm:text-sm text-xs font-light text-themed-grey-300">
         Start making quick, comfortable convenient deals with no fee
       </p>
       <SendInvitationDialog>
-        <Button
-          size="md"
-          className="mt-auto bg-themed-grey-100 text-themed-black-primary w-fit"
-        >
+        <Button size='md' className="sm:mt-auto mt-[9px] sm:px-6 px-5 tracking-[-0.4px] bg-themed-grey-100 text-themed-black-primary w-fit">
           Send invintation
         </Button>
       </SendInvitationDialog>
@@ -285,14 +288,15 @@ const MarketPulse = () => (
     defaultValue="day"
     className="w-full"
   >
-    <DashboardCardRoot className="min-h-[300px] gap-5 h-full w-full flex-col flex">
+    <DashboardCardRoot className="sm:min-h-[300px] min-h-[240px]  gap-5 h-full w-full flex-col flex">
       <div className="flex w-full h-fit text-nowrap sm:flex-nowrap ">
         <div className="flex flex-col w-full gap-1">
           <div className="flex ">
-            <p className="tracking-wide">Market pulse</p>
+          <p className="leading-[12px] md:text-sm text-xs  text-nowrap">Market pulse</p>
+            
 
             <div className="ml-auto max-w-[200px] flex w-full">
-              <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-full p-1">
+              <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-fit ml-auto p-1">
                 <TabTrigger
                   value="day"
                   className="text-xs md:text-sm min-h-[30px]"
@@ -312,7 +316,7 @@ const MarketPulse = () => (
           </div>
           <div className="flex sm:gap-6 leading-none md:text-lg text-md font-bold">
             <span className="tracking-tightest">569 123 $</span>
-            <div className="md:text-sm text-xs font-medium mt-auto tracking-wide text-green-500 flex items-center justify-center gap-1">
+            <div className="md:text-sm text-xs leading-[50.5px] ml-[2px] font-medium mt-auto text-green-500 flex items-center justify-center gap-1">
               <ArrowTopRightIcon className="w-6 h-6" />
               12 545 $
             </div>
@@ -335,7 +339,7 @@ export default function Page() {
   const newUser = Boolean(params.get('new'));
 
   return (
-    <div className="w-full h-full sm:pt-[40px] sm:pr-[40px]  px-4 sm:pl-[23px] flex flex-col">
+    <div className="w-full h-full sm:pt-[40px] sm:pr-[40px]  px-4 sm:pl-[22px] flex flex-col">
       <Title>
         <Dealer />
       </Title>
@@ -352,7 +356,7 @@ export default function Page() {
           <SalesStatus />
         </div>
 
-        <div className="flex lg:flex-nowrap flex-wrap sm:gap-5 gap-2 w-full  h-full ">
+        <div className="flex lg:flex-nowrap  flex-wrap sm:gap-5 gap-2 w-full  h-full ">
           <SellsStatus />
           <PartnersStatus />
           {newUser ? null : <SendInvitationCard />}

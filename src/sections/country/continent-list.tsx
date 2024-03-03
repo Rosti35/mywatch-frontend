@@ -17,19 +17,16 @@ export const ContinentList = () =>
 
       <div className="grid gap-[10px] mt-[16px] mb-[30px] h-full text-sm sm:grid-cols-2 xl:grid-cols-3 grid-cols-1">
         {countries?.sort().map(([country, iso]) => (
-          <div
-            key={iso}
-            className="flex items-center whitespace-nowrap gap-2"
-          >
-            <Checkbox>
+          <Checkbox key={iso}>
+            <div className="flex items-center whitespace-nowrap gap-[10px]">
               <FlagImage
                 width={24}
                 height={24}
                 iso2={iso}
               />
               <span className="text-ellipsis overflow-hidden max-w-40">{country}</span>
-            </Checkbox>
-          </div>
+            </div>
+          </Checkbox>
         ))}
       </div>
     </div>

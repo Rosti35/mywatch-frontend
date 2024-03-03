@@ -90,10 +90,10 @@ const ContactsCard = () => {
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-[24px] sm:p-[40px] p-4">
+    <div className="flex flex-col gap-[24px] sm:pt-[40px] sm:pl-[23px] sm:pr-[40px]  p-4 py-5">
       <div className="w-full flex gap-[70px]">
         <div className="w-full flex flex-col text-wrap sm:gap-[30px] gap-[18px]">
-          <div>
+          <div className="flex flex-col sm:gap-[14px]">
             <SubrouteTitle
               href="/dealers"
               back="Back"
@@ -110,25 +110,16 @@ export default function Page() {
           </p>
 
           <div className="flex sm:gap-[10px] gap-2 flex-wrap text-nowrap">
-            <Button
-              size="md"
-              className="gap-[10px] text-sm sm:w-fit w-full px-[24px]"
-            >
+            <button className="flex items-center sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85 gap-[10px] text-sm sm:w-fit w-full h-[50px] px-[24px]">
               <PlusIcon className="w-6 h-6" />
               Add to my partners
-            </Button>
-            <Button
-              size="md"
-              className="text-themed-black-primary text-sm sm:w-fit w-1/2 flex-1 bg-white"
-            >
+            </button>
+            <button className="flex w-fit items-center sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85 gap-[10px] text-sm sm:flex-auto flex-1 sm:w-fit h-[50px] px-[24px]">
               Sent message
-            </Button>
-            <Button
-              size="md"
-              className="border border-red-600 text-sm bg-transparent sm:w-fit w-1/2  text-red-600"
-            >
+            </button>
+            <button className="flex items-center sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85 gap-[10px] text-sm sm:w-fit sm:flex-auto flex-1 w-fit h-[50px] px-[24px]">
               To black list
-            </Button>
+            </button>
           </div>
         </div>
         <div className="max-w-[400px] hidden md:block min-w-[400px] w-full">
@@ -142,7 +133,7 @@ export default function Page() {
         <PartnersStatus />
       </div>
 
-      <p className="sm:text-lg text-md font-bold sm:mt-[20px]">Now on sale</p>
+      <p className="sm:text-lg text-md font-bold tracking-tight sm:mt-[12px]">Now on sale</p>
       <WatchPreview />
       <WatchPreview />
     </div>

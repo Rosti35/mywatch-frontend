@@ -9,7 +9,7 @@ import {FilterSelect} from '../../_components/filter';
 
 const Title = () => {
   return (
-    <div className="flex w-full flex-col sm:gap-5 gap-5">
+    <div className="flex w-full flex-col sm:gap-5 gap-4">
       <p className="tracking-tighter sm:leading-7 leading-none">Sell watches</p>
 
       <div className="flex  sm:gap-4 gap-2 font-normal overflow-auto text-sm text-nowrap">
@@ -43,7 +43,7 @@ const Title = () => {
 };
 export default function Page() {
   return (
-    <div className="px-4 pb-4 lg:pb-4 lg:px-6 lg:pt-[40px]">
+    <div className="px-4 pb-4 lg:pb-4 lg:pl-[22px] lg:pr-[40px] lg:pt-[42px]">
       <DashboardPageLayout title={<Title />}>
         <div className="h-fit w-full flex flex-col gap-8">
           <div className="space-y-[30px] hidden sm:block">
@@ -57,7 +57,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="w-full h-full flex flex-col gap-5">
+          <div className="w-full h-full flex flex-col sm:gap-5 gap-2">
             <WatchPreview sell />
             <WatchPreview sell />
             <WatchPreview sell />

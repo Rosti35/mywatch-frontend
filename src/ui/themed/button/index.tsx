@@ -22,7 +22,7 @@ const ButtonMedium = ({className, ...props}: HTMLAttributes<HTMLButtonElement>) 
   return (
     <button
       className={cn(
-        `flex items-center justify-center h-button-md px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
+        `flex items-center justify-center sm:h-button-md h-button-sm sm:px-6 px-4 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
         className,
       )}
       {...props}

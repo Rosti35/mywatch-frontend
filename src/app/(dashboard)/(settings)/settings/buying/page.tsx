@@ -25,7 +25,7 @@ export default function Page() {
         className="flex gap-0 flex-col overflow-auto h-full"
         defaultValue="brand"
       >
-        <div className="w-full items-center px-4 sm:px-0 whitespace-nowrap overflow-x-auto min-h-[50px] gap-[14px] h-fit flex">
+        <div className="w-full sm:w-fit items-center px-4 lg:px-0 whitespace-nowrap overflow-auto min-h-[50px] sm:[&>*]:h-[50px] [&>*]:h-[40px] gap-[14px] h-fit flex">
           <TabTriggerWithBadge
             value="brand"
             count={2}

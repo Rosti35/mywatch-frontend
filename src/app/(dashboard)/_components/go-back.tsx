@@ -13,7 +13,7 @@ export const GoBack = ({
   >
     <Link
       href={href}
-      className="w-fit flex items-center gap-2 font-medium text-sm"
+      className="w-fit flex items-center gap-[10px] tracking-[-0.4px] font-medium text-sm"
     >
       <ArrowLeftIcon className="w-6 h-6" />
       {label}

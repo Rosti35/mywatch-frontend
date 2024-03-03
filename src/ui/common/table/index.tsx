@@ -23,7 +23,7 @@ export const TableRow = ({children, className, ...props}: HTMLAttributes<HTMLDiv
         'w-full grid-cols-5 text-nowrap grid [&>*]:h-[90px] items-center border-t border-t-themed-grey-300',
         className,
       )}
-      style={{gridTemplateColumns: '23.3% 22.1% 24.4% 16% 0%'}}
+      style={{gridTemplateColumns: '23% 22.3% 24.6% 16.7% 0%'}}
       {...props}
     >
       {children}

@@ -1,7 +1,7 @@
 import {ReactNode, Suspense} from 'react';
 
 export const Title = ({children}: Readonly<{children: React.ReactNode}>) => (
-  <div className="sm:text-lg text-md sm:px-0 sm:mt-0 mt-[16px] font-bold sm:leading-[32px] leading-none tracking-tight sm:mb-[30px] mb-[20px]">
+  <div className="sm:text-lg text-md sm:px-0 sm:mt-0 mt-[25px] font-bold sm:leading-[32px] leading-none sm:tracking-tight tracking-[-0.5px] sm:mb-[30px] mb-[20px]">
     {children}
   </div>
 );

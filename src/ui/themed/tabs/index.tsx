@@ -74,7 +74,7 @@ export const TabTriggerWithBadge = ({
     <TabTrigger
       {...props}
       disableTransition
-      className="sm:px-6 px-4 md:py-3 max-h-[50px] min-h-[50px] h-full text-nowrap [&>div]:bg-themed-black-primary [&>div]:text-white w-full flex transition-all gap-[10px] justify-center rounded-full bg-white sm:text-sm text-[14px]"
+      className="sm:px-6 px-4 md:py-3  h-full text-nowrap [&>div]:bg-themed-black-primary [&>div]:text-white w-full flex transition-all gap-[10px] justify-center rounded-full bg-white sm:text-sm text-[14px]"
       activeClassname="text-white bg-themed-black-primary [&>div]:!bg-white [&>div]:text-black"
     >
       {children}

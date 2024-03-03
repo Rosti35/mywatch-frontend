@@ -20,6 +20,6 @@ export const SubrouteTitle = ({
 }: PropsWithChildren & {back?: string; href: string}) => (
   <div className="flex flex-col gap-4 ">
     {back ? <GoBack href={href}>{back}</GoBack> : null}
-    <p className="sm:text-lg text-md font-semibold leading-8 tracking-tight">{children}</p>
+    <p className="sm:text-lg text-md font-semibold leading-2 tracking-tight">{children}</p>
   </div>
 );
