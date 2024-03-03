@@ -31,7 +31,7 @@ export const SettingsLayout = ({
   const prevRoute = usePop();
 
   return (
-    <div className="w-full h-full flex flex-col gap-[30px]">
+    <div className="w-full h-full min-h-[100svh] flex flex-col gap-[30px]">
       <span className="flex flex-col px-4 sm:px-0 sm:pt-[40px] pt-4 gap-[14px]">
         {showBack ? (
           <Link href={prevRoute}>

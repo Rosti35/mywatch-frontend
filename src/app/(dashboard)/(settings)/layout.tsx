@@ -6,7 +6,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col w-full h-dvh">
+    <div className="flex flex-col w-full sm:h-screen min-h-screen">
       <div className="flex gap-6 w-full h-full sm:pb-0 pb-[72px]">
         <div className="sm:block pl-[24px] py-[40px] hidden flex-1 w-full min-w-[262px] h-full max-w-[262px]">
           <SettingsSidebar />
