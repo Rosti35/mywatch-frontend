@@ -8,7 +8,9 @@ export default function Page() {
       showBack
       back="Back to list"
     >
+      <div className="px-4 sm:px-0">
       <Address />
+      </div>
     </SettingsLayout>
   );
 }

@@ -12,9 +12,9 @@ export default function Page() {
     at what price range and from which country. This will allow us to
     offer you only what you need!"
     >
-      <Switch id="1">I only want to receive offers from my partners</Switch>
+      <Switch id="1" className='px-4 sm:px-0'>I only want to receive offers from my partners</Switch>
 
-      <div className="w-full h-full flex py-[40px] overflow-auto">
+      <div className="w-full px-4 sm:px-0 h-full flex sm:py-[40px] overflow-auto">
         <Country />
       </div>
     </SettingsLayout>

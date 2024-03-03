@@ -55,7 +55,7 @@ export default function Page() {
 
             <div className="flex flex-col sm:gap-[14px] gap-[10px] text-nowrap overflow-hidden">
               <p className="sm:text-[20px] text-[18px] font-semibold">Condition</p>
-              <div className="flex gap-[10px]">
+              <div className="flex gap-[10px] overflow-auto p-1 bg-themed-grey-300 rounded-full">
                 <Button size='md' className="rounded-full gap-1 bg-themed-grey-100 justify-center text-themed-black-primary h-[50px] border border-themed-black-primary sm:pl-4  sm:pr-6 flex items-center">
                   <CheckIcon className="w-9 h-9 stroke-current ml-auto text-black" />
                   <span className="tracking-wide">Brand new</span>

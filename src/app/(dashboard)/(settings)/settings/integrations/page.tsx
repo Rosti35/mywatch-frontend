@@ -6,7 +6,7 @@ import {SettingsLayout} from '../_layouts/settings';
 export default function Page() {
   return (
     <SettingsLayout title="Integrations">
-      <div className="overflow-auto grid grid-cols-2 gap-5">
+      <div className="overflow-auto grid lg:grid-cols-2 grid-cols-1 sm:gap-5 gap-[10px] px-4 sm:px-0">
         <IntegrationCard
           integration="Whatsapp"
           connected

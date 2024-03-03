@@ -15,8 +15,8 @@ export default function Page() {
       title="Delivery addresses"
       showSaveButton={false}
     >
-      <div className="h-full overflow-auto">
-        <div className="overflow-auto flex flex-wrap gap-5">
+      <div className="h-full px-4 pb-4">
+        <div className="grid md:grid-cols-2 grid-cols-1 sm:gap-5 gap-[10px]">
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />

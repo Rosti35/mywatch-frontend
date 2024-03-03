@@ -8,7 +8,7 @@ export default function Page() {
       showBack
       back='Back to list'
     >
-      <div className="h-full overflow-auto ">
+      <div className="h-full px-4 sm:px-0 overflow-auto ">
         <Account />
       </div>
     </SettingsLayout>

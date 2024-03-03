@@ -31,8 +31,11 @@ export const SettingsLayout = ({
   const prevRoute = usePop();
 
   return (
-    <div className="w-full sm:h-full  flex flex-col gap-[30px]">
-      <span className="flex flex-col px-4 sm:px-0 sm:pt-[40px] pt-4 gap-[14px]">
+    <div
+      className="w-full sm:h-full  flex flex-col gap-[30px]"
+      style={{minHeight: 'calc(100vh - 90px)'}}
+    >
+      <span className="flex flex-col sm:pt-[40px] px-4 sm:px-0 gap-[14px] pt-5">
         {showBack ? (
           <Link href={prevRoute}>
             <button className="w-fit flex items-center justify-center gap-2">
