@@ -2,12 +2,12 @@ import {StarIcon} from '@/ui/common/icons/star';
 
 export const DealerRating = () => {
   return (
-    <span className="flex gap-3 items-center">
-      <div className="flex gap-2">
+    <span className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center">
         <StarIcon className="w-4 h-4 text-yellow-500" />
         <span className="text-[14px]">4.8</span>
       </div>
-      <span className="text-themed-grey-400">(543 deals)</span>
+      <span className="text-themed-grey-400 text-xs sm:text-sm">543 deals</span>
     </span>
   );
 };

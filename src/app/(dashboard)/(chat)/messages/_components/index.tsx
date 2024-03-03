@@ -14,7 +14,7 @@ import {usePathname} from 'next/navigation';
 
 export const SearchLot = () => (
   <ComboboxRoot options={[]}>
-    <div className="relative rounded-xl w-full flex items-center justify-center bg-themed-grey-300  pl-4 h-[60px]">
+    <div className="relative rounded-xl w-full flex items-center justify-center bg-themed-grey-300  pl-4 sm:h-[60px] h-[50px]">
       <ComboboxTrigger
         className="h-6 w-full tracking-normal text-themed-grey-500"
         placeholder="Search by lot"
@@ -45,18 +45,22 @@ export const MessageLink = ({link}: {link: string}) => {
 
 export const Sidebar = () => {
   return (
-    <div className="w-full h-full flex flex-col">
-      <Title>Messages</Title>
+    <div className="w-full h-full flex flex-col ">
+      <span className=" sm:px-0 px-4">
+        <Title>Messages</Title>
+      </span>
 
-      <SearchLot />
+      <div className="flex flex-col px-4 lg:px-0">
+        <SearchLot />
 
-      <div className="flex flex-col pt-[10px]">
-        {[1, 2, 3].map(k => (
-          <MessageLink
-            key={k}
-            link={String(k)}
-          />
-        ))}
+        <div className="flex flex-col pt-[10px]">
+          {[1, 2, 3].map(k => (
+            <MessageLink
+              key={k}
+              link={String(k)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

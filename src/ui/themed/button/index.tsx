@@ -11,7 +11,7 @@ const ButtonSmall = ({className, ...props}: HTMLAttributes<HTMLButtonElement>) =
   return (
     <button
       className={cn(
-        `flex items-center  sm:text-sm text-xs justify-center sm:px-5 px-[14px] h-button-sm transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
+        `flex items-center  sm:text-sm text-[14px] justify-center sm:px-5 px-[14px] h-button-sm transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`,
         className,
       )}
       {...props}

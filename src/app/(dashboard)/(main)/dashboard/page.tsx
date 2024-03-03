@@ -22,7 +22,7 @@ import {
 import {Button} from '@/ui/themed/button';
 import {PropsWithChildren, ReactNode} from 'react';
 import {PhoneField} from '@/ui/themed/fields/phone';
-import {DashboardPageLayout} from '../../_layout';
+import {DashboardPageLayout, Title} from '../../_layout';
 import {Message} from '../../_components/message';
 import {
   AddButton,
@@ -146,7 +146,7 @@ const AvatarsRow = () => (
 );
 
 const SellsStatus = () => (
-  <DashboardCardRoot className="flex flex-col">
+  <DashboardCardRoot className="flex flex-col gap-2">
     <DashboardCardTitle>
       <DashboardCardActivity>
         <DashboardTitleLink href="/buy">Watches on sale</DashboardTitleLink>
@@ -158,12 +158,14 @@ const SellsStatus = () => (
         </p>
       </DashboardCardActivity>
     </DashboardCardTitle>
-    <Link
-      href="/settings/buying"
-      className="mt-auto font-normal tracking-wide sm:text-[15px] text-xs items-center sm:leading-none leading-10 flex gap-[6px]"
-    >
-      Set up your buying preferences <ArrowTopRightIcon className="w-6 h-6" />
-    </Link>
+    <DashboardCardContent>
+      <Link
+        href="/settings/buying"
+        className="mt-auto font-normal tracking-wide sm:text-[15px] text-xs items-center sm:leading-none flex gap-[6px]"
+      >
+        Set up your buying preferences <ArrowTopRightIcon className="w-6 h-6" />
+      </Link>
+    </DashboardCardContent>
   </DashboardCardRoot>
 );
 
@@ -333,10 +335,14 @@ export default function Page() {
   const newUser = Boolean(params.get('new'));
 
   return (
-    <DashboardPageLayout title={<Dealer />}>
-      <div className="flex sm:gap-5 gap-2 flex-col">
+    <div className="w-full h-full sm:pt-[40px]  px-4 lg:px-6 flex flex-col">
+      <Title>
+        <Dealer />
+      </Title>
+
+      <div className="flex sm:gap-5 gap-2 pb-4 flex-col">
         {newUser ? (
-          <div className="flex lg:flex-nowrap gap-[20px] sm:py-[30px] py-5 flex-wrap w-full h-fit text-white bg-[#89A4B7] rounded-[32px] ">
+          <div className="flex lg:flex-nowrap gap-[20px] sm:py-[30px] py-5 flex-wrap w-full h-fit text-white bg-[#89A4B7] sm:rounded-[32px] rounded-3xl">
             <Boarding />
             <InvitationCard />
           </div>
@@ -351,11 +357,11 @@ export default function Page() {
           <PartnersStatus />
           {newUser ? null : <SendInvitationCard />}
         </div>
-        <div className="flex flex-1 lg:flex-nowrap flex-wrap  sm:gap-5 gap-2 w-full  h-full ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 flex-wrap sm:gap-5 gap-2 w-full  h-full ">
           <MarketPulse />
           <Chat />
         </div>
       </div>
-    </DashboardPageLayout>
+    </div>
   );
 }

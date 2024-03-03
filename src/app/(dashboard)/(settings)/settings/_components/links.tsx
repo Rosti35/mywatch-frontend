@@ -16,11 +16,11 @@ const SettingLink = ({link, children}: SettingLinkProps) => {
     <Link
       href={`/settings/${link}`}
       key={link}
-      className="border-b border-[#D4D4D4] sm:border-0 last:border-b-0"
+      className="border-b border-[#D4D4D4]  sm:border-0 last:border-b-0"
     >
       <button
         className={cn(
-          'w-full z-40 relative sm:px-5 px-0 h-[50px] text-left transition-all items-center justify-center text-themed-black-primary rounded-xl hover:bg-themed-grey-300',
+          'w-full z-40 relative sm:px-5 px-0 h-[50px] sm:px-5 px-4 text-left transition-all items-center justify-center text-themed-black-primary rounded-xl hover:bg-themed-grey-300',
           active ? 'bg-themed-black-primary text-white hover:bg-themed-black-primary/90' : null,
         )}
       >

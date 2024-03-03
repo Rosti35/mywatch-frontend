@@ -90,7 +90,7 @@ const ContactsCard = () => {
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-[24px]">
+    <div className="flex flex-col gap-[24px] sm:p-[40px] p-4">
       <div className="w-full flex gap-[70px]">
         <div className="w-full flex flex-col text-wrap sm:gap-[30px] gap-[18px]">
           <div>

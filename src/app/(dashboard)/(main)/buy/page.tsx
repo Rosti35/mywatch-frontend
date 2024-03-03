@@ -8,7 +8,7 @@ import {Button} from '@/ui/themed/button';
 
 const Title = () => {
   return (
-    <div className="flex w-full flex-wrap sm:flex-nowrap items-center">
+    <div className="flex w-full flex-wrap sm:flex-nowrap items-center gap-5">
       <span className="tracking-tighter text-nowrap">New watches for sale</span>
       <Button
         size="sm"
@@ -19,9 +19,9 @@ const Title = () => {
     </div>
   );
 };
-export default function Stock() {
+export default function Page() {
   return (
-    <div>
+    <div className='px-4 pb-4 lg:pb-4 lg:px-6 lg:pt-[40px]'>
       <DashboardPageLayout title={<Title />}>
         <div className="h-fit w-full flex flex-col gap-5">
           <div className="space-y-[30px]">

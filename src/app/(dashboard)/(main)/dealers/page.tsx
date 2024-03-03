@@ -13,7 +13,7 @@ import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import {RatingBadge} from '@/sections/demo/watch-card';
 import {FilterSelect} from '../../_components/filter';
-import {DashboardPageLayout} from '../../_layout';
+import {DashboardPageLayout, Title} from '../../_layout';
 
 const RadioGroupDemo = () => (
   <form>
@@ -150,7 +150,7 @@ const DealerCatalogItemMobile = () => {
 
         <Button
           size="sm"
-          className="mt-auto text-sm sm:px-5 px-[14px] sm:text-[14px]"
+          className="mt-auto text-sm bg-white text-red-500 sm:px-5 px-[14px] sm:text-[14px]"
         >
           Block
         </Button>
@@ -208,68 +208,74 @@ const DealerCatalogItem = ({name, location, iso2, stock, id}: DealerCatalogItemP
 
 export default function Page() {
   return (
-    <DashboardPageLayout title="Out trusted dealers">
-      <TabRoot
-        defaultValue="dealers"
-        className="gap-[30px] h-full w-full"
+    <div className="w-full h-full sm:pt-[40px] lg:px-6 flex flex-col">
+      <span className=" sm:px-0 px-4">
+        <Title>Out trusted dealers</Title>
+      </span>
+      <div
+        title="Out trusted dealers"
+        className="flex flex-col w-full h-full"
       >
-        <div className="overflow-x-auto w-fit items-center whitespace-nowrap sm:h-[50px] h-[40px] gap-4 flex">
-          <TabTriggerWithBadge
-            value="dealers"
-            count={0}
-          >
-            All dealers
-          </TabTriggerWithBadge>
-          <TabTriggerWithBadge
-            value="partners"
-            count={3}
-          >
-            My partners
-          </TabTriggerWithBadge>
-          <TabTriggerWithBadge
-            value="black_list"
-            count={3}
-          >
-            Black list
-          </TabTriggerWithBadge>
-        </div>
-
-        <TabContent
-          disableTransition
-          value="dealers"
-          className="w-full h-full"
+        <TabRoot
+          defaultValue="dealers"
+          className="gap-[30px] h-full w-full overflow-hidden"
         >
-          <div className="flex flex-col w-full h-full gap-[16px]">
-            <Filters />
+          <div className="overflow-auto sm:w-fit w-full px-4 md:px-0 items-center whitespace-nowrap sm:h-[50px] h-[40px] gap-4 flex">
+            <TabTriggerWithBadge
+              value="dealers"
+              count={0}
+            >
+              All dealers
+            </TabTriggerWithBadge>
+            <TabTriggerWithBadge
+              value="partners"
+              count={3}
+            >
+              My partners
+            </TabTriggerWithBadge>
+            <TabTriggerWithBadge
+              value="black_list"
+              count={3}
+            >
+              Black list
+            </TabTriggerWithBadge>
+          </div>
 
-            <div className="md:block hidden">
-              <TableHeader>
-                <span className="mt-1">Dealer</span>
-                <span className="mt-1">Rating</span>
-                <span className="mt-1">Location</span>
-                <span className="mt-1">Current stock</span>
-                <span></span>
-              </TableHeader>
+          <TabContent
+            disableTransition
+            value="dealers"
+            className="w-full h-full"
+          >
+            <div className="flex flex-col w-full h-full gap-[16px]">
+              <Filters />
 
-              <div>
-                <DealerCatalogItem {...sampleDealer} />
-                <DealerCatalogItem {...sampleDealer} />
-                <DealerCatalogItem {...sampleDealer} />
-                <DealerCatalogItem {...sampleDealer} />
+              <div className="md:block hidden">
+                <TableHeader>
+                  <span className="mt-1">Dealer</span>
+                  <span className="mt-1">Rating</span>
+                  <span className="mt-1">Location</span>
+                  <span className="mt-1">Current stock</span>
+                </TableHeader>
+
+                <div>
+                  <DealerCatalogItem {...sampleDealer} />
+                  <DealerCatalogItem {...sampleDealer} />
+                  <DealerCatalogItem {...sampleDealer} />
+                  <DealerCatalogItem {...sampleDealer} />
+                </div>
+              </div>
+
+              <div className="md:hidden w-full h-full flex flex-col px-4">
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
               </div>
             </div>
-
-            <div className="md:hidden w-full h-full flex flex-col">
-              <DealerCatalogItemMobile />
-
-              <DealerCatalogItemMobile />
-              <DealerCatalogItemMobile />
-              <DealerCatalogItemMobile />
-              <DealerCatalogItemMobile />
-            </div>
-          </div>
-        </TabContent>
-      </TabRoot>
-    </DashboardPageLayout>
+          </TabContent>
+        </TabRoot>
+      </div>
+    </div>
   );
 }

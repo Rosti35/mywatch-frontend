@@ -9,10 +9,10 @@ import {FilterSelect} from '../../_components/filter';
 
 const Title = () => {
   return (
-    <div className="flex w-full flex-col sm:gap-5 gap-[8px]">
-      <p className="tracking-tighter sm:leading-7 leading-[42px]">Sell watches</p>
+    <div className="flex w-full flex-col sm:gap-5 gap-5">
+      <p className="tracking-tighter sm:leading-7 leading-none">Sell watches</p>
 
-      <div className="flex  sm:gap-4 gap-2 font-normal text-sm text-nowrap">
+      <div className="flex  sm:gap-4 gap-2 font-normal overflow-auto text-sm text-nowrap">
         <Link
           href={'/stock'}
           className="w-fit "
@@ -43,25 +43,27 @@ const Title = () => {
 };
 export default function Page() {
   return (
-    <DashboardPageLayout title={<Title />}>
-      <div className="h-fit w-full flex flex-col gap-8">
-        <div className="space-y-[30px] hidden sm:block">
-          <div className="w-full h-fit relative flex flex-col gap-[14px]">
-            <div className="flex gap-[14px]">
-              <FilterSelect>Brand & Model</FilterSelect>
-              <FilterSelect>Warehouse</FilterSelect>
-              <FilterSelect>Status</FilterSelect>
-              <FilterSelect>Sort by</FilterSelect>
+    <div className="px-4 pb-4 lg:pb-4 lg:px-6 lg:pt-[40px]">
+      <DashboardPageLayout title={<Title />}>
+        <div className="h-fit w-full flex flex-col gap-8">
+          <div className="space-y-[30px] hidden sm:block">
+            <div className="w-full h-fit relative flex flex-col gap-[14px]">
+              <div className="flex gap-[14px]">
+                <FilterSelect>Brand & Model</FilterSelect>
+                <FilterSelect>Warehouse</FilterSelect>
+                <FilterSelect>Status</FilterSelect>
+                <FilterSelect>Sort by</FilterSelect>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="w-full h-full flex flex-col gap-5">
-          <WatchPreview sell />
-          <WatchPreview sell />
-          <WatchPreview sell />
+          <div className="w-full h-full flex flex-col gap-5">
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+          </div>
         </div>
-      </div>
-    </DashboardPageLayout>
+      </DashboardPageLayout>
+    </div>
   );
 }

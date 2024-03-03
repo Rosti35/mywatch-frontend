@@ -25,7 +25,7 @@ export default function Page() {
         className="flex gap-0 flex-col overflow-auto h-full"
         defaultValue="brand"
       >
-        <div className="w-full items-center whitespace-nowrap overflow-x-auto min-h-[50px] gap-[14px] h-fit flex">
+        <div className="w-full items-center px-4 sm:px-0 whitespace-nowrap overflow-x-auto min-h-[50px] gap-[14px] h-fit flex">
           <TabTriggerWithBadge
             value="brand"
             count={2}
@@ -58,7 +58,7 @@ export default function Page() {
           </TabTriggerWithBadge>
         </div>
 
-        <div className="mt-[30px] h-full flex flex-col overflow-hidden">
+        <div className="mt-[30px] sm:px-0 px-4 h-full flex flex-col overflow-hidden">
           <TabContent
             disableTransition
             value="brand"

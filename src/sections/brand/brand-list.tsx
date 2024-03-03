@@ -25,7 +25,7 @@ export const BrandList = ({template = BrandCheckbox, className, ...props}: Brand
   return Object.entries(groupNamesByLetter()).map(([continent, countries]) => (
     <div
       key={continent}
-      className="flex gap-7 px-1 leading-5 w-full h-full mb-[30px]"
+      className="flex gap-7 px-1 leading-5 w-full h-fit mb-[30px]"
     >
       <div className="text-[20px] font-bold h-full sticky top-0 ">
         <p className="leading-9">{continent}</p>

@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(onest.className, 'bg-themed-grey-100 tracking-wide md:h-screen md:overflow-hidden sm:text-sm text-xs')}>
+      <body className={cn(onest.className, 'bg-themed-grey-100 text-themed-black-primary md:h-screen md:overflow-hidden sm:text-sm text-[14px] tracking-wide')}>
         {children}
       </body>
     </html>

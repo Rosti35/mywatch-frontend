@@ -8,12 +8,12 @@ import {PropsWithChildren} from 'react';
 
 const UserProfile = () => {
   return (
-    <div className="flex items-center gap-[14px]">
-      <div className="w-[60px] h-[60px] relative bg-zinc-500 rounded-full">
+    <div className="flex items-center gap-[14px] sm:p-0 p-4 w-full">
+      <div className="min-w-[60px] min-h-[60px] relative bg-zinc-500 rounded-full">
         <div className="w-[25px] h-[25px] bg-blue-500 absolute top-[2px] border -translate-y-1/2 border-themed-grey-100 rounded-full -right-[2px]" />
       </div>
-      <div className="flex flex-col gap-1">
-        <p className="tracking-[0.01rem] font-semibold sm:text-sm text-[14px]">
+      <div className="flex flex-col gap-1  text-ellipsis text-nowrap whitespace-nowrap overflow-hidden w-full">
+        <p className="tracking-[0.01rem] w-full  text-ellipsis text-nowrap whitespace-nowrap overflow-hidden font-semibold sm:text-sm text-[14px]">
           Daytona Stainless Steel Black Dial
         </p>
         <p className="sm:text-sm text-[14px]">Ineichen Zuriсh</p>
@@ -47,7 +47,7 @@ const MessageReceived = ({children}: PropsWithChildren) => {
 export default function Page() {
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center">
+      <div className="flex items-center flex-wrap lg:flex-nowrap gap-4">
         <UserProfile />
         <div className="ml-auto sm:flex hidden gap-[10px]">
           <Button
@@ -79,35 +79,37 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="h-full px-2 pb-[50px] gap-[35px] flex flex-col-reverse">
+      <div className="h-full px-4 pb-[50px] gap-[35px] flex flex-col-reverse">
         <MessageSent>Perfect</MessageSent>
         <MessageReceived>Tell me, what is the condition of the watch?</MessageReceived>
       </div>
 
       <div className="mt-auto gap-5 w-full h-fit flex flex-col">
-        <div className="flex gap-[11px] overflow-auto text-nowrap min-h-[40px]">
+        <div className="flex gap-[11px] whitespace-nowrap overflow-auto sm:px-0 px-4 text-nowrap min-h-[40px]">
           <Button
             size="sm"
-            className="sm:bg-themed-grey-200 bg-white text-themed-black-primary"
+            className="sm:bg-themed-grey-200 text-nowrap px-[20px] bg-white text-themed-black-primary"
           >
             Generate invoice
           </Button>
           <Button
             size="sm"
-            className="sm:bg-themed-grey-200 bg-white text-themed-black-primary"
+            className="sm:bg-themed-grey-200 text-nowrap px-[20px] bg-white text-themed-black-primary"
           >
             Send delivery address
           </Button>
           <Button
             size="sm"
-            className="sm:bg-themed-grey-200 bg-white text-themed-black-primary"
+            className="sm:bg-themed-grey-200 text-nowrap px-[20px] bg-white text-themed-black-primary"
           >
             Confirm deal
           </Button>
         </div>
-        <div className="flex px-5 items-center gap-4 bg-white  rounded-xl">
-          <AttachmentIcon className="w-6 h-6 text-themed-grey-400" />
-          <input className="h-[60px] text-sm w-full  outline-none" />
+        <div className="sm:px-0 px-4 sm:pb-0 pb-6">
+          <div className="flex px-5 items-center gap-4 bg-white  rounded-xl">
+            <AttachmentIcon className="w-6 h-6 text-themed-grey-400" />
+            <input className="h-[60px] text-sm w-full  outline-none" />
+          </div>
         </div>
       </div>
     </div>
