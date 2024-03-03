@@ -1,3 +1,3 @@
-import DashboardLayout from '../dashboard/layout';
+import {DashboardLayout} from '../../_layout';
 
 export default DashboardLayout;

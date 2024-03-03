@@ -1,4 +1,4 @@
-import {PropsWithChildren} from 'react';
+import {PropsWithChildren, Suspense} from 'react';
 
 const LayoutScroll = ({children}: PropsWithChildren) => {
   return (
@@ -15,5 +15,9 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <LayoutScroll>{children}</LayoutScroll>;
+  return (
+    <LayoutScroll>
+      <Suspense>{children}</Suspense>
+    </LayoutScroll>
+  );
 }
