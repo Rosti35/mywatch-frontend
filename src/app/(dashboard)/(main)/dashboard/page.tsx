@@ -111,7 +111,7 @@ const StockStatus = () => (
         </DashboardTitleLink>
         <p className="mt-auto md:text-lg text-md leading-none font-bold">12</p>
       </DashboardCardActivity>
-      <AddButton />
+      <AddButton className="my-auto" />
     </DashboardCardTitle>
   </DashboardCardRoot>
 );
@@ -189,6 +189,32 @@ const PartnersStatus = () => (
   </DashboardCardRoot>
 );
 
+const Chat = () => (
+  <DashboardCardRoot className="gap-6 max-h-[300px] w-full h-fit flex flex-col">
+    <DashboardCardTitle className="items-center gap-2">
+      <DashboardTitleLink
+        href="/messages"
+        className="text-[22px] font-bold leading-3"
+      >
+        Chats
+      </DashboardTitleLink>
+
+      <Badge className="bg-red-500">+2</Badge>
+      <Link
+        href="/"
+        className="ml-auto tracking-tight flex items-center gap-2"
+      >
+        All messages <ArrowTopRightIcon className="w-6 h-6" />
+      </Link>
+    </DashboardCardTitle>
+    <div className="flex items-center flex-col gap-[14px]">
+      {[1, 2, 3].map(i => (
+        <Message key={i} />
+      ))}
+    </div>
+  </DashboardCardRoot>
+);
+
 const SendInvitationCard = () => (
   <DashboardCardRoot className="bg-themed-black-primary text-white flex">
     <DashboardCardActivity className="flex flex-col gap-4">
@@ -211,19 +237,19 @@ const SendInvitationCard = () => (
 );
 
 const Boarding = () => (
-  <div className="justify-between flex flex-col w-full">
-    <DashboardCardRoot className="bg-transparent">
-      <p className="font-bold text-lg leading-10 tracking-tight">
+  <div className="justify-between flex flex-col gap-[20px] w-full ">
+    <div className="bg-transparent sm:px-[30px] px-5">
+      <p className="font-bold leading-10 sm:text-lg text-md tracking-tight">
         Complete the boarding to mywatch
       </p>
-    </DashboardCardRoot>
+    </div>
 
     <NewUserStepper steps={steps} />
   </div>
 );
 
 const InvitationCard = () => (
-  <DashboardCardRoot className="bg-transparent">
+  <div className="bg-transparent sm:pr-[30px] pr-5 md:pl-0 pl-5 w-full">
     <div className="ml-auto p-6 bg-themed-black-primary w-full rounded-3xl h-full flex flex-col">
       <p className="text-md font-bold leading-8 tracking-[-0.6px]">I have an invitation</p>
       <p className="text-themed-grey-400 leading-5 my-auto mt-[6px]">
@@ -240,7 +266,7 @@ const InvitationCard = () => (
         </button>
       </div>
     </div>
-  </DashboardCardRoot>
+  </div>
 );
 
 const Dealer = () => {
@@ -251,6 +277,56 @@ const Dealer = () => {
     </DealerProfile>
   );
 };
+
+const MarketPulse = () => (
+  <TabRoot
+    defaultValue="day"
+    className="w-full"
+  >
+    <DashboardCardRoot className="min-h-[240px] gap-5 h-full w-full flex-col flex">
+      <div className="flex w-full h-fit text-nowrap sm:flex-nowrap ">
+        <div className="flex flex-col w-full gap-1">
+          <div className="flex ">
+            <p className="tracking-wide">Market pulse</p>
+
+            <div className="ml-auto max-w-[200px] flex w-full">
+              <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-full p-1">
+                <TabTrigger
+                  value="day"
+                  className="text-xs md:text-sm min-h-[30px]"
+                  activeClassname="font-medium"
+                >
+                  Day
+                </TabTrigger>
+                <TabTrigger
+                  value="month"
+                  className="text-xs md:text-sm min-h-[30px]"
+                  activeClassname="font-medium"
+                >
+                  Month
+                </TabTrigger>
+              </TabTriggerContainer>
+            </div>
+          </div>
+          <div className="flex sm:gap-6 leading-none md:text-lg text-md font-bold">
+            <span className="tracking-tightest">569 123 $</span>
+            <div className="md:text-sm text-xs font-medium mt-auto tracking-wide text-green-500 flex items-center justify-center gap-1">
+              <ArrowTopRightIcon className="w-6 h-6" />
+              12 545 $
+            </div>
+          </div>
+        </div>
+      </div>
+      <TabContent
+        value="day"
+        className="h-full  w-full flex-1 items-stretch"
+      >
+        <LineChart data={data} />
+      </TabContent>
+    </DashboardCardRoot>
+  </TabRoot>
+);
+
 export default function Page() {
   const params = useSearchParams();
 
@@ -258,9 +334,9 @@ export default function Page() {
 
   return (
     <DashboardPageLayout title={<Dealer />}>
-      <div className="flex sm:gap-5 gap-2 flex-col h-auto">
+      <div className="flex sm:gap-5 gap-2 flex-col">
         {newUser ? (
-          <div className="flex lg:flex-nowrap flex-wrap w-full h-fit md:gap-[20px] gap-2 text-white bg-[#89A4B7] rounded-[32px] ">
+          <div className="flex lg:flex-nowrap gap-[20px] sm:py-[30px] py-5 flex-wrap w-full h-fit text-white bg-[#89A4B7] rounded-[32px] ">
             <Boarding />
             <InvitationCard />
           </div>
@@ -275,75 +351,10 @@ export default function Page() {
           <PartnersStatus />
           {newUser ? null : <SendInvitationCard />}
         </div>
-        <TabRoot
-          defaultValue="day"
-          className="grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-2 h-full flex-wrap w-full flex-1"
-        >
-          <DashboardCardRoot className="min-h-[240px] gap-5 h-full w-full flex-col flex">
-            <div className="flex w-full h-fit text-nowrap sm:flex-nowrap ">
-              <div className="flex flex-col w-full gap-1">
-                <div className="flex ">
-                  <p className="tracking-wide">Market pulse</p>
-
-                  <div className="ml-auto max-w-[200px] flex w-full">
-                    <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-full p-1">
-                      <TabTrigger
-                        value="day"
-                        className="text-xs md:text-sm min-h-[30px]"
-                        activeClassname="font-medium"
-                      >
-                        Day
-                      </TabTrigger>
-                      <TabTrigger
-                        value="month"
-                        className="text-xs md:text-sm min-h-[30px]"
-                        activeClassname="font-medium"
-                      >
-                        Month
-                      </TabTrigger>
-                    </TabTriggerContainer>
-                  </div>
-                </div>
-                <div className="flex sm:gap-6 leading-none md:text-lg text-md font-bold">
-                  <span className="tracking-tightest">569 123 $</span>
-                  <div className="md:text-sm text-xs font-medium mt-auto tracking-wide text-green-500 flex items-center justify-center gap-1">
-                    <ArrowTopRightIcon className="w-6 h-6" />
-                    12 545 $
-                  </div>
-                </div>
-              </div>
-            </div>
-            <TabContent
-              value="day"
-              className="h-full  w-full flex-1 items-stretch"
-            >
-              <LineChart data={data} />
-            </TabContent>
-          </DashboardCardRoot>
-          <DashboardCardRoot className="gap-6 w-full h-fit flex flex-col">
-            <DashboardCardTitle className="items-center gap-2">
-              <DashboardTitleLink
-                href="/messages"
-                className="text-[22px] font-bold leading-3"
-              >
-                Chats
-              </DashboardTitleLink>
-
-              <Badge className="bg-red-500">+2</Badge>
-              <Link
-                href="/"
-                className="ml-auto tracking-tight flex items-center gap-2"
-              >
-                All messages <ArrowTopRightIcon className="w-6 h-6" />
-              </Link>
-            </DashboardCardTitle>
-            <DashboardCardContent className="items-center flex-col gap-[14px]">
-              {[1, 2, 3].map(i => (
-                <Message key={i} />
-              ))}
-            </DashboardCardContent>
-          </DashboardCardRoot>
-        </TabRoot>
+        <div className="flex flex-1 lg:flex-nowrap flex-wrap  sm:gap-5 gap-2 w-full  h-full ">
+          <MarketPulse />
+          <Chat />
+        </div>
       </div>
     </DashboardPageLayout>
   );

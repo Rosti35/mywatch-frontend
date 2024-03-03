@@ -38,6 +38,13 @@ export default function Stock() {
           <WatchPreview />
           <WatchPreview />
           <WatchPreview />
+          <WatchPreview />
+          <WatchPreview />
+          <WatchPreview />
+          <WatchPreview />
+          <WatchPreview />
+          <WatchPreview />
+          
         </div>
       </DashboardPageLayout>
     </div>

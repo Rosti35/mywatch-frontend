@@ -73,8 +73,14 @@ export const DashboardTitleLink = (props: ComponentProps<typeof Link>) => (
   />
 );
 
-export const AddButton = () => (
-  <button className="bg-themed-black-primary ml-auto my-auto  text-white rounded-full min-w-[50px] h-[50px] items-center flex justify-center">
+export const AddButton = ({className, ...props}: HTMLAttributes<HTMLButtonElement>) => (
+  <button
+    className={cn(
+      className,
+      'bg-themed-black-primary ml-auto text-white rounded-full min-w-[50px] h-[50px] items-center flex justify-center',
+    )}
+    {...props}
+  >
     <PlusIcon className="w-6 h-6" />
   </button>
 );

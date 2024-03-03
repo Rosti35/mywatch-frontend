@@ -107,7 +107,7 @@ export default function Page() {
         </div>
         <div className="flex px-5 items-center gap-4 bg-white  rounded-xl">
           <AttachmentIcon className="w-6 h-6 text-themed-grey-400" />
-          <input className="h-[60px] w-full  outline-none" />
+          <input className="h-[60px] text-sm w-full  outline-none" />
         </div>
       </div>
     </div>

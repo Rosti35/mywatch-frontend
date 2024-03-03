@@ -2,6 +2,7 @@ import {WatchDetails} from '@/sections/demo/watch-card';
 import {TimeIcon} from '@/ui/common/icons/time';
 import {Button} from '@/ui/themed/button';
 import {DealerBadge} from '@/ui/themed/dealer/badge';
+import {SubrouteTitle} from '@/ui/themed/links';
 import {ArrowLeftIcon} from '@radix-ui/react-icons';
 import Link from 'next/link';
 
@@ -16,13 +17,12 @@ export default function Page() {
       </div>
       <div className="w-full pt-[30px]">
         <div className="flex flex-col gap-4 ">
-          <Link
+          <SubrouteTitle
             href="/buy"
-            className="w-fit flex items-center gap-2 tracking-tight"
+            back="Back to search"
           >
-            <ArrowLeftIcon className="w-6 h-6" />
-            <span className="tracking-wide"> Back to search</span>
-          </Link>
+            Daytona Stainless Steel Black Dial
+          </SubrouteTitle>
 
           <p className="text-lg font-semibold leading-8 tracking-tight">
             Daytona Stainless Steel Black Dial

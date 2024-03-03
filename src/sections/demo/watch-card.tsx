@@ -147,7 +147,7 @@ const BuyWatch = () => (
 );
 
 export const SaleCountdown = () => (
-  <div className="md:h-[62px] h-[50px] flex items-center justify-center w-full gap-[10px] bg-green-700/10 rounded-xl py-[8px]">
+  <div className="md:h-[62px] h-[57px] max-w-[170px] flex items-center justify-center w-full gap-[10px] bg-green-700/10 rounded-xl py-[8px]">
     <TimeIcon className="w-6 h-6 text-green-600 " />
     <span className="lg:text-[14px] text-xs">
       <p className="text-themed-grey-400 tracking-wide">On sale, time left</p>

@@ -1,5 +1,6 @@
 import {cn} from '@/lib/cn';
-import {HTMLAttributes} from 'react';
+import {HTMLAttributes, PropsWithChildren} from 'react';
+import {GoBack} from '../links';
 
 export const Badge = ({className, children, ...props}: HTMLAttributes<HTMLSpanElement>) => (
   <span

@@ -2,15 +2,8 @@ import {CardRoot} from '@/ui/common/card';
 import {TrashIcon} from '@/ui/common/icons/trash';
 import {TableHeader, TableRow} from '@/ui/common/table';
 import {Button} from '@/ui/themed/button';
-import {GoBack} from '@/ui/themed/links';
+import {GoBack, SubrouteTitle} from '@/ui/themed/links';
 import {PropsWithChildren} from 'react';
-
-const SubrouteTitle = ({children}: PropsWithChildren) => (
-  <div className="flex flex-col gap-4 ">
-    <GoBack href="/sell">Back</GoBack>
-    <p className="sm:text-lg text-md font-semibold leading-8 tracking-tight">{children}</p>
-  </div>
-);
 
 const ProductCard = () => {
   return (
@@ -99,7 +92,12 @@ export default function Page() {
   return (
     <div className="flex gap-5 overflow-hidden">
       <div className="w-full flex flex-col sm:gap-[30px] gap-5">
-        <SubrouteTitle>Import from other platforms</SubrouteTitle>
+        <SubrouteTitle
+          href="/sell"
+          back="Back"
+        >
+          Import from other platforms
+        </SubrouteTitle>
 
         <CardRoot className="sm:p-[30px] p-[20px] w-full flex flex-col bg-themed-grey-100 gap-[10px]">
           <p className="text-md font-bold leading-8">Chrono24</p>

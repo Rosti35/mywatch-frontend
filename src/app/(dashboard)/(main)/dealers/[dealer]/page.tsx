@@ -19,6 +19,7 @@ import {
   DealerProfileAvatar,
   DealerVerification,
 } from '@/ui/themed/dealer';
+import {SubrouteTitle} from '@/ui/themed/links';
 
 const [, iso2] = defaultCountries[0];
 
@@ -92,14 +93,14 @@ export default function Page() {
     <div className="flex flex-col gap-[24px]">
       <div className="w-full flex gap-[70px]">
         <div className="w-full flex flex-col text-wrap sm:gap-[30px] gap-[18px]">
-          <Link
-            href="/dealers"
-            className="w-fit flex items-center gap-1 font-medium"
-          >
-            <ArrowLeftIcon className="w-6 h-6" />
-            <span className="tracking-wide sm:text-sm text-[14px]"> Back to list</span>
-          </Link>
-          <Dealer />
+          <div>
+            <SubrouteTitle
+              href="/dealers"
+              back="Back"
+            />
+
+            <Dealer />
+          </div>
 
           <p className="md:leading-6 sm:text-sm text-[14px] leading-[21px] md:tracking-wide">
             Released in 1963, Cosmograph Daytona watches have long gone beyond just a work of
