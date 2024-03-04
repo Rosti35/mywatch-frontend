@@ -19,7 +19,7 @@ export const Price = () => (
 
 export const Warehouse = () => (
   <div className="mt-auto text-sm">
-    <p className="sm:text-[14px] text-xs tracking-wide">Warehouse</p>
+    <p className="sm:text-[14px] text-xs tracking-wide text-[#A3A3A3]">Warehouse</p>
     <p className="flex items-center gap-2 sm:text-sm text-[14px]">
       <FlagImage iso2={iso2} />
       Zurich

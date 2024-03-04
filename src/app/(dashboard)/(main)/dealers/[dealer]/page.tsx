@@ -114,10 +114,10 @@ export default function Page() {
               <PlusIcon className="w-6 h-6" />
               Add to my partners
             </button>
-            <button className="flex w-fit items-center sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85 gap-[10px] text-sm sm:flex-auto flex-1 sm:w-fit h-[50px] px-[24px]">
+            <button className="flex w-fit sm:max-w-[151px] items-center sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-[#F5F5F5] text-themed-black-primary hover:opacity-85 gap-[10px] text-sm sm:flex-auto flex-1 sm:w-fit h-[50px] px-[24px]">
               Sent message
             </button>
-            <button className="flex items-center sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85 gap-[10px] text-sm sm:w-fit sm:flex-auto flex-1 w-fit h-[50px] px-[24px]">
+            <button className="flex items-center sm:max-w-[132px] sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-transparent border-red-500 text-red-500 border hover:opacity-85 gap-[10px] text-sm sm:w-fit sm:flex-auto flex-1 w-fit h-[50px] px-[24px]">
               To black list
             </button>
           </div>

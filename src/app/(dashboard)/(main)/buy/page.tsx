@@ -5,6 +5,7 @@ import {WatchPreview} from '@/sections/demo/watch-card';
 import {DashboardPageLayout} from '../../_layout';
 import {FilterSelect} from '../../_components/filter';
 import {Button} from '@/ui/themed/button';
+import {FilterIcon} from '@/ui/common/icons/filter';
 
 const Title = () => {
   return (
@@ -12,9 +13,9 @@ const Title = () => {
       <span className="tracking-tighter text-nowrap">New watches for sale</span>
       <Button
         size="sm"
-        className="sm:ml-auto font-medium px-5 text-nowrap"
+        className="sm:ml-auto font-medium px-5 text-nowrap flex items-center justify-center gap-[10px]"
       >
-        Set up selection
+        <FilterIcon className="w-6 h-6" /> Set up selection
       </Button>
     </div>
   );
@@ -24,10 +25,10 @@ export default function Page() {
     <div className="px-4 pb-4 lg:pb-4 lg:pl-[22px] lg:pr-[40px] lg:pt-[42px]">
       <DashboardPageLayout title={<Title />}>
         <div className="h-fit w-full flex flex-col gap-8">
-          <div className="space-y-[30px] hidden sm:block" >
+          <div className="space-y-[30px] hidden sm:block">
             <div className="w-full h-fit relative flex flex-col gap-[14px]">
               <TextField placeholder="Find the model" />
-              <div className="gap-[14px] ">
+              <div className="gap-[14px] flex">
                 <FilterSelect>Brand & Model</FilterSelect>
                 <FilterSelect>Warehouse</FilterSelect>
                 <FilterSelect>Sort by</FilterSelect>

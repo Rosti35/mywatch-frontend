@@ -16,7 +16,10 @@ const UserProfile = () => {
         <p className="tracking-[0.01rem] w-full  text-ellipsis text-nowrap whitespace-nowrap overflow-hidden font-semibold sm:text-sm text-[14px]">
           Daytona Stainless Steel Black Dial
         </p>
-        <p className="sm:text-sm text-[14px]">Ineichen Zuriсh</p>
+        <p className="sm:text-sm flex items-center text-[14px] gap-[6px]">
+          Ineichen Zuriсh
+          <span className="w-2 h-2 rounded-full bg-[#3BAD49]" />
+        </p>
       </div>
     </div>
   );
@@ -24,7 +27,7 @@ const UserProfile = () => {
 
 const MessageSent = ({children}: PropsWithChildren) => (
   <div className="rounded-2xl leading-5 ml-auto relative bg-themed-black-primary text-white z-30 py-[14.5px] pl-[17px] pr-[13px] w-fit">
-    <div className="flex gap-[11px] items-center tracking-wide">
+    <div className="flex gap-[11px] font-normal items-center tracking-wide">
       <span>{children}</span>
       <span className="text-[14px] text-[#9CA3AF] tracking-wide">10:30</span>
     </div>
@@ -35,7 +38,7 @@ const MessageSent = ({children}: PropsWithChildren) => (
 const MessageReceived = ({children}: PropsWithChildren) => {
   return (
     <div className="rounded-2xl leading-5 mr-auto relative bg-white text-white z-30 py-[14.5px] pr-[17px] pl-[16px] w-fit">
-      <div className="flex items-center gap-[11px] tracking-wide">
+      <div className="flex font-normal items-center gap-[11px] tracking-wide">
         <span className="text-black">{children}</span>
         <span className="text-[14px] text-[#9CA3AF] leading-5 tracking-wide">10:30</span>
       </div>
@@ -100,7 +103,7 @@ export default function Page() {
           </Button>
           <Button
             size="sm"
-            className="sm:bg-themed-grey-200 text-nowrap px-[20px] bg-white text-themed-black-primary"
+            className="sm:bg-[#3BAD49] text-white text-nowrap px-[20px]"
           >
             Confirm deal
           </Button>

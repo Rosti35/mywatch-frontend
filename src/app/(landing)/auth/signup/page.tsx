@@ -8,6 +8,7 @@ import {Account} from '@/forms/templates/new/account';
 import {AccountInfoCard} from './_components/account-info-card';
 import {Button} from '@/ui/themed/button';
 import * as RadioGroup from '@radix-ui/react-radio-group';
+import Link from 'next/link';
 
 const RadioGroupDemo = () => (
   <form>
@@ -17,7 +18,7 @@ const RadioGroupDemo = () => (
     >
       <div className="flex items-center">
         <RadioGroup.Item
-          className="w-6 h-6 rounded-full outline-none cursor-default border border-themed-grey-300"
+          className="w-6 h-6 rounded-full outline-none cursor-default border border-[#D4D4D4]"
           value="default"
           id="r1"
         >
@@ -32,7 +33,7 @@ const RadioGroupDemo = () => (
       </div>
       <div className="flex items-center">
         <RadioGroup.Item
-          className="w-6 h-6 rounded-full outline-none cursor-default border border-themed-grey-300"
+          className="w-6 h-6 rounded-full outline-none cursor-default border border-[#D4D4D4]"
           value="offense"
           id="r1"
         >
@@ -95,7 +96,9 @@ export default function Page() {
           <AccountInfo />
 
           <div className="flex sm:flex-row w-full gap-6 items-center">
-            <Button>Create account</Button>
+            <Link href="/dashboard">
+              <Button>Create account</Button>
+            </Link>
 
             <div className="text-themed-grey-400 sm:text-[14px] text-xs max-w-[300px]">
               By creating an account, you accept our terms of service and end user license agreement

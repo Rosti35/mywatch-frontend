@@ -8,12 +8,15 @@ import {TableHeader, TableRow} from '@/ui/common/table';
 import {Button} from '@/ui/themed/button';
 import {PlusIcon} from '@/ui/common/icons/plus';
 import {CheckIcon} from '@/ui/common/icons/check';
-import {PropsWithChildren} from 'react';
+import {PropsWithChildren, useRef, useState} from 'react';
 import {Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger} from '@/ui/common/dialog';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import {RatingBadge} from '@/sections/demo/watch-card';
 import {FilterSelect} from '../../_components/filter';
 import {DashboardPageLayout, Title} from '../../_layout';
+import {FilterIcon} from '@/ui/common/icons/filter';
+import {useIsomorphicLayoutEffect} from '@/hooks/common/use-isomorphic-layout-effect';
+import {AnimatePresence, motion} from 'framer-motion';
 
 const RadioGroupDemo = () => (
   <form>
@@ -80,7 +83,7 @@ const DealerProfile = () => {
         <p className="text-sm flex gap-[16px] mt-[1px] font-normal leading-6">
           <span className="leading-5 tracking-wide flex items-center gap-[10px]">
             <CheckIcon className="w-[18px] text-white h-[18px] bg-blue-400 rounded-full" />
-            Verfied dealer
+            Premium dealer
           </span>
           <span className="text-themed-grey-400">Since 2023</span>
         </p>
@@ -137,23 +140,27 @@ const DealerCatalogItemMobile = () => {
           <RatingBadge />
         </p>
 
-        <p>Current stock {sampleDealer.stock}</p>
+        <p>
+          <span className="text-[#737373]">Current stock</span> {sampleDealer.stock}
+        </p>
       </div>
 
       <div className="flex flex-col justify-center gap-[7px] ml-auto">
         <Button
           size="sm"
-          className="text-sm sm:px-5 px-[14px] sm:text-[14px]"
+          className="text-sm sm:px-5 text-white px-[14px] sm:text-[14px]"
         >
           <PlusIcon className="w-6 h-6" />
         </Button>
 
-        <Button
-          size="sm"
-          className="bg-white text-red-500 sm:px-5 px-[20px] text-[14px]"
-        >
-          Block
-        </Button>
+        <AddToBlacklistDialog>
+          <Button
+            size="sm"
+            className="bg-white text-red-500 sm:px-5 px-[20px] text-[14px]"
+          >
+            Block
+          </Button>
+        </AddToBlacklistDialog>
       </div>
     </div>
   );
@@ -186,13 +193,10 @@ const DealerCatalogItem = ({name, location, iso2, stock, id}: DealerCatalogItemP
       <div className="w-full bg-themed-grey-200 flex items-center">
         <p className="w-full">{stock}</p>
       </div>
-      <div className="w-full bg-red-900  gap-3 flex items-center">
-        <Button
-          size="md"
-          className="h-[50px] min-w-[50px] flex items-center justify-center p-0"
-        >
+      <div className="w-full gap-3 flex items-center">
+        <button className="h-[50px] bg-themed-black-primary rounded-full min-w-[50px] text-white flex items-center justify-center p-0">
           <PlusIcon className="w-6 h-6 m-auto" />
-        </Button>
+        </button>
         <AddToBlacklistDialog>
           <Button
             size="md"
@@ -207,8 +211,42 @@ const DealerCatalogItem = ({name, location, iso2, stock, id}: DealerCatalogItemP
 };
 
 export default function Page() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [show, setShow] = useState(false);
+
+  const handleWheel = (e: WheelEvent) => {
+    setShow(e.deltaY > 0);
+  };
+
+  useIsomorphicLayoutEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    element.addEventListener('wheel', handleWheel);
+    return () => {
+      element.removeEventListener('wheel', handleWheel);
+    };
+  });
   return (
-    <div className="w-full h-full sm:pt-[40px] lg:pl-[23px]  flex flex-col">
+    <div
+      ref={ref}
+      className="w-full h-full sm:pt-[40px] lg:pl-[23px] relative  flex flex-col"
+    >
+      <AnimatePresence>
+        {show ? (
+          <motion.div
+            initial={{y: 100}}
+            animate={{y: 0}}
+            exit={{y: 100}}
+            className="fixed w-full h-fit bottom-[68px] flex items-center justify-center"
+          >
+            <button className="bg-themed-grey-100 px-5 py-[10px] flex items-center rounded-full gap-[10px] text-nowrap m-6">
+              <FilterIcon className="w-6 h-6" />
+              Filter and sorting
+            </button>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
       <span className=" sm:px-0 px-4">
         <Title>Our trusted dealers</Title>
       </span>
@@ -266,6 +304,11 @@ export default function Page() {
               </div>
 
               <div className="md:hidden w-full h-full flex flex-col px-4">
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
+                <DealerCatalogItemMobile />
                 <DealerCatalogItemMobile />
                 <DealerCatalogItemMobile />
                 <DealerCatalogItemMobile />

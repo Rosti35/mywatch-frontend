@@ -121,7 +121,7 @@ const StockStatus = () => (
 const SalesStatus = () => (
   <DashboardCardRoot className="gap-[10px] flex flex-col">
     <DashboardCardTitle>
-      <DashboardTitleLink href="/sell">
+      <DashboardTitleLink href="/archive">
         <p className="leading-5 md:text-sm text-[14px] text-nowrap">My active sales</p>
       </DashboardTitleLink>
     </DashboardCardTitle>
@@ -156,7 +156,7 @@ const SellsStatus = () => (
         <DashboardTitleLink href="/buy">Watches on sale</DashboardTitleLink>
         <p className="sm:text-lg text-md font-bold flex gap-[18px] sm:leading-10 leading-5 items-center">
           12 322
-          <span className="font-bold text-[14px] rounded-full w-[30px] h-6 bg-green-500 text-white flex items-center justify-center">
+          <span className="font-bold text-[14px] rounded-full w-[30px] h-6 bg-[#3BAD49] text-white flex items-center justify-center">
             +2
           </span>
         </p>
@@ -178,7 +178,9 @@ const PartnersStatus = () => (
     <DashboardCardTitle>
       <DashboardCardActivity>
         <DashboardTitleLink href="/dealers">
-          <p className="leading-[7px] sm:leading-none md:text-sm text-xs  text-nowrap">My partners</p>
+          <p className="leading-[7px] sm:leading-none md:text-sm text-xs  text-nowrap">
+            My partners
+          </p>
         </DashboardTitleLink>
         <p className="sm:text-lg text-md font-bold sm:leading-[42.5px] leading-[42px]">98</p>
       </DashboardCardActivity>
@@ -209,7 +211,7 @@ const Chat = () => (
 
       <Badge className="bg-red-500">+2</Badge>
       <Link
-        href="/"
+        href="/messages"
         className="ml-auto tracking-tight flex items-center gap-2"
       >
         All messages <ArrowTopRightIcon className="w-6 h-6" />
@@ -233,8 +235,11 @@ const SendInvitationCard = () => (
         Start making quick, comfortable convenient deals with no fee
       </p>
       <SendInvitationDialog>
-        <Button size='md' className="sm:mt-auto mt-[9px] sm:px-6 px-5 tracking-[-0.4px] bg-themed-grey-100 text-themed-black-primary w-fit">
-          Send invintation
+        <Button
+          size="md"
+          className="sm:mt-auto  mt-[9px] sm:px-6 px-5 tracking-[-0.4px] bg-themed-grey-100 text-themed-black-primary w-fit"
+        >
+          <span className="sm:text-sm text-[14px]">Send invintation</span>
         </Button>
       </SendInvitationDialog>
     </DashboardCardActivity>
@@ -286,14 +291,13 @@ const Dealer = () => {
 const MarketPulse = () => (
   <TabRoot
     defaultValue="day"
-    className="w-full"
+    className="w-full text-[#262626]"
   >
     <DashboardCardRoot className="sm:min-h-[300px] min-h-[240px]  gap-5 h-full w-full flex-col flex">
       <div className="flex w-full h-fit text-nowrap sm:flex-nowrap ">
         <div className="flex flex-col w-full gap-1">
           <div className="flex ">
-          <p className="leading-[12px] md:text-sm text-xs  text-nowrap">Market pulse</p>
-            
+            <p className="leading-[12px] md:text-sm text-xs  text-nowrap">Market pulse</p>
 
             <div className="ml-auto max-w-[200px] flex w-full">
               <TabTriggerContainer className="h-fit bg-[#e5e5e5] w-fit ml-auto p-1">
@@ -316,7 +320,7 @@ const MarketPulse = () => (
           </div>
           <div className="flex sm:gap-6 leading-none md:text-lg text-md font-bold">
             <span className="tracking-tightest">569 123 $</span>
-            <div className="md:text-sm text-xs leading-[50.5px] ml-[2px] font-medium mt-auto text-green-500 flex items-center justify-center gap-1">
+            <div className="md:text-sm text-xs leading-[50.5px] ml-[2px] font-medium mt-auto text-[#3BAD49] flex items-center justify-center gap-1">
               <ArrowTopRightIcon className="w-6 h-6" />
               12 545 $
             </div>

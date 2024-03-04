@@ -16,9 +16,7 @@ export default function Layout({
         </div>
         <div className="w-full overflow-hidden h-full md:py-[30px] md:pr-[40px] p-0 ">
           <div className="w-full h-full overflow-auto sm:bg-themed-grey-100  sm:rounded-3xl bg-transparent rounded-none">
-            <div className="sm:p-[30px] w-full h-full">
-              {children}
-            </div>
+            <div className="sm:p-[30px]  relative w-full h-full z-40">{children}</div>
           </div>
         </div>
       </div>

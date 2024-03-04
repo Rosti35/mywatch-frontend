@@ -18,7 +18,7 @@ export default function Page() {
 
       <div className="overflow-auto w-full px-4 sm:px-0 h-full min-h-[300px]">
         <div className="w-full gap-5 flex md:flex-col min-h-[280px] h-full flex-row">
-          <div className="max-w-[544px] min-w-[300px]  max-h-[544px] rounded-3xl w-full h-full aspect-square bg-zinc-400" />
+          <div className="max-w-[544px] min-w-[300px] max-h-[544px] rounded-3xl w-full h-full aspect-square bg-zinc-400" />
           <div className="max-w-[544px] min-w-[300px] max-h-[544px] rounded-3xl w-full h-full aspect-square bg-zinc-400" />
         </div>
       </div>

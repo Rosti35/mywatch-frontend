@@ -12,7 +12,7 @@ import {Button} from '@/ui/themed/button';
 
 export default function Page() {
   return (
-    <div className="sm:pt-[39px] sm:pr-[40px] sm:pl-[22px] p-4 py-5">
+    <div className="sm:pt-[39px] sm:pr-[40px] sm:pl-[22px] p-4 overflow-x-auto py-5">
       <div className="flex gap-[50px]  w-full h-full">
         <div className="flex flex-1 flex-col sm:gap-[54px] gap-6 w-full h-full">
           <div className="flex flex-col sm:gap-4 gap-2 ">
@@ -47,15 +47,15 @@ export default function Page() {
                 <p className="sm:text-[20px] text-[18px] font-semibold">Upload photos</p>
 
                 <button className="w-[186px] sm:h-[184px] h-[120px] sm:leading-5 flex-col gap-2 p-8 text-themed-grey-500 bg-themed-grey-100  rounded-3xl items-center justify-center flex">
-                  <UploadIcon className="min-w-6 min-h-6" />
+                  <UploadIcon className="min-w-6 max-w-6 max-h-6 min-h-6" />
                   Select files or drag and drop
                 </button>
               </div>
             </div>
 
-            <div className="flex flex-col sm:gap-[14px] gap-[10px] text-nowrap overflow-hidden">
+            <div className="flex flex-col sm:gap-[14px] gap-[10px] text-nowrap ">
               <p className="sm:text-[20px] text-[18px] font-semibold">Condition</p>
-              <div className="flex gap-[10px] overflow-auto p-1 bg-themed-grey-300 rounded-full">
+              <div className="flex gap-[10px] overflow-auto p-1 rounded-full">
                 <Button size='md' className="rounded-full gap-1 bg-themed-grey-100 justify-center text-themed-black-primary h-[50px] border border-themed-black-primary sm:pl-4  sm:pr-6 flex items-center">
                   <CheckIcon className="w-9 h-9 stroke-current ml-auto text-black" />
                   <span className="tracking-wide">Brand new</span>

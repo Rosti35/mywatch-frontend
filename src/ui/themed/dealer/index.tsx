@@ -15,7 +15,7 @@ type DealerVerificationProps = {
 };
 
 export const DealerRatingLabel = () => (
-  <div className="flex items-center gap-[6px]">
+  <div className="flex font-semibold text-[#262626] items-center gap-[6px]">
     <StarIcon className="w-4 h-4 text-yellow-500" />
     4.8
   </div>
@@ -34,7 +34,7 @@ export const DealerVerification = ({showSince}: DealerVerificationProps) => (
 
     <span className="flex sm:text-sm text-[14px] text-nowrap gap-[10px] items-center">
       <DealerRatingLabel />
-      <span className="text-themed-grey-400 sm:text-sm text-xs">(543 deals)</span>
+      <span className="text-[##262626] font-normal sm:text-sm text-xs">(543 deals)</span>
     </span>
 
     {showSince ? <span className="text-themed-grey-400 sm:block hidden">Since 2023</span> : null}
