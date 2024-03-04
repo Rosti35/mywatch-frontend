@@ -34,7 +34,7 @@ export const MessageLink = ({link}: {link: string}) => {
   return (
     <span
       className={cn(
-        'sm:px-5 sm:py-5 py-[14px] px-0 rounded-3xl hover:bg-themed-grey-100 transition-all text-themed-black-primary',
+        'sm:px-5 sm:py-5 py-[14px] px-0 rounded-3xl sm:hover:bg-themed-grey-100 transition-all text-themed-black-primary',
         active
           ? 'bg-themed-black-primary text-white font-medium hover:bg-themed-black-primary/90'
           : 'bg-transparent',

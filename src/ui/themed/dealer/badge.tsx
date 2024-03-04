@@ -21,7 +21,7 @@ export const DealerBadge = ({variant}: DealerBadgeProps) => {
   switch (variant) {
     case 'md':
       return (
-        <div className="mt-4 flex items-center gap-[14px]">
+        <div className="mt-4 flex items-center sm:gap-[14px] gap-[10px]">
           <div className="w-[60px] h-[60px] rounded-full bg-blue-800" />
           <div className="flex flex-col">
             <p className="font-bold mb-[3px] leading-5  tracking-wide text-[18px]">
@@ -34,7 +34,7 @@ export const DealerBadge = ({variant}: DealerBadgeProps) => {
 
     case 'sm':
       return (
-        <div className="mt-auto flex items-center gap-3">
+        <div className="mt-auto flex items-center sm:gap-3 gap-[10px]">
           <div className="w-10 h-10 rounded-full bg-blue-800" />
           <div>
             <p className="tracking-wide">Ineichen Zuriсh</p>

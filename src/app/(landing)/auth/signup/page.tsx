@@ -95,9 +95,16 @@ export default function Page() {
           <CompanyInfo />
           <AccountInfo />
 
-          <div className="flex sm:flex-row w-full gap-6 items-center">
-            <Link href="/dashboard">
-              <Button>Create account</Button>
+          <div className="flex sm:flex-row flex-col w-full gap-6 items-center">
+            <Link
+              href="/dashboard"
+              className="w-full"
+            >
+              <Button
+                className={`flex items-center w-full sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md   px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`}
+              >
+                Create account
+              </Button>
             </Link>
 
             <div className="text-themed-grey-400 sm:text-[14px] text-xs max-w-[300px]">
@@ -105,7 +112,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="w-full md:flex hidden mt-[52px] items-end justify-end h-fit">
+        <div className="w-full md:flex ml-10 hidden mt-[52px] items-end justify-end h-fit">
           <AccountInfoCard />
         </div>
       </div>

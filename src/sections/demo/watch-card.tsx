@@ -49,7 +49,9 @@ export const SellWatchMobile = () => {
           <p className="font-bold text-[14px] leading-[19px]">Daytona Stainless Steel Black Dial</p>
         </Link>
 
-        <div className="mt-[11px]"><WatchDetails /></div>
+        <div className="mt-[11px]">
+          <WatchDetails />
+        </div>
 
         <Price />
 
@@ -87,7 +89,9 @@ export const BuyWatchMobile = () => {
           <DealerBadge variant="sm" />
           <Warehouse />
         </div>
-        <Button className="w-full">Want to buy</Button>
+        <button className=" h-[50px] bg-themed-black-primary text-white rounded-full w-full">
+          Want to buy
+        </button>
       </div>
     </div>
   );
@@ -143,7 +147,7 @@ const BuyWatch = () => (
       </button>
     </div>
     <div className="mt-auto flex h-full">
-    <Warehouse />
+      <Warehouse />
     </div>
   </div>
 );

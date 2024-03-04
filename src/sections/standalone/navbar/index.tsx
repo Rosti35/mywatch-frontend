@@ -8,6 +8,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/ui/common/dialog';
+import {AppleIcon} from '@/ui/common/icons/apple';
+import {GoogleIcon} from '@/ui/common/icons/google';
+import {QrIcon} from '@/ui/common/icons/qr';
 import {Button} from '@/ui/themed/button';
 import {TextField} from '@/ui/themed/fields/text';
 import Link from 'next/link';
@@ -23,10 +26,18 @@ export function SignInDialog() {
           Log in
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] bg-themed-grey-100 gap-[30px] rounded-[32px] p-[40px]">
+      <DialogContent className="sm:max-w-[600px]  bg-themed-grey-100 gap-[30px] rounded-[32px] p-[40px]">
         <DialogHeader>
-          <DialogTitle>Log in to mywatch</DialogTitle>
-          <DialogDescription>Dont have an account? Sign up</DialogDescription>
+          <DialogTitle className="sm:text-left">Log in to mywatch</DialogTitle>
+          <DialogDescription className="sm:text-left flex gap-2 text-[#262626]">
+            Dont have an account?
+            <Link
+              href="/auth/signup"
+              className="underline"
+            >
+              Sign up
+            </Link>
+          </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-[10px]">
           <TextField
@@ -39,7 +50,12 @@ export function SignInDialog() {
             type="password"
           />
 
-          <Button>Log in</Button>
+          <Link
+            href="/dashboard"
+            className="w-full"
+          >
+            <Button className="w-full">Log in</Button>
+          </Link>
 
           <Link
             href="/forgot-password"
@@ -48,10 +64,19 @@ export function SignInDialog() {
             Forgot password?
           </Link>
         </div>
-        <DialogFooter className="w-full items-stretch">
-          <Button className="w-full bg-white text-themed-black-primary">Apple</Button>
-          <Button className="w-full bg-white text-themed-black-primary">Google</Button>
-          <Button className="w-full bg-white text-themed-black-primary">Mobile App</Button>
+        <DialogFooter className="w-full flex gap-2 items-stretch">
+          <Button className="w-full flex text-nowrap items-center justify-center gap-[10px] bg-white text-themed-black-primary">
+            <AppleIcon className="w-6 h-6" />
+            Apple
+          </Button>
+          <Button className="w-full flex text-nowrap items-center justify-center gap-[10px] bg-white text-themed-black-primary">
+            <GoogleIcon className="w-6 h-6" />
+            Google
+          </Button>
+          <Button className="w-full flex text-nowrap items-center justify-center gap-[10px] bg-white text-themed-black-primary">
+            <QrIcon className="w-6 h-6" />
+            Mobile App
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
