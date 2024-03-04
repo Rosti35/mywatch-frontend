@@ -28,14 +28,14 @@ export const Warehouse = () => (
 );
 export const SellWatchMobile = () => {
   return (
-    <div className="grid grid-cols-2 sm:hidden  p-[10px] w-full h-full bg-white rounded-[20px] gap-[2px]">
+    <div className="flex sm:hidden  p-[10px] w-full h-full bg-white rounded-[20px] gap-[2px]">
       <div className="w-full flex flex-col h-full">
         <div className="w-full max-w-[150px] h-fit aspect-square rounded-3xl bg-zinc-500" />
         <MessagesLink
           count={3}
           newMessages={2}
         />
-        <div className="mt-auto px-[10px]">
+        <div className="mt-5 px-[10px]">
           <Warehouse />
         </div>
       </div>
@@ -62,7 +62,7 @@ export const SellWatchMobile = () => {
 export const BuyWatchMobile = () => {
   return (
     <div className="flex flex-col bg-white rounded-[20px]   p-[10px] sm:hidden ">
-      <div className="grid grid-cols-2 w-full h-full gap-[14px]">
+      <div className="flex w-full h-full gap-[14px]">
         <div className="w-full flex flex-col h-full">
           <div className="w-full max-w-[150px] h-fit aspect-square rounded-3xl bg-zinc-500" />
         </div>

@@ -61,6 +61,15 @@ export default function Page() {
             <WatchPreview sell />
             <WatchPreview sell />
             <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
+            <WatchPreview sell />
           </div>
         </div>
       </DashboardPageLayout>
