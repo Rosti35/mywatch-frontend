@@ -18,16 +18,16 @@ const ProductCard = () => {
       </div>
       <div className="flex gap-[25px] w-full pl-[14px]">
         <div className="flex flex-col">
-          <p className="tracking-wide">Year</p>
-          <p className="tracking-wide">2020</p>
+          <p className="tracking-wide text-xs text-[#737373]">Year</p>
+          <p className="tracking-wide text-xs">2020</p>
         </div>
         <div className="flex flex-col">
-          <p className="tracking-wide">Package</p>
-          <p className="tracking-wide">Box and papers</p>
+          <p className="tracking-wide text-xs text-[#737373]">Package</p>
+          <p className="tracking-wide text-xs">Box and papers</p>
         </div>
         <div className="flex flex-col">
-          <p className="tracking-wide">Condition</p>
-          <p className="tracking-wide">Brand new</p>
+          <p className="tracking-wide text-xs text-[#737373]">Condition</p>
+          <p className="tracking-wide text-xs">Brand new</p>
         </div>
       </div>
 
@@ -79,7 +79,7 @@ const ProductList = () => (
             <div className="w-full   gap-3 flex items-center tracking-wide mt-1">Box, papers</div>
             <div className="w-full   gap-5 flex items-center mt-1">
               <span className="font-bold tracking-wide">33 783 $</span>
-              <TrashIcon className="min-w-6 min-h-6" />
+              <TrashIcon className="w-6 h-6" />
             </div>
           </TableRow>
         );
@@ -90,7 +90,7 @@ const ProductList = () => (
 
 export default function Page() {
   return (
-    <div className="flex gap-5 overflow-hidden">
+    <div className="px-4 pb-4 lg:pb-4 pt-5 lg:pl-[22px] lg:pr-[40px] lg:pt-[42px]">
       <div className="w-full flex flex-col sm:gap-[30px] gap-5">
         <SubrouteTitle
           href="/sell"

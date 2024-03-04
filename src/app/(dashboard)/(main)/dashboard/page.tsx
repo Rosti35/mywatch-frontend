@@ -73,7 +73,7 @@ function SendInvitationDialog({children}: PropsWithChildren) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] bg-themed-grey-100 gap-[30px] rounded-[32px] p-[40px]">
+      <DialogContent className="sm:max-w-[600px] bg-themed-grey-100 gap-[30px] sm:rounded-[32px] rounded-3xl sm:p-[40px]">
         <DialogHeader>
           <DialogTitle>Invite your trusted partners</DialogTitle>
           <DialogDescription>
@@ -83,9 +83,9 @@ function SendInvitationDialog({children}: PropsWithChildren) {
 
         <TabRoot
           defaultValue={'whatsapp'}
-          className="flex flex-col gap-[16px]"
+          className="flex flex-col gap-[16px] w-full overflow-hidden"
         >
-          <TabTriggerContainer className="bg-themed-grey-200">
+          <TabTriggerContainer className="bg-themed-grey-200 overflow-auto w-full">
             <TabTrigger value="whatsapp">Whatsapp</TabTrigger>
             <TabTrigger value="tg">Telegram</TabTrigger>
             <TabTrigger value="sms">SMS</TabTrigger>
@@ -198,7 +198,7 @@ const PartnersStatus = () => (
 );
 
 const Chat = () => (
-  <DashboardCardRoot className="gap-6 min-h-[300px] w-full h-fit flex flex-col">
+  <DashboardCardRoot className="gap-6 sm:min-h-[300px] w-full h-fit flex flex-col">
     <DashboardCardTitle className="items-center gap-2">
       <DashboardTitleLink
         href="/messages"

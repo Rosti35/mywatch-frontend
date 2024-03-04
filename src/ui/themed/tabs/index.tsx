@@ -29,7 +29,7 @@ export const TabTrigger = ({
     <Primitive.TabTrigger
       activeClassname={cn('text-black', activeClassname)}
       className={cn(
-        'px-5 flex-1 flex text-themed-grey-500 rounded-full items-center justify-center relative text-sm leading-none',
+        'px-5 flex-1 flex text-themed-grey-500 rounded-full items-center justify-center relative sm:text-sm text-xs leading-none',
         className,
       )}
       {...props}
@@ -47,7 +47,7 @@ export const TabTriggerContainer = ({
   return (
     <div
       className={cn(
-        'flex rounded-full h-[58px] p-1 overflow-hidden  bg-themed-grey-300',
+        'flex rounded-full h-[58px] p-1  bg-themed-grey-300',
         className,
       )}
       {...props}

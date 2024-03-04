@@ -51,7 +51,7 @@ export const SettingsLayout = ({
       {children}
 
       {showSaveButton ? (
-        <div className="mt-auto px-4 sm:px-0 flex flex-col sm:flex-row sm:gap-4 gap-2">
+        <div className="mt-auto px-4 sm:px-0 pb-4 sm:pb-0 flex flex-col sm:flex-row sm:gap-4 gap-2">
           <Button>Save settings</Button>
           <Button className="bg-white hover:opacity-70 text-themed-black-primary">Reset</Button>
         </div>
