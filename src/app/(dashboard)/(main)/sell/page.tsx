@@ -6,6 +6,7 @@ import {Button} from '@/ui/themed/button';
 import Link from 'next/link';
 import {DashboardPageLayout} from '../../_layout';
 import {FilterSelect} from '../../_components/filter';
+import {ImportDialog} from '@/sections/dialogs/import';
 
 const Title = () => {
   return (
@@ -26,17 +27,14 @@ const Title = () => {
           </Button>
         </Link>
 
-        <Link
-          href={'/import'}
-          className="sm:w-fit w-full"
-        >
+        <ImportDialog>
           <Button
             size="sm"
             className="bg-[#D4D4D4]  text-themed-black-primary rounded-full w-full sm:w-fit"
           >
             Import from other platforms
           </Button>
-        </Link>
+        </ImportDialog>
       </div>
     </div>
   );

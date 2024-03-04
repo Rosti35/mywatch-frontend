@@ -1,5 +1,6 @@
 import {cn} from '@/lib/cn';
 import {HTMLAttributes, PropsWithChildren, ReactNode} from 'react';
+import {PlusIcon} from '../icons/plus';
 
 type CommonCardProps = HTMLAttributes<HTMLDivElement> & PropsWithChildren;
 
@@ -13,6 +14,13 @@ export const CardRoot = ({className, children, ...props}: CommonCardProps) => {
     </div>
   );
 };
+
+export const EmptyCard = () => (
+  <CardRoot className="items-center justify-center h-full gap-3.5 text-[#A3A3A3]">
+    <PlusIcon className="w-6 h-6" />
+    <p>Add new</p>
+  </CardRoot>
+);
 
 type CardTitleProps = {
   actions: ReactNode | string | null;

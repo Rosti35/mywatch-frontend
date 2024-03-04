@@ -4,6 +4,7 @@ import {sampeDelieveryAddress} from '@/fake';
 import {DelieveryAddressPreview} from '@/sections/preview/delivery';
 import {SettingsLayout} from '../_layouts/settings';
 import {useCardActions} from '@/hooks/use-card-actions';
+import {EmptyCard} from '@/ui/common/card';
 
 export default function Page() {
   const actions = useCardActions();
@@ -20,6 +21,7 @@ export default function Page() {
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />
+          <EmptyCard />
         </div>
       </div>
     </SettingsLayout>

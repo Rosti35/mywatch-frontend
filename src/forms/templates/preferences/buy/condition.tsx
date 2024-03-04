@@ -8,5 +8,12 @@ export const Condition = () => (
       <Checkbox>Pre-owned</Checkbox>
       <Checkbox>No matter</Checkbox>
     </span>
+
+    <p className="text-md font-semibold">Set</p>
+    <span className="space-y-2">
+      <Checkbox>Original box</Checkbox>
+      <Checkbox>Original papers</Checkbox>
+      <Checkbox>No matter</Checkbox>
+    </span>
   </div>
 );

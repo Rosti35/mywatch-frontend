@@ -14,7 +14,7 @@ export default function Page() {
     >
       <Switch id="1" className='px-4 sm:px-0'>I only want to receive offers from my partners</Switch>
 
-      <div className="w-full px-4 sm:px-0 h-full flex sm:py-[40px] overflow-auto">
+      <div className="w-full px-4 sm:px-0 h-full flex overflow-auto">
         <Country />
       </div>
     </SettingsLayout>

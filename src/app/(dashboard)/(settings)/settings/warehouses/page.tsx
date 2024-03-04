@@ -4,6 +4,8 @@ import {sampleWarehouse} from '@/fake';
 import {SettingsLayout} from '../_layouts/settings';
 import {useCardActions} from '@/hooks/use-card-actions';
 import {WarehousePreview} from '@/sections/preview/warehouse';
+import {CardRoot, EmptyCard} from '@/ui/common/card';
+import {PlusIcon} from '@/ui/common/icons/plus';
 
 export default function Page() {
   const actions = useCardActions();
@@ -20,6 +22,7 @@ export default function Page() {
           <WarehousePreview {...passingProps} />
           <WarehousePreview {...passingProps} />
           <WarehousePreview {...passingProps} />
+          <EmptyCard />
         </div>
       </div>
     </SettingsLayout>

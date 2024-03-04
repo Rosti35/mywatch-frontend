@@ -1,4 +1,5 @@
 import {MessagesLink, SaleCountdown, WatchDetails} from '@/sections/demo/watch-card';
+import {ChatDialog} from '@/sections/dialogs/chat';
 import {
   ProductPageLayout,
   ProductImageLayout,
@@ -9,6 +10,7 @@ import {
   ProductDescription,
 } from '@/ui/layouts/product';
 import {Cross1Icon} from '@radix-ui/react-icons';
+import Link from 'next/link';
 
 const Price = () => (
   <span className="flex text-nowrap gap-6 py-1 items-center">
@@ -49,7 +51,17 @@ export default function Page() {
 
         <ProductBrand>Rolex</ProductBrand>
 
-        <MessagesLink count={2} />
+        <Link
+          href="/messages/1"
+          className="lg:hidden block"
+        >
+          <MessagesLink count={2} />
+        </Link>
+        <div className="lg:block hidden">
+          <ChatDialog>
+            <MessagesLink count={2} />
+          </ChatDialog>
+        </div>
 
         <ProductDescription>
           Released in 1963, Cosmograph Daytona watches have long gone beyond just a work of

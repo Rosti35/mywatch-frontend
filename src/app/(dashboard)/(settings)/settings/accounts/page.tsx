@@ -4,6 +4,7 @@ import {sampleBank} from '@/fake';
 import {SettingsLayout} from '../_layouts/settings';
 import {useCardActions} from '@/hooks/use-card-actions';
 import {BankAccountPreview} from '@/sections/preview/bank';
+import {EmptyCard} from '@/ui/common/card';
 
 export default function Page() {
   const actions = useCardActions();
@@ -17,6 +18,7 @@ export default function Page() {
           <BankAccountPreview {...passingProps} />
           <BankAccountPreview {...passingProps} />
           <BankAccountPreview {...passingProps} />
+          <EmptyCard />
         </div>
       </div>
     </SettingsLayout>

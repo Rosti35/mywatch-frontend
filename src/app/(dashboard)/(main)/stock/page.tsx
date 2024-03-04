@@ -17,42 +17,7 @@ import {TextField} from '@/ui/themed/fields/text';
 import {PropsWithChildren} from 'react';
 import {TabContent, TabRoot} from '@/ui/common/tabs';
 import {TabTrigger, TabTriggerContainer} from '@/ui/themed/tabs';
-import {DashboardPageLayout} from '../../_layout';
-
-function ImportDialog({children}: PropsWithChildren) {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] bg-themed-grey-100 gap-[30px] rounded-[32px] p-[40px]">
-        <DialogHeader>
-          <DialogTitle>Import from other platforms</DialogTitle>
-          <DialogDescription className="leading-6 tracking-wide">
-            Just send an invitation and start making quick, convenient transactions
-          </DialogDescription>
-        </DialogHeader>
-        <TabRoot
-          defaultValue={'chrono'}
-          className="flex flex-col gap-[16px]"
-        >
-          <TabTriggerContainer className="bg-themed-grey-200">
-            <TabTrigger value="chrono">Chrono24</TabTrigger>
-            <TabTrigger value="xml">XML Import</TabTrigger>
-          </TabTriggerContainer>
-          <TabContent value="chrono">
-            <TextField placeholder="Url" />
-          </TabContent>
-
-          <Link
-            href={'/import'}
-            className="w-full"
-          >
-            <Button className="w-full">Import</Button>
-          </Link>
-        </TabRoot>
-      </DialogContent>
-    </Dialog>
-  );
-}
+import {ImportDialog} from '@/sections/dialogs/import';
 
 function AddBrandDialog({children}: PropsWithChildren) {
   return (
@@ -82,7 +47,7 @@ const BrandItem = ({brand}: BrandItemProps) => {
     <Link
       href="/stock/brand"
       aria-label="Brand"
-      className="data-[state=on]:bg-themed-black-primary leading-[24px] tracking-wide text-left data-[state=on]:text-white hover:bg-themed-black-primary/80 hover:text-white transition-all rounded-md "
+      className="data-[state=on]:bg-themed-black-primary leading-[24px] tracking-wide text-left data-[state=on]:text-white hover:underline transition-all rounded-md "
     >
       {brand}
     </Link>

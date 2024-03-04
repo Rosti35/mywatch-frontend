@@ -43,7 +43,7 @@ export const SettingsLayout = ({
             </button>
           </Link>
         ) : null}
-        <h1 className="text-lg font-bold tracking-tight leading-[32px]">{title}</h1>
+        <h1 className="text-lg font-bold tracking-tight text-[#262626] leading-[32px]">{title}</h1>
 
         {description ? <span className="leading-5">{description}</span> : null}
       </span>
