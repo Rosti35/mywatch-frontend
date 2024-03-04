@@ -108,7 +108,10 @@ export default function Page() {
         <div className="sm:px-0 px-4 sm:pb-0 pb-6">
           <div className="flex px-5 items-center gap-4 bg-white  rounded-xl">
             <AttachmentIcon className="w-6 h-6 text-themed-grey-400" />
-            <input className="h-[60px] text-sm w-full  outline-none" />
+            <input
+              className="h-[60px] text-sm w-full  outline-none placeholder:text-themed-grey-400"
+              placeholder="Write message"
+            />
           </div>
         </div>
       </div>

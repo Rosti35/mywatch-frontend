@@ -5,21 +5,21 @@ import {Cross1Icon} from '@radix-ui/react-icons';
 
 export default function Page() {
   return (
-    <div className="flex flex-col md:flex-row gap-5 overflow-hidden">
-      <span className="sm:hidden block">
+    <div className="flex flex-col sm:h-dvh md:flex-row sm:gap-5 overflow-hidden sm:pt-[39px] sm:pr-[40px] sm:pl-[22px] sm:pb-0">
+      <span className="sm:hidden block pt-5 pl-4 sm:p-0">
         <SubrouteTitle
           href="/sell"
           back="Back to list"
         />
       </span>
 
-      <div className="overflow-auto w-full h-full min-h-[300px]">
+      <div className="overflow-auto w-full px-4 sm:px-0 h-full min-h-[300px]">
         <div className="w-full gap-5 flex md:flex-col min-h-[280px] h-full flex-row">
           <div className="max-w-[544px] min-w-[300px]  max-h-[544px] rounded-3xl w-full h-full aspect-square bg-zinc-400" />
           <div className="max-w-[544px] min-w-[300px] max-h-[544px] rounded-3xl w-full h-full aspect-square bg-zinc-400" />
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full sm:p-0 p-4">
         <div className="flex flex-col gap-5 ">
           <span>
             <span className="hidden sm:block">

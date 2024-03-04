@@ -1,5 +1,7 @@
 import {CardRoot} from '@/ui/common/card';
 import {CheckIcon} from '@/ui/common/icons/check';
+import {CopyIcon} from '@/ui/common/icons/copy';
+import {Button} from '@/ui/themed/button';
 import {Cross2Icon} from '@radix-ui/react-icons';
 import {PropsWithChildren} from 'react';
 
@@ -31,10 +33,17 @@ export const IntegrationCard = ({children, connected, integration}: IntegrationC
       <p className="text-[20px] font-bold">{integration}</p>
       <span className="ml-auto flex items-center justify-center">{children}</span>
     </div>
-    {connected ? <Connected /> : <NotConnected />}
-
-    <button className="py-4 px-5 w-fit text-white bg-themed-black-primary rounded-full">
-      {connected ? 'Sent invintation' : 'Reconnect'}
-    </button>
+    <div className="flex gap-6 items-center">
+      <Button
+        size="md"
+        className="w-fit"
+      >
+        Join group
+      </Button>
+      <span className='flex items-center gap-1'>
+        <CopyIcon className="w-5 h-5" />
+        Copy link
+      </span>
+    </div>
   </CardRoot>
 );

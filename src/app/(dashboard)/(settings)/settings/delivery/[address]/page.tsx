@@ -9,7 +9,7 @@ export default function Page() {
       back="Back to list"
     >
       <div className="px-4 sm:px-0">
-      <Address />
+        <Address />
       </div>
     </SettingsLayout>
   );

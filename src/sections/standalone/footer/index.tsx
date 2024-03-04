@@ -6,7 +6,7 @@ import GAppsSVG from '@/ui/common/svg/g-app.svg';
 import {Logo} from '@/ui/common/branding/logo';
 
 const MobileLayout = () => (
-  <div className="flex gap-[60px] flex-wrap justify-center">
+  <div className="flex sm:hidden gap-[60px] flex-wrap justify-center">
     <div className="flex font-normal gap-5 flex-col w-fit">
       <div className="border border-white/20 rounded-xl flex justify-center items-center gap-5 py-[25px] px-5 text-[12px] tracking-wide leading-4">
         <Image
@@ -96,7 +96,7 @@ const MobileLayout = () => (
 );
 
 const PCLayout = () => (
-  <div className="flex gap-[60px] flex-wrap justify-center">
+  <div className="sm:flex hidden gap-[60px]  flex-wrap justify-center">
     <div className="flex font-normal gap-2 flex-col w-fit">
       <p className="font-bold leading-9 tracking-wide text-[18px]">About</p>
 
@@ -194,6 +194,7 @@ export const Footer = () => (
       </div>
 
       <MobileLayout />
+      <PCLayout />
     </div>
   </div>
 );

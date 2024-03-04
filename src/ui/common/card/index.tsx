@@ -23,7 +23,7 @@ export const CardTitle = ({children, actions, ...props}: CardTitleProps) => {
       className="flex"
       {...props}
     >
-      <p className="font-bold text-[20px] leading-[25px]">{children}</p>
+      <p className="font-bold text-[20px] leading-[16px]">{children}</p>
 
       <span className="ml-auto flex items-center justify-center">{actions}</span>
     </div>

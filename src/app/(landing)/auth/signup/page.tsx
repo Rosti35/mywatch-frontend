@@ -1,3 +1,5 @@
+'use client';
+
 import {TabContent, TabRoot, TabTrigger, TabTriggerContainer} from '@/ui/themed/tabs';
 
 import {Company} from '@/forms/templates/new/company';
@@ -5,6 +7,47 @@ import {Person} from '@/forms/templates/new/person';
 import {Account} from '@/forms/templates/new/account';
 import {AccountInfoCard} from './_components/account-info-card';
 import {Button} from '@/ui/themed/button';
+import * as RadioGroup from '@radix-ui/react-radio-group';
+
+const RadioGroupDemo = () => (
+  <form>
+    <RadioGroup.Root
+      className="flex sm:flex-row flex-col sm:gap-[30px] gap-[14px]"
+      defaultValue="default"
+    >
+      <div className="flex items-center">
+        <RadioGroup.Item
+          className="w-6 h-6 rounded-full outline-none cursor-default border border-themed-grey-300"
+          value="default"
+          id="r1"
+        >
+          <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-3 after:h-3 after:rounded-[50%] after:bg-themed-black-primary" />
+        </RadioGroup.Item>
+        <label
+          className="text-black text-[15px] leading-none pl-[15px]"
+          htmlFor="r1"
+        >
+          Legal entity / corporation
+        </label>
+      </div>
+      <div className="flex items-center">
+        <RadioGroup.Item
+          className="w-6 h-6 rounded-full outline-none cursor-default border border-themed-grey-300"
+          value="offense"
+          id="r1"
+        >
+          <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-3 after:h-3 after:rounded-[50%] after:bg-themed-black-primary" />
+        </RadioGroup.Item>
+        <label
+          className="text-black text-[15px] leading-none pl-[15px]"
+          htmlFor="r1"
+        >
+          Natural person / sole proprietor
+        </label>
+      </div>
+    </RadioGroup.Root>
+  </form>
+);
 
 const CompanyInfo = () => (
   <section>
@@ -12,10 +55,7 @@ const CompanyInfo = () => (
       Company info
     </h2>
     <TabRoot defaultValue="tab1">
-      <TabTriggerContainer>
-        <TabTrigger value="tab1">Legal entity / corporation</TabTrigger>
-        <TabTrigger value="tab2">Natural person / sole proprietor</TabTrigger>
-      </TabTriggerContainer>
+      <RadioGroupDemo />
 
       <div>
         <TabContent
