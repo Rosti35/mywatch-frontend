@@ -1,4 +1,5 @@
 import {cn} from '@/lib/cn';
+import {EyeIcon} from '@/ui/common/icons/eye';
 import {MessageIcon} from '@/ui/common/icons/message';
 import {StarIcon} from '@/ui/common/icons/star';
 import {TimeIcon} from '@/ui/common/icons/time';
@@ -102,12 +103,14 @@ type MessagesLinkProps = {
 };
 export const MessagesLink = ({count, newMessages}: MessagesLinkProps) => {
   return (
-    <div className="flex items-center gap-[14px]">
+    <div className="flex items-center sm:gap-5">
       <button className="bg-white max-w-[200px] px-4 rounded-full h-[40px] flex items-center gap-[10px]">
         <MessageIcon className="sm:w-6 sm:h-6 w-5 h-5 text-black" />
-        <span className="sm:text-[16px] text-xs lg:before:content-['Messages'] before:content-none font-normal flex items-center justify-center gap-[10px] tracking-[-0.03rem]">
-          {count ? <span>{count}</span> : null}
-        </span>
+        {count ? (
+          <span className="sm:text-[16px] text-[14px] font-normal flex items-center justify-center gap-[10px] tracking-[-0.03rem]">
+            Messages {count}
+          </span>
+        ) : null}
 
         {newMessages ? (
           <span className="w-[30px] sm:h-6 h-5 bg-green-500 rounded-full font-bold sm:text-[14px] text-xs flex items-center justify-center text-white">
@@ -115,6 +118,12 @@ export const MessagesLink = ({count, newMessages}: MessagesLinkProps) => {
           </span>
         ) : null}
       </button>
+
+      <div className="flex gap-[10px] items-center sm:text-sm text-[14px]">
+        <EyeIcon className="sm:w-6 sm:h-6 w-5 h-5 text-themed-black-primary" />
+        100
+        <span className="text-green-600">+2</span>
+      </div>
     </div>
   );
 };

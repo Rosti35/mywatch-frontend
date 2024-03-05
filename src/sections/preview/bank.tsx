@@ -19,3 +19,23 @@ export const BankAccountPreview = ({
     </CardRoot>
   );
 };
+
+export const BankAccountPreviewBTC = ({
+  company,
+  bic_code,
+  account_number,
+  ...props
+}: BankAccountPreviewProps) => {
+  return (
+    <CardRoot className="h-full">
+      <CardTitle actions={<ContextMenu {...props} />}>BTC</CardTitle>
+
+      <CardField
+        caption="Wallet"
+        className="mt-auto"
+      >
+        13idc4shJYvguGmCsaK5TAGmuyo...TQ
+      </CardField>
+    </CardRoot>
+  );
+};

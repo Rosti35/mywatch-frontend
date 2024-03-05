@@ -47,16 +47,14 @@ const ArchiveItem = () => (
       <WatchDetails />
 
       <div className="mt-auto flex items-center gap-5">
-        <div className="w-10 h-10 rounded-full bg-blue-800" />
+        <div className="min-w-[40px] min-h-[40px] max-h-[40px] max-w-[40px] rounded-full bg-blue-800" />
         <div>
           <p className="tracking-wide">Ineichen Zuriсh</p>
           <p className="text-[#4B5563] text-[14px]">Buyer</p>
         </div>
 
         <div className="flex items-center gap-[14px]">
-          <button className="bg-white max-w-[200px] px-4 rounded-full h-[40px] flex items-center gap-[10px]">
-            <MessageIcon className="sm:w-6 sm:h-6 w-5 h-5 text-black" />
-          </button>
+          <MessagesLink />
         </div>
       </div>
     </div>
@@ -83,6 +81,7 @@ const ArchiveItemMobile = () => {
       <div className="grid grid-cols-2 w-full h-full gap-[14px]">
         <div className="w-full flex flex-col h-full">
           <div className="w-full max-w-[150px] h-fit aspect-square rounded-3xl bg-zinc-500" />
+          <MessagesLink />
         </div>
 
         <div className="w-full flex flex-col gap-2 h-full">

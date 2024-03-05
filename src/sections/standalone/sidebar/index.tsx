@@ -1,6 +1,7 @@
 'use client';
 
 import {Logo} from '@/ui/common/branding/logo';
+import {ArrowDownIcon} from '@/ui/common/icons/arrow-down';
 import {HomeIcon} from '@/ui/common/icons/home';
 import {LegalIcon} from '@/ui/common/icons/legal';
 import {LogoutIcon} from '@/ui/common/icons/logout';
@@ -53,8 +54,13 @@ export const _Sidebar = () => {
 
   return (
     <aside className="w-full h-full flex flex-col gap-5 overflow-auto py-[30px]  text-white/70 bg-themed-black-primary rounded-3xl">
-      <span className="text-xl px-[30px]">
-        <Logo className="text-white max-w-[150px] mx-auto" />
+      <span className="text-xl px-[30px] gap-4 flex">
+        <Logo className="text-white sm:max-w-[137px] mx-auto" />
+
+        <button className="flex gap-[10px] items-center text-[14px]">
+          EN
+          <ArrowDownIcon className="w-5 h-5" />
+        </button>
       </span>
 
       <div className="flex flex-col text-sm px-[30px] [&>*]:h-[54px]">

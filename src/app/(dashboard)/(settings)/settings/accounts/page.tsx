@@ -3,7 +3,7 @@
 import {sampleBank} from '@/fake';
 import {SettingsLayout} from '../_layouts/settings';
 import {useCardActions} from '@/hooks/use-card-actions';
-import {BankAccountPreview} from '@/sections/preview/bank';
+import {BankAccountPreview, BankAccountPreviewBTC} from '@/sections/preview/bank';
 import {EmptyCard} from '@/ui/common/card';
 
 export default function Page() {
@@ -18,6 +18,7 @@ export default function Page() {
           <BankAccountPreview {...passingProps} />
           <BankAccountPreview {...passingProps} />
           <BankAccountPreview {...passingProps} />
+          <BankAccountPreviewBTC {...passingProps} />
           <EmptyCard />
         </div>
       </div>
