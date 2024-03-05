@@ -6,6 +6,7 @@ import {useCardActions} from '@/hooks/use-card-actions';
 import {WarehousePreview} from '@/sections/preview/warehouse';
 import {CardRoot, EmptyCard} from '@/ui/common/card';
 import {PlusIcon} from '@/ui/common/icons/plus';
+import Link from 'next/link';
 
 export default function Page() {
   const actions = useCardActions();
@@ -22,7 +23,9 @@ export default function Page() {
           <WarehousePreview {...passingProps} />
           <WarehousePreview {...passingProps} />
           <WarehousePreview {...passingProps} />
-          <EmptyCard />
+          <Link href="/settings/warehouses/1">
+            <EmptyCard />
+          </Link>
         </div>
       </div>
     </SettingsLayout>

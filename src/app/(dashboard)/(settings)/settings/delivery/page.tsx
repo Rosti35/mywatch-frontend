@@ -5,6 +5,7 @@ import {DelieveryAddressPreview} from '@/sections/preview/delivery';
 import {SettingsLayout} from '../_layouts/settings';
 import {useCardActions} from '@/hooks/use-card-actions';
 import {EmptyCard} from '@/ui/common/card';
+import Link from 'next/link';
 
 export default function Page() {
   const actions = useCardActions();
@@ -21,7 +22,9 @@ export default function Page() {
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />
           <DelieveryAddressPreview {...passingProps} />
-          <EmptyCard />
+          <Link href="/settings/delivery/1">
+            <EmptyCard />
+          </Link>
         </div>
       </div>
     </SettingsLayout>

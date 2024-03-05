@@ -8,6 +8,7 @@ import {DealerBadge} from '@/ui/themed/dealer/badge';
 import Link from 'next/link';
 import {HTMLAttributes, SVGProps} from 'react';
 import {FlagImage, defaultCountries} from 'react-international-phone';
+import {ChatDialog} from '../dialogs/chat';
 
 const [, iso2] = defaultCountries[0];
 
@@ -104,22 +105,43 @@ type MessagesLinkProps = {
 export const MessagesLink = ({count, newMessages}: MessagesLinkProps) => {
   return (
     <div className="flex items-center sm:gap-5">
-      <button className="bg-white max-w-[200px] px-4 rounded-full h-[40px] flex items-center gap-[10px]">
+      <span className="sm:block hidden">
+        <ChatDialog>
+          <button className="bg-white max-w-[200px] px-4 rounded-full h-[40px] flex items-center sm:gap-[10px] gap-[5px]">
+            <MessageIcon className="sm:w-6 sm:h-6 w-5 h-5 text-black" />
+            {count ? (
+              <span className="sm:text-[16px] sm:before:content-['Messages'] before:content-none text-[14px] font-normal flex items-center justify-center gap-[10px] tracking-[-0.03rem]">
+                {count}
+              </span>
+            ) : null}
+
+            {newMessages ? (
+              <span className="w-[30px] sm:flex hidden sm:h-6 h-5 bg-green-500 rounded-full font-bold sm:text-[14px] text-xs items-center justify-center text-white">
+                +2
+              </span>
+            ) : null}
+          </button>
+        </ChatDialog>
+      </span>
+      <Link
+        href="/messages/1"
+        className="bg-white sm:hidden max-w-[200px] px-4 rounded-full h-[40px] flex items-center sm:gap-[10px] gap-[5px]"
+      >
         <MessageIcon className="sm:w-6 sm:h-6 w-5 h-5 text-black" />
         {count ? (
-          <span className="sm:text-[16px] text-[14px] font-normal flex items-center justify-center gap-[10px] tracking-[-0.03rem]">
-            Messages {count}
+          <span className="sm:text-[16px] sm:before:content-['Messages'] before:content-none text-[14px] font-normal flex items-center justify-center gap-[10px] tracking-[-0.03rem]">
+            {count}
           </span>
         ) : null}
 
         {newMessages ? (
-          <span className="w-[30px] sm:h-6 h-5 bg-green-500 rounded-full font-bold sm:text-[14px] text-xs flex items-center justify-center text-white">
+          <span className="w-[30px] sm:flex hidden sm:h-6 h-5 bg-green-500 rounded-full font-bold sm:text-[14px] text-xs items-center justify-center text-white">
             +2
           </span>
         ) : null}
-      </button>
+      </Link>
 
-      <div className="flex gap-[10px] items-center sm:text-sm text-[14px]">
+      <div className="flex sm:gap-[10px] gap-[5px] items-center sm:text-sm text-[14px]">
         <EyeIcon className="sm:w-6 sm:h-6 w-5 h-5 text-themed-black-primary" />
         100
         <span className="text-green-600">+2</span>

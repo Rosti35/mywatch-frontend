@@ -7,18 +7,21 @@ import {FilterSelect} from '../../_components/filter';
 import {Button} from '@/ui/themed/button';
 import {FilterIcon} from '@/ui/common/icons/filter';
 import {MicIcon} from '@/ui/common/icons/mic';
-import { CameraIcon } from '@/ui/common/icons/camera';
+import {CameraIcon} from '@/ui/common/icons/camera';
+import Link from 'next/link';
 
 const Title = () => {
   return (
     <div className="flex w-full flex-wrap sm:flex-nowrap items-center gap-5">
       <span className="tracking-tighter text-nowrap">New watches for sale</span>
-      <Button
-        size="sm"
-        className="sm:ml-auto font-medium px-5 text-nowrap flex items-center justify-center gap-[10px]"
-      >
-        <FilterIcon className="w-6 h-6" /> Set up selection
-      </Button>
+      <Link href="/settings/buying">
+        <Button
+          size="sm"
+          className="sm:ml-auto font-medium px-5 text-nowrap flex items-center justify-center gap-[10px]"
+        >
+          <FilterIcon className="w-6 h-6" /> Set up selection
+        </Button>
+      </Link>
     </div>
   );
 };
@@ -34,7 +37,7 @@ export default function Page() {
                   className={
                     'w-full outline-none p-5 text-sm placeholder:text-ellipsis placeholder:overflow-hidden placeholder:text-[#262626]'
                   }
-                  placeholder='Find the model'
+                  placeholder="Find the model"
                 />
 
                 <div className="ml-auto flex py-5 pr-5 gap-5 text-themed-black-primary">

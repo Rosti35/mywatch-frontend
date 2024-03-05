@@ -5,6 +5,7 @@ import {SettingsLayout} from '../_layouts/settings';
 import {useCardActions} from '@/hooks/use-card-actions';
 import {BankAccountPreview, BankAccountPreviewBTC} from '@/sections/preview/bank';
 import {EmptyCard} from '@/ui/common/card';
+import Link from 'next/link';
 
 export default function Page() {
   const actions = useCardActions();
@@ -19,10 +20,12 @@ export default function Page() {
       <div className="h-full px-4 sm:px-0">
         <div className="grid md:grid-cols-2 grid-cols-1 sm:gap-5 gap-[10px]">
           <BankAccountPreview {...passingProps} />
-          <BankAccountPreview {...passingProps} />
-          <BankAccountPreview {...passingProps} />
+          
           <BankAccountPreviewBTC {...passingProps} />
-          <EmptyCard />
+          <BankAccountPreview {...passingProps} />
+          <Link href="/settings/accounts/1">
+            <EmptyCard />
+          </Link>
         </div>
       </div>
     </SettingsLayout>

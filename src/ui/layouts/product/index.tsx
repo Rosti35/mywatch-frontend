@@ -1,4 +1,6 @@
+'use client';
 import {SubrouteTitle} from '@/ui/themed/links';
+import {useRouter} from 'next/navigation';
 import {ReactNode, PropsWithChildren} from 'react';
 
 export const ProductPageLayout = ({children}: {children: ReactNode}) => {
