@@ -86,7 +86,7 @@ const ArchiveItemMobile = () => {
 
         <div className="w-full flex flex-col gap-2 h-full">
           <Link
-            href="/sell/1"
+            href="/archive/1"
             className="space-y-1"
           >
             <p className="text-xs">Rolex</p>
