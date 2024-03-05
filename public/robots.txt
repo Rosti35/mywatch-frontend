@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mywatch-frontend.vercel.app/
+
+# Sitemaps
+Sitemap: https://mywatch-frontend.vercel.app/sitemap.xml
