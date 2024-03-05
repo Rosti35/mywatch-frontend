@@ -72,8 +72,12 @@ export default function Page() {
           </button>
         </div>
 
-        <span className="hidden sm:block">
+        <span className="hidden sm:flex gap-[30px]">
           <DealerBadge variant="md" />
+
+          <div className="mt-[6px]">
+          <Warehouse />
+          </div>
         </span>
       </ProductDescriptionLayout>
     </ProductPageLayout>

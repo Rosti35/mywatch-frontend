@@ -7,7 +7,7 @@ export const DealerRating = () => {
         <StarIcon className="w-4 h-4 text-yellow-500" />
         <span className="text-[14px]">4.8</span>
       </div>
-      <span className="text-[#737373] text-xs sm:text-sm">543 deals</span>
+      <span className="text-[#737373] text-xs sm:text-[14px]">543 deals</span>
     </span>
   );
 };
@@ -21,7 +21,7 @@ export const DealerBadge = ({variant}: DealerBadgeProps) => {
   switch (variant) {
     case 'md':
       return (
-        <div className="mt-4 flex items-center sm:gap-[14px] gap-[10px]">
+        <div className="flex items-center sm:gap-[14px] gap-[10px]">
           <div className="w-[60px] h-[60px] rounded-full bg-blue-800" />
           <div className="flex flex-col">
             <p className="font-bold mb-[3px] leading-5  tracking-wide text-[18px]">

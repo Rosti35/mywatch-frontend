@@ -6,6 +6,8 @@ import {DashboardPageLayout} from '../../_layout';
 import {FilterSelect} from '../../_components/filter';
 import {Button} from '@/ui/themed/button';
 import {FilterIcon} from '@/ui/common/icons/filter';
+import {MicIcon} from '@/ui/common/icons/mic';
+import { CameraIcon } from '@/ui/common/icons/camera';
 
 const Title = () => {
   return (
@@ -27,7 +29,19 @@ export default function Page() {
         <div className="h-fit w-full flex flex-col gap-8">
           <div className="space-y-[30px] hidden sm:block">
             <div className="w-full h-fit relative flex flex-col gap-[14px]">
-              <TextField placeholder="Find the model" />
+              <div className="flex w-full bg-white h-[60px] items-center rounded-xl overflow-hidden">
+                <input
+                  className={
+                    'w-full outline-none p-5 text-sm placeholder:text-ellipsis placeholder:overflow-hidden placeholder:text-[#262626]'
+                  }
+                  placeholder='Find the model'
+                />
+
+                <div className="ml-auto flex py-5 pr-5 gap-5 text-themed-black-primary">
+                  <MicIcon className="w-6 h-6" />
+                  <CameraIcon className="w-6 h-6" />
+                </div>
+              </div>
               <div className="gap-[14px] flex">
                 <FilterSelect>Brand & Model</FilterSelect>
                 <FilterSelect>Warehouse</FilterSelect>
