@@ -15,7 +15,7 @@ import Link from 'next/link';
 const Price = () => (
   <span className="flex text-nowrap gap-6 py-1 items-center">
     <div>
-      <p className="text-[14px] text-themed-grey-400 leading-5 tracking-wide">Fixed price</p>
+      <p className="text-[14px] text-[#737373] leading-5 tracking-wide">Fixed price</p>
 
       <p className="sm:text-[30px] text-md font-bold">33 344$</p>
     </div>

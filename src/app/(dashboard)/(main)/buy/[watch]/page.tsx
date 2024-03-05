@@ -34,7 +34,7 @@ export default function Page() {
         </div>
 
         <span className="mt-[10px]">
-          <p className="text-[14px] text-themed-grey-400">Fixed price</p>
+          <p className="text-[14px] text-[#737373]">Fixed price</p>
 
           <div className="flex items-center gap-3">
             <p className="sm:text-[30px] text-md font-bold">33 344 $</p>

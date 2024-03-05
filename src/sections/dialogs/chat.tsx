@@ -5,27 +5,18 @@ import {
   MessageSent,
   MessageReceived,
 } from '@/app/(dashboard)/(chat)/messages/[chat]/_components';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogOverlay,
-  DialogPortal,
-  DialogTitle,
-  DialogTrigger,
-} from '@/ui/common/dialog';
+import {Dialog, DialogOverlay, DialogPortal, DialogTrigger} from '@/ui/common/dialog';
 import {AttachmentIcon} from '@/ui/common/icons/attachment';
 import {TelegramIcon} from '@/ui/common/icons/telegram';
 import {WhatsappIcon} from '@/ui/common/icons/whapsapp';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
 import {Button} from '@/ui/themed/button';
-import {TextField} from '@/ui/themed/fields/text';
-import {TabContent, TabRoot, TabTrigger, TabTriggerContainer} from '@/ui/themed/tabs';
-import Link from 'next/link';
+
 import {PropsWithChildren} from 'react';
 import {Cross2Icon} from '@radix-ui/react-icons';
+import {SendIcon} from '@/ui/common/icons/send';
+import {AddToBlacklistDialog} from './block';
 
 export function ChatDialog({children}: PropsWithChildren) {
   return (
@@ -63,12 +54,14 @@ export function ChatDialog({children}: PropsWithChildren) {
                   />
                 </Button>
 
-                <Button
-                  size="sm"
-                  className="bg-white px-[18px] text-red-500 tracking-[0.02rem]"
-                >
-                  Complain
-                </Button>
+                <AddToBlacklistDialog>
+                  <Button
+                    size="sm"
+                    className="bg-white px-[18px] text-red-500 tracking-[0.02rem]"
+                  >
+                    Complain
+                  </Button>
+                </AddToBlacklistDialog>
 
                 <DialogPrimitive.Close>
                   <Cross2Icon className="h-6 w-6 text-themed-grey-400" />
@@ -112,6 +105,7 @@ export function ChatDialog({children}: PropsWithChildren) {
                     className="h-[60px] text-sm w-full  outline-none placeholder:text-themed-grey-400"
                     placeholder="Write message"
                   />
+                  <SendIcon className="w-6 h-6 text-[#141B34]" />
                 </div>
               </div>
             </div>

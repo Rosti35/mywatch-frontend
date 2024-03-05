@@ -172,9 +172,12 @@ export const SaleCountdown = () => (
 );
 
 const SellWatch = () => (
-  <div className="lg:pl-[30px] pl-4 gap-[15px] text-nowrap w-full flex flex-col">
+  <div className="lg:pl-[30px] pl-4 gap-[15px] h-full text-nowrap w-full flex flex-col">
     <Price />
     <SaleCountdown />
+    <div className="mt-auto">
+      <Warehouse />
+    </div>
   </div>
 );
 
@@ -187,19 +190,19 @@ export const WatchDetails = ({className, ...props}: HTMLAttributes<HTMLDivElemen
     {...props}
   >
     <div className="flex gap-[6px] flex-row sm:flex-col ">
-      <p className="text-themed-grey-600 sm:text-[14px] text-xs sm:leading-[4px]">Year</p>
+      <p className="text-[#737373] sm:text-[14px] text-xs sm:leading-[4px]">Year</p>
       <p className="sm:leading-7">2023</p>
     </div>
     <div className="flex gap-[6px] flex-row sm:flex-col">
-      <p className="text-themed-grey-600 sm:text-[14px] text-xs sm:leading-[4px]">Package</p>
+      <p className="text-[#737373] sm:text-[14px] text-xs sm:leading-[4px]">Package</p>
       <p className="sm:leading-7">Box and papers</p>
     </div>
     <div className="flex gap-[6px] flex-row sm:flex-col">
-      <p className="text-themed-grey-600 sm:text-[14px] text-xs sm:leading-[4px]">Condition</p>
+      <p className="text-[#737373] sm:text-[14px] text-xs sm:leading-[4px]">Condition</p>
       <p className="sm:leading-7">Brand new</p>
     </div>
     <div className="flex gap-[6px] flex-row sm:flex-col">
-      <p className="text-themed-grey-600 sm:text-[14px] text-xs sm:leading-[4px]">Reference</p>
+      <p className="text-[#737373] sm:text-[14px] text-xs sm:leading-[4px]">Reference</p>
       <p className="sm:leading-7">112312</p>
     </div>
   </div>

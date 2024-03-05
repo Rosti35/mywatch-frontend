@@ -7,7 +7,7 @@ export const DealerRating = () => {
         <StarIcon className="w-4 h-4 text-yellow-500" />
         <span className="text-[14px]">4.8</span>
       </div>
-      <span className="text-themed-grey-400 text-xs sm:text-sm">543 deals</span>
+      <span className="text-[#737373] text-xs sm:text-sm">543 deals</span>
     </span>
   );
 };

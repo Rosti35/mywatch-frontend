@@ -6,6 +6,7 @@ import {WhatsappIcon} from '@/ui/common/icons/whapsapp';
 import {Button} from '@/ui/themed/button';
 import {UserProfile, MessageSent, MessageReceived} from './_components';
 import {AddToBlacklistDialog} from '@/sections/dialogs/block';
+import {SendIcon} from '@/ui/common/icons/send';
 
 export default function Page() {
   return (
@@ -44,9 +45,14 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="h-full px-4 pb-[50px] gap-[35px] flex flex-col-reverse">
-        <MessageSent>Perfect</MessageSent>
-        <MessageReceived>Tell me, what is the condition of the watch?</MessageReceived>
+      <div className="h-full flex flex-col">
+        <div className="flex mt-auto flex-col px-4 pb-[50px] pt-[30px] gap-[35px] items-center w-full justify-center">
+          <p className="text-[#A3A3A3]">30 december 2023</p>
+          <div className="h-full w-full gap-[35px] flex flex-col-reverse">
+            <MessageSent>Perfect</MessageSent>
+            <MessageReceived>Tell me, what is the condition of the watch?</MessageReceived>
+          </div>
+        </div>
       </div>
 
       <div className="mt-auto gap-5 w-full h-fit flex flex-col">
@@ -77,6 +83,7 @@ export default function Page() {
               className="h-[60px] text-sm w-full  outline-none placeholder:text-themed-grey-400"
               placeholder="Write message"
             />
+            <SendIcon className="w-6 h-6 text-[#141B34]" />
           </div>
         </div>
       </div>
