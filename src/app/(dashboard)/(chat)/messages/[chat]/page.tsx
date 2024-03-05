@@ -1,3 +1,5 @@
+'use client';
+
 import {AttachmentIcon} from '@/ui/common/icons/attachment';
 import {TelegramIcon} from '@/ui/common/icons/telegram';
 import {WhatsappIcon} from '@/ui/common/icons/whapsapp';

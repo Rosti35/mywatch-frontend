@@ -1,3 +1,5 @@
+'use client'
+
 import {BlacklistStatus} from '@/sections/dealer/status/blacklisted';
 import {PartnersStatus} from '@/sections/dealer/status/partners';
 import {RatingStatus} from '@/sections/dealer/status/rating';

@@ -1,5 +1,4 @@
-import {RatingBadge, WatchDetails} from '@/sections/demo/watch-card';
-import {TimeIcon} from '@/ui/common/icons/time';
+import {WatchDetails} from '@/sections/demo/watch-card';
 import {
   ProductBrand,
   ProductDescription,
