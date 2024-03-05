@@ -9,10 +9,7 @@ import {WhatsappIcon} from '@/ui/common/icons/whapsapp';
 import {TelegramIcon} from '@/ui/common/icons/telegram';
 import {MailIcon} from '@/ui/common/icons/mail';
 import {LinkIcon} from '@/ui/common/icons/link';
-import Link from 'next/link';
-import {ArrowLeftIcon} from '@radix-ui/react-icons';
 import {WatchPreview} from '@/sections/demo/watch-card';
-import {Button} from '@/ui/themed/button';
 import {
   DealerCompanyName,
   DealerProfile,
@@ -20,6 +17,7 @@ import {
   DealerVerification,
 } from '@/ui/themed/dealer';
 import {SubrouteTitle} from '@/ui/themed/links';
+import {AddToBlacklistDialog} from '@/sections/dialogs/block';
 
 const [, iso2] = defaultCountries[0];
 
@@ -117,9 +115,11 @@ export default function Page() {
             <button className="flex w-fit sm:max-w-[151px] items-center sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-[#F5F5F5] text-themed-black-primary hover:opacity-85 gap-[10px] text-sm sm:flex-auto flex-1 sm:w-fit h-[50px] px-[24px]">
               Sent message
             </button>
-            <button className="flex items-center sm:max-w-[132px] sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-transparent border-red-500 text-red-500 border hover:opacity-85 gap-[10px] text-sm sm:w-fit sm:flex-auto flex-1 w-fit h-[50px] px-[24px]">
-              To black list
-            </button>
+            <AddToBlacklistDialog>
+              <button className="flex items-center sm:max-w-[132px] sm:text-sm justify-center sm:h-button-lg transition rounded-full bg-transparent border-red-500 text-red-500 border hover:opacity-85 gap-[10px] text-sm sm:w-fit sm:flex-auto flex-1 w-fit h-[50px] px-[24px]">
+                To black list
+              </button>
+            </AddToBlacklistDialog>
           </div>
         </div>
         <div className="max-w-[400px] hidden md:block min-w-[400px] w-full">

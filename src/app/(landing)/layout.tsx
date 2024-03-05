@@ -7,8 +7,8 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col overflow-auto h-screen">
-      <main className="flex flex-col px-4 md:px-100 pb-[132px] space-y-[60px] bg-themed-grey-200">
+    <div className="flex flex-col overflow-auto h-full">
+      <main className="flex flex-col px-4 md:px-100 pb-[132px] sm:space-y-[60px] space-y-[36px] bg-themed-grey-200">
         <Navbar />
         {children}
       </main>

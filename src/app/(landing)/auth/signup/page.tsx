@@ -9,6 +9,7 @@ import {AccountInfoCard} from './_components/account-info-card';
 import {Button} from '@/ui/themed/button';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import Link from 'next/link';
+import {ConfirmMailDialog} from '@/sections/dialogs/confirm-mail';
 
 const RadioGroupDemo = () => (
   <form>
@@ -96,16 +97,13 @@ export default function Page() {
           <AccountInfo />
 
           <div className="flex sm:flex-row flex-col w-full gap-6 items-center">
-            <Link
-              href="/dashboard"
-              className="w-full"
-            >
+            <ConfirmMailDialog>
               <Button
-                className={`flex items-center w-full sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md   px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`}
+                className={`flex items-center sm:w-fit w-full sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md   px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85`}
               >
                 Create account
               </Button>
-            </Link>
+            </ConfirmMailDialog>
 
             <div className="text-themed-grey-400 sm:text-[14px] text-xs max-w-[300px]">
               By creating an account, you accept our terms of service and end user license agreement

@@ -25,13 +25,15 @@ const Price = () => (
 
 const Actions = () => (
   <div className="flex gap-3.5">
-    <button
-      className={
-        'flex items-center sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md  px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85 sm:w-fit w-full'
-      }
-    >
-      Edit information
-    </button>
+    <Link href="/stock/1/add">
+      <button
+        className={
+          'flex items-center sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md  px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85 sm:w-fit w-full'
+        }
+      >
+        Edit information
+      </button>
+    </Link>
     <button className="flex items-center sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md  px-6 transition rounded-full bg-themed-grey-300  text-themed-black-primary gap-2.5 sm:w-fit w-full hover:opacity-85">
       <Cross1Icon className="w-6 h-6" />
       Cancel

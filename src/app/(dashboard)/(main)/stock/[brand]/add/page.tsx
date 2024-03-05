@@ -9,6 +9,80 @@ import {Switch} from '@/ui/common/switch';
 import {CheckIcon} from '@/ui/common/icons/check';
 import {UploadIcon} from '@/ui/common/icons/upload';
 import {Button} from '@/ui/themed/button';
+import {useState} from 'react';
+import {cn} from '@/lib/cn';
+
+const ToggleGroup = () => {
+  const [active, setActive] = useState<string>('brand_new');
+  const items = [
+    {
+      id: 'brand_new',
+      label: 'Brand new',
+    },
+    {
+      id: 'like_new',
+      label: 'Like new',
+    },
+    {
+      id: 'good',
+      label: 'Good',
+    },
+    {
+      id: 'fair',
+      label: 'Fair',
+    },
+  ];
+
+  return (
+    <div className="flex gap-[10px] overflow-auto p-1 rounded-full">
+      {items.map(item => (
+        <Button
+          key={item.id}
+          size="md"
+          id={item.id}
+          className={cn(
+            'bg-themed-grey-100 text-themed-black-primary px-6',
+            active === item.id
+              ? 'rounded-full gap-1 bg-themed-grey-100 justify-center text-themed-black-primary h-[50px] border border-themed-black-primary sm:pl-4  sm:pr-6 flex items-center'
+              : null,
+          )}
+          onClick={() => setActive(item.id)}
+        >
+          {active === item.id && (
+            <CheckIcon className="w-9 h-9 stroke-current ml-auto text-black" />
+          )}
+          <span className="tracking-wide">{item.label}</span>
+        </Button>
+      ))}
+      {/* <Button
+        size="md"
+        id="brand_new"
+        className="rounded-full gap-1 bg-themed-grey-100 justify-center text-themed-black-primary h-[50px] border border-themed-black-primary sm:pl-4  sm:pr-6 flex items-center"
+      >
+        <CheckIcon className="w-9 h-9 stroke-current ml-auto text-black" />
+        <span className="tracking-wide">Brand new</span>
+      </Button>
+      <Button
+        size="md"
+        className="bg-themed-grey-100 text-themed-black-primary px-6"
+      >
+        Like new
+      </Button>
+      <Button
+        size="md"
+        className="bg-themed-grey-100 text-themed-black-primary px-6"
+      >
+        Good
+      </Button>
+      <Button
+        size="md"
+        className="bg-themed-grey-100 text-themed-black-primary px-6"
+      >
+        Fair
+      </Button> */}
+    </div>
+  );
+};
 
 export default function Page() {
   return (
@@ -55,17 +129,7 @@ export default function Page() {
 
             <div className="flex flex-col sm:gap-[14px] gap-[10px] text-nowrap ">
               <p className="sm:text-[20px] text-[18px] font-semibold">Condition</p>
-              <div className="flex gap-[10px] overflow-auto p-1 rounded-full">
-                <Button size='md' className="rounded-full gap-1 bg-themed-grey-100 justify-center text-themed-black-primary h-[50px] border border-themed-black-primary sm:pl-4  sm:pr-6 flex items-center">
-                  <CheckIcon className="w-9 h-9 stroke-current ml-auto text-black" />
-                  <span className="tracking-wide">Brand new</span>
-                </Button>
-                <Button size='md' className="bg-themed-grey-100 text-themed-black-primary px-6">
-                  Like new
-                </Button>
-                <Button size='md' className="bg-themed-grey-100 text-themed-black-primary px-6">Good</Button>
-                <Button size='md' className="bg-themed-grey-100 text-themed-black-primary px-6">Fair</Button>
-              </div>
+              <ToggleGroup />
               <div className="flex sm:gap-10 gap-8 leading-6">
                 <Checkbox>Original Box</Checkbox>
                 <Checkbox>Original Papers</Checkbox>
@@ -82,7 +146,9 @@ export default function Page() {
               </div>
             </div>
             <div className="flex flex-col gap-[14px]">
-              <p className="sm:text-[20px] text-[18px] sm:leading-6 font-semibold">Suggested price</p>
+              <p className="sm:text-[20px] text-[18px] sm:leading-6 font-semibold">
+                Suggested price
+              </p>
               <div className="flex gap-[30px] flex-wrap sm:flex-nowrap">
                 <NumericFormat
                   value="0"

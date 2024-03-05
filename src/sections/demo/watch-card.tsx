@@ -208,7 +208,7 @@ export const WatchPreview = ({sell = false}: WatchPreviewProps) => {
 
         <div className="flex flex-col w-full sm:gap-5 lg:px-6 px-2 lg:py-6 p-2 border-r  border-r-themed-grey-200">
           <Link
-            href={`${sell ? 'sell' : 'buy'}/1`}
+            href={`/${sell ? 'sell' : 'buy'}/1`}
             className="space-y-1"
           >
             <p className="sm:leading-5">Rolex</p>

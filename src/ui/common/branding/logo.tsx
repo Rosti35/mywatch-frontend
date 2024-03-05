@@ -4,7 +4,7 @@ import {SVGProps} from 'react';
 export const Logo = ({className, ...props}: SVGProps<SVGSVGElement>) => (
   <div className="flex items-center">
     <svg
-      className={cn('align-middle w-full h-full max-w-[200px] text-themed-black-primary', className)}
+      className={cn('align-middle w-full h-full max-w-[123px] sm:max-w-[200px] text-themed-black-primary', className)}
       viewBox="0 0 199 50"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"

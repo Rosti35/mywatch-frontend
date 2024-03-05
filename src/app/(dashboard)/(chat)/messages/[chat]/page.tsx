@@ -3,6 +3,7 @@ import {TelegramIcon} from '@/ui/common/icons/telegram';
 import {WhatsappIcon} from '@/ui/common/icons/whapsapp';
 import {Button} from '@/ui/themed/button';
 import {UserProfile, MessageSent, MessageReceived} from './_components';
+import {AddToBlacklistDialog} from '@/sections/dialogs/block';
 
 export default function Page() {
   return (
@@ -30,12 +31,14 @@ export default function Page() {
             />
           </Button>
 
-          <Button
-            size="sm"
-            className="bg-white px-[18px] text-red-500 tracking-[0.02rem]"
-          >
-            Complain
-          </Button>
+          <AddToBlacklistDialog>
+            <Button
+              size="sm"
+              className="bg-white px-[18px] text-red-500 tracking-[0.02rem]"
+            >
+              Complain
+            </Button>
+          </AddToBlacklistDialog>
         </div>
       </div>
 

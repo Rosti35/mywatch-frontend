@@ -15,8 +15,6 @@ import {
 import {Button} from '@/ui/themed/button';
 import {TextField} from '@/ui/themed/fields/text';
 import {PropsWithChildren} from 'react';
-import {TabContent, TabRoot} from '@/ui/common/tabs';
-import {TabTrigger, TabTriggerContainer} from '@/ui/themed/tabs';
 import {ImportDialog} from '@/sections/dialogs/import';
 
 function AddBrandDialog({children}: PropsWithChildren) {

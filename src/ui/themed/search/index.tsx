@@ -3,6 +3,9 @@ import {InputHTMLAttributes, PropsWithChildren, createContext, useContext, useSt
 import {Option} from '@/ui/common/combobox';
 import {AnimatePresence, motion} from 'framer-motion';
 import {defaultTransition} from '@/ui/util';
+import {cn} from '@/lib/cn';
+import {CameraIcon} from '@/ui/common/icons/camera';
+import {MicIcon} from '@/ui/common/icons/mic';
 
 type SearchContextProps = {
   query: string;
@@ -53,15 +56,23 @@ const useSearch = () => {
   return context;
 };
 
-export const SearchField = (props: InputHTMLAttributes<HTMLInputElement>) => {
+export const SearchField = ({className, ...props}: InputHTMLAttributes<HTMLInputElement>) => {
   const {setOpen} = useSearch();
 
   return (
-    <TextField
-      {...props}
-      onFocus={() => setOpen(true)}
-      onBlur={() => setOpen(false)}
-    />
+    <div className="flex w-full bg-white h-[60px] items-center rounded-xl overflow-hidden">
+      <input
+        className={cn('w-full outline-none p-5 text-sm placeholder:text-ellipsis placeholder:overflow-hidden placeholder:text-[#262626]', className)}
+        onFocus={() => setOpen(true)}
+        onBlur={() => setOpen(false)}
+        {...props}
+      />
+
+      <div className="ml-auto flex py-5 pr-5 gap-5 text-themed-black-primary">
+        <MicIcon className="w-6 h-6" />
+        <CameraIcon className="w-6 h-6" />
+      </div>
+    </div>
   );
 };
 
