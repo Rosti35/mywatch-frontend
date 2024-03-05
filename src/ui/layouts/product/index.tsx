@@ -17,12 +17,12 @@ export const ProductPageLayout = ({children}: {children: ReactNode}) => {
 };
 
 export const ProductImage = () => (
-  <div className=" w-full  rounded-3xl sm:min-h-max min-h-[280px] h-full aspect-square bg-zinc-400" />
+  <div className=" min-w-max rounded-3xl sm:min-h-[544px] min-h-[280px] h-full aspect-square bg-zinc-400" />
 );
 
 export const ProductImageLayout = ({children}: PropsWithChildren) => (
   <div className="overflow-auto w-full  h-full px-4 sm:pl-0 sm:pr-[40px] sm:pt-[40px]">
-    <div className="w-full gap-4 flex  md:flex-col min-h-[280px] h-full flex-row">
+    <div className="w-full gap-4 flex  md:flex-col h-full flex-row aspect-square">
       {children}
       <div className="sm:pb-[10px] sm:pr-0 pr-[0.1px]" />
     </div>
