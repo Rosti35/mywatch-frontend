@@ -104,7 +104,7 @@ type MessagesLinkProps = {
 };
 export const MessagesLink = ({count, newMessages}: MessagesLinkProps) => {
   return (
-    <div className="flex items-center sm:gap-5">
+    <div className="flex items-center sm:gap-5 gap-2">
       <span className="sm:block hidden">
         <ChatDialog>
           <button className="bg-white max-w-[200px] px-4 rounded-full h-[40px] flex items-center sm:gap-[10px] gap-[5px]">
