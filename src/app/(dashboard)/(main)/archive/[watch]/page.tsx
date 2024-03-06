@@ -1,4 +1,4 @@
-import {WatchDetails} from '@/sections/demo/watch-card';
+import {MessagesLink, WatchDetails} from '@/sections/demo/watch-card';
 import {
   ProductBrand,
   ProductDescription,
@@ -19,6 +19,8 @@ export default function Page() {
       <ProductDescriptionLayout>
         <ProductSeries>Daytona Stainless Steel Black Dial</ProductSeries>
         <ProductBrand>Rolex</ProductBrand>
+
+        <MessagesLink count={1} />
         <ProductDescription>
           Released in 1963, Cosmograph Daytona watches have long gone beyond just a work of
           watchmaking and have become a legend. It is the name of the model, which is strongly

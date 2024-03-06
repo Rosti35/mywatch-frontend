@@ -24,8 +24,8 @@ export const ProductImage = () => (
 
 export const ProductImageLayout = ({children}: PropsWithChildren) => (
   <div className="overflow-auto w-full  h-full px-4 sm:pl-0 sm:pr-[40px] sm:pt-[40px]">
-    <div className="w-full gap-4 flex  md:flex-col h-full flex-row aspect-square">
-      {children}
+    <div className="w-full gap-4 sm:space-y-4 flex sm:block max-h-[280px] sm:max-h-max h-full flex-row aspect-square">
+      {children}0
       <div className="sm:pb-[10px] sm:pr-0 pr-[0.1px]" />
     </div>
   </div>
