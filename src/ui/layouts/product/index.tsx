@@ -19,13 +19,13 @@ export const ProductPageLayout = ({children}: {children: ReactNode}) => {
 };
 
 export const ProductImage = () => (
-  <div className=" min-w-max rounded-3xl sm:min-h-[544px] min-h-[280px] h-full aspect-square bg-zinc-400" />
+  <div className=" rounded-3xl  w-full min-h-[280px] h-max aspect-square bg-zinc-400" />
 );
 
 export const ProductImageLayout = ({children}: PropsWithChildren) => (
   <div className="overflow-auto w-full  h-full px-4 sm:pl-0 sm:pr-[40px] sm:pt-[40px]">
     <div className="w-full gap-4 sm:space-y-4 flex sm:block max-h-[280px] sm:max-h-max h-full flex-row aspect-square">
-      {children}0
+      {children}
       <div className="sm:pb-[10px] sm:pr-0 pr-[0.1px]" />
     </div>
   </div>
