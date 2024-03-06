@@ -5,7 +5,7 @@ export const Timer = () => {
   const offset = circumference * ((100 - progress) / 100);
 
   return (
-    <svg className="h-full md:w-[165px] w-[95px] overflow-visible md:scale-100 scale-50">
+    <svg className="md:h-full md:w-[165px] w-[95px] h-[100px] overflow-visible md:scale-100 scale-[0.55]">
       <g className="text-themed-grey-500">
         <circle
           r="80"

@@ -110,15 +110,10 @@ const UploadButton = ({children}: PropsWithChildren) => {
   );
 
   return (
-    <motion.div
-      layout
-      className="p-5 max-w-[450px] bg-themed-grey-100 rounded-[20px] flex flex-col"
-    >
+    <motion.div className="p-5 max-w-[450px] bg-themed-grey-100 rounded-[20px] flex flex-col">
       <div className="flex w-full items-center  gap-2.5">
-        <DocumentAttachmentIcon className="w-6 h-6" />
-        <span className=' text-nowrap overflow-ellipsis overflow-hidden whitespace-nowrap w-fit'>
-        {children}
-        </span>
+        <DocumentAttachmentIcon className="min-w-[24px] min-h-[24px] max-w-[24px] max-h-[24px]" />
+        <span className="w-fit">{children}</span>
         <SwitchStatus
           status={status}
           onUpload={() => ref.current?.click()}
@@ -162,7 +157,7 @@ export default function Page() {
               <UploadButton>Articles of incorporation</UploadButton>
             </div>
 
-            <div className="ml-auto mb-auto w-fit h-fit gap-[30px] max-w-[544px] rounded-3xl md:p-[30px] p-5 bg-themed-black-primary text-white flex md:flex-row flex-nowrap flex-row-reverse">
+            <div className="ml-auto md:flex hidden mb-auto w-fit h-fit gap-[30px] max-w-[544px] rounded-3xl md:p-[30px] p-5 bg-themed-black-primary text-white md:flex-row flex-nowrap flex-row-reverse">
               <div className="w-fit text-wrap">
                 <p className="font-bold leading-6 md:text-md text-[18px] tracking-tight text-nowrap">
                   We have started checking
@@ -175,7 +170,7 @@ export default function Page() {
                 </button>
               </div>
 
-              <div className="w-fit relative hidden">
+              <div className="w-fit relative">
                 <Timer />
                 <div className="absolute w-full h-full left-0 top-0 flex flex-col items-center justify-center">
                   <p className="font-medium leading-10 tracking-tight text-lg">45:40</p>
@@ -183,13 +178,48 @@ export default function Page() {
                 </div>
               </div>
             </div>
+
+            <div className="ml-auto md:hidden gap-5 flex mb-auto w-fit h-fit flex-col  rounded-3xl md:p-[30px] p-5 bg-themed-black-primary text-white">
+              <div className="flex gap-5 ">
+                <div className="relative h-fit text-nowrap">
+                  <Timer />
+                  <div className="absolute z-50 w-full h-full left-0 top-0 flex flex-col items-center justify-center">
+                    <p className="font-medium md:leading-10 tracking-tight md:text-lg text-[18px]">45:40</p>
+                    <p className="md:text-[14px] text-xs">time left</p>
+                  </div>
+                </div>
+                <div className="w-fit text-wrap">
+                  <p className="font-bold leading-6 md:text-md text-[18px] tracking-wide">
+                    We have started checking
+                  </p>
+                  <p className="leading-[1.3rem] md:text-sm text-xs tracking-wide mt-[10px]">
+                    It will take us 48 hours to confirm your documents and open access to the
+                    platform
+                  </p>
+                </div>
+              </div>
+
+              <button className=" rounded-full bg-white text-themed-black-primary px-[30px] py-[15px]">
+                Cancel
+              </button>
+            </div>
           </div>
 
-          <div className="flex mt-auto gap-4">
-            <Button className="px-[30px] bg-themed-black-primary rounded-full text-white py-5">
+          <div className="flex sm:flex-row flex-col mt-auto sm:gap-4 gap-2">
+            <button
+              className="
+            flex items-center sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md   px-6 transition rounded-full bg-themed-black-primary text-themed-grey-100 hover:opacity-85
+            py-5"
+            >
               Upload
-            </Button>
-            <Button className="px-[30px] text-black bg-white">Save for later</Button>
+            </button>
+            <button
+              className="
+            flex items-center sm:text-sm text-[14px] justify-center sm:h-button-lg h-button-md  transition rounded-full hover:opacity-85
+            px-[30px] text-black bg-white"
+            >
+              Save for later
+            </button>
           </div>
         </div>
       </DashboardPageLayout>
