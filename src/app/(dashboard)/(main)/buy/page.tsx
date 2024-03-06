@@ -14,10 +14,13 @@ const Title = () => {
   return (
     <div className="flex w-full flex-wrap sm:flex-nowrap items-center gap-5">
       <span className="tracking-tighter text-nowrap">New watches for sale</span>
-      <Link href="/settings/buying">
+      <Link
+        href="/settings/buying"
+        className="sm:ml-auto "
+      >
         <Button
           size="sm"
-          className="sm:ml-auto font-medium px-5 text-nowrap flex items-center justify-center gap-[10px]"
+          className="font-medium px-5 text-nowrap flex items-center justify-center gap-[10px]"
         >
           <FilterIcon className="w-6 h-6" /> Set up selection
         </Button>
